@@ -1,7 +1,9 @@
-#!/usr/bin/env nodejs
-var http = require('http');
-http.createServer(function (req, res) {
-  res.writeHead(200, {'Content-Type': 'text/plain'});
-  res.end('Scrimpr.com is coming soon \n');
-}).listen(8080, 'localhost');
-console.log('Server running at http://localhost:8080/');
+const http = require('http')
+const fs = require('fs')
+
+const server = http.createServer((req, res) => {
+  res.writeHead(200, { 'content-type': 'text/html' })
+  fs.createReadStream('scrimpr.html').pipe(res)
+})
+
+server.listen(process.env.PORT || 8080)
