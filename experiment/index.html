@@ -1,3 +1,10 @@
+<?php
+if($_POST["Message"]) {
+mail("mlharvey871@gmail.com", "Here is the sample subject line",
+$_POST["Insert Your Message"]. "From: jane@janedoe.com");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +16,7 @@
     <title>Scrimpr</title> 
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="css/style.css">
   
    <style>
 
@@ -80,13 +87,13 @@
       
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="../assets/basketmoney.jpg" alt="1" width="600" height="300">
+      <img src="assets/basketmoney.jpg" alt="1" width="600" height="300">
     </div>
     <div class="carousel-item">
-      <img src="../assets/groceries1.jpg" alt="2" width="600" height="300">
+      <img src="assets/groceries1.jpg" alt="2" width="600" height="300">
     </div>
     <div class="carousel-item">
-      <img src="../assets/groceries2.jpg" alt="3" width="600" height="300">
+      <img src="assets/groceries2.jpg" alt="3" width="600" height="300">
     </div>
   </div>
           
@@ -106,11 +113,33 @@
 
       <div id="middle">
         <br>
-        <img id="logo" class="thick-green-border centre-image" src="../assets/scrimprlogo bigcoin1.jpg" alt="3" width="auto" height="100">
+        <img id="logo" class="thick-green-border centre-image" src="assets/scrimprlogo bigcoin1.jpg" alt="3" width="auto" height="100">
         <br>
-    
+
+        <div ID="pigs-name">
+     
+        <h2> Pig's Name: </h2>
+          </div>
+  <br>
+  </textarea>
         <button id="background-button" class ="centre-image" type="button" onclick = "changeBackground()">Change Background Colour</button>
+        <br>
+        <label id="toggle" class="switch centre-image" onclick = "changeBackground()">
+          <input type="checkbox">
+          <span class="slider round"></span>
+          
+        </label>
        <br>
+       <div>
+       <form accept-charset="UTF-8" action="https://getform.io/f/72782ec2-8f22-40cc-9ee0-616e991b1ba5" method="POST" enctype="multipart/form-data"  target="_blank" id="wpform">
+        <div>
+           <div>
+              <input style="margin-top: 5px; background-color: #fff; height:35px; width:235px;" class ="centre-image" type="text" name="pig_id" placeholder="Enter Pig's ID Number" required="required">
+           </div>
+        </div>
+        <br>
+        <input type="hidden" name="utf8" value="✓">
+        <button style="font-size:14px; background-color:#6b7ddf; color:#fff; font-weight:bold;" class ="centre-image" type="submit">SEARCH</button>
       </div>
 
     </main>

@@ -1,9 +1,12 @@
 let borderButton = document.getElementById("border-button")
-let scrimprLogo = document.getElementById("logo")
+let border = document.getElementById("logo")
 
 let back = document.getElementById("middle")
 
 document.querySelector("background-button").addEventListener("")
+document.querySelector("toggle").addEventListener("")
+
+let toggle = false;
 
 function changeBackground() {
     let a = Math.floor(Math.random()*256);
@@ -14,3 +17,7 @@ function changeBackground() {
 
     document.body.style.background = colour;
 }
+
+
+    
+
