@@ -1,159 +1,174 @@
-<?php
-if($_POST["Message"]) {
-mail("mlharvey871@gmail.com", "Here is the sample subject line",
-$_POST["Insert Your Message"]. "From: jane@janedoe.com");
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Scrimpr</title> 
+  <title>Scrimpr</title>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
-  
-   <style>
+  <link rel="stylesheet" href="css/stylelist.css">
 
-.carousel-inner img {
-    
-    width: auto;
-    height: 300px;
-    max-height: 300px;
-    vertical-align: middle;
-}
+  <style>
+    .carousel-inner img {
 
-.carousel-item {
-  text-align: center;
-}
-    </style>
+      width: auto;
+      height: 300px;
+      max-height: 300px;
+      vertical-align: middle;
+    }
+
+    .carousel-item {
+      text-align: center;
+    }
+  </style>
 
 </head>
 
 <body>
 
-    <header>
+  <header>
 
-        <div class="container-fluid p-0">
-            <nav class="navbar navbar-expand-lg">
-              <a class="navbar-brand" href="#">
-                <i class="fas fa-book-reader fa-2x mx-3"></i>Scrimpr</a>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <i class="fas fa-align-right text-light"></i>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNav">
-                <div class="mr-auto"></div>
-                <ul class="navbar-nav">
-                  <li class="nav-item active">
-                    <a class="nav-link" href="#">HOME
-                      <span class="sr-only">(current)</span>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">FEATURE</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">FEATURE</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <div class="dropdown">
-                      <a href="#" class="nav-link">FEATURE</a>
-                      <div class="dropdown-content">
-                      </div>
-                    </div>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">FEATURE</a>
-                </ul>
+    <div class="container-fluid p-0">
+      <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#">
+          <i class="fas fa-book-reader fa-2x mx-3"></i>Scrimpr</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-align-right text-light"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <div class="mr-auto"></div>
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">HOME
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">FEATURE</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">FEATURE</a>
+            </li>
+            <li class="nav-item dropdown">
+              <div class="dropdown">
+                <a href="#" class="nav-link">FEATURE</a>
+                <div class="dropdown-content">
+                </div>
               </div>
-            </nav>
-          </div>
-
-          <div id="demo" class="carousel slide" data-ride="carousel">
-
-            
-            <ul class="carousel-indicators">
-              <li data-target="#demo" data-slide-to="0" class="active"></li>
-              <li data-target="#demo" data-slide-to="1"></li>
-              <li data-target="#demo" data-slide-to="2"></li>
-            </ul>
-          
-      
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="assets/basketmoney.jpg" alt="1" width="600" height="300">
-    </div>
-    <div class="carousel-item">
-      <img src="assets/groceries1.jpg" alt="2" width="600" height="300">
-    </div>
-    <div class="carousel-item">
-      <img src="assets/groceries2.jpg" alt="3" width="600" height="300">
-    </div>
-  </div>
-          
-            
-            <a class="carousel-control-prev" href="#demo" data-slide="prev">
-              <span class="carousel-control-prev-icon"></span>
-            </a>
-            <a class="carousel-control-next" href="#demo" data-slide="next">
-              <span class="carousel-control-next-icon"></span>
-            </a>
-          
-          </div>
-
-    </header>
-
-    <main>
-
-      <div id="middle">
-        <br>
-        <img id="logo" class="thick-green-border centre-image" src="assets/scrimprlogo bigcoin1.jpg" alt="3" width="auto" height="100">
-        <br>
-
-        <div ID="pigs-name">
-     
-        <h2> Pig's Name: </h2>
-          </div>
-  <br>
-  </textarea>
-        <button id="background-button" class ="centre-image" type="button" onclick = "changeBackground()">Change Background Colour</button>
-        <br>
-        <label id="toggle" class="switch centre-image" onclick = "changeBackground()">
-          <input type="checkbox">
-          <span class="slider round"></span>
-          
-        </label>
-       <br>
-       <div>
-       <form accept-charset="UTF-8" action="https://getform.io/f/72782ec2-8f22-40cc-9ee0-616e991b1ba5" method="POST" enctype="multipart/form-data"  target="_blank" id="wpform">
-        <div>
-           <div>
-              <input style="margin-top: 5px; background-color: #fff; height:35px; width:235px;" class ="centre-image" type="text" name="pig_id" placeholder="Enter Pig's ID Number" required="required">
-           </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">FEATURE</a>
+          </ul>
         </div>
-        <br>
-        <input type="hidden" name="utf8" value="✓">
-        <button style="font-size:14px; background-color:#6b7ddf; color:#fff; font-weight:bold;" class ="centre-image" type="submit">SEARCH</button>
+      </nav>
+    </div>
+
+    <div id="demo" class="carousel slide" data-ride="carousel">
+
+
+      <ul class="carousel-indicators">
+        <li data-target="#demo" data-slide-to="0" class="active"></li>
+        <li data-target="#demo" data-slide-to="1"></li>
+        <li data-target="#demo" data-slide-to="2"></li>
+      </ul>
+
+
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="assets/basketmoney.jpg" alt="1" width="600" height="300">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/groceries1.jpg" alt="2" width="600" height="300">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/groceries2.jpg" alt="3" width="600" height="300">
+        </div>
       </div>
 
-    </main>
 
-    <footer>
+      <a class="carousel-control-prev" href="#demo" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </a>
+      <a class="carousel-control-next" href="#demo" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </a>
 
-      <script src="script.js"></script>
+    </div>
 
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </header>
 
-    </footer>
+  <main>
+
+    <div id="middle">
+      <br>
+      <img id="logo" class="thick-green-border centre-image" src="assets/scrimprlogo bigcoin1.jpg" alt="3" width="auto"
+        height="100">
+      <br>
+
+      <div ID="pigs-name">
+
+        <h2> Pig's Name: </h2>
+      </div>
+      <br>
+      </textarea>
+      <button id="background-button" class="centre-image" type="button" onclick="changeBackground()">Change Background
+        Colour</button>
+      <br>
+      <label id="toggle" class="switch centre-image" onclick="changeBackground()">
+        <input type="checkbox">
+        <span class="slider round"></span>
+
+      </label>
+      <br>
+      <div>
+        <form accept-charset="UTF-8" action="https://getform.io/f/72782ec2-8f22-40cc-9ee0-616e991b1ba5" method="POST"
+          enctype="multipart/form-data" target="_blank" id="wpform">
+      </div>
+      <div>
+        <input style="margin-top: 5px; background-color: #fff; height:35px; width:235px;" class="centre-image"
+          type="text" name="pig_id" placeholder="Enter Pig's ID Number" required="required">
+      </div>
+    </div>
+    <br>
+    <input type="hidden" name="utf8" value="d">
+    <button style="font-size:14px; background-color:#6b7ddf; color:#fff; font-weight:bold;" class="centre-image"
+      type="submit" onclick="loadName()">SEARCH</button>
+    </div>
+    <br>
+    <br>
+    <div class="container">
+      <div class="shopping-list">
+        <h2>Basic Shopping List</h2>
+        <br>
+        <div style="text-align: center;">
+          <i id="pig" class="fas fa-piggy-bank"></i>
+          <input id="userInput" type="text">
+        </div>
+        <br>
+        <div id="allItems"></div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+
+    <script src="script.js"></script>
+
+    <script src="xhr.js"></script>
+
+    <script src="list.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/07891d9bf6.js" crossorigin="anonymous"></script>
+
+  </footer>
 
 </body>
-
-
