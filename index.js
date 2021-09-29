@@ -17,16 +17,19 @@ const groupMembers = [
 ];
 
 app.get('/api/groupMembers', (req, res) =>{
+    res.setHeader("Access-Control-Allow-Origin", "*");
     res.send(groupMembers);
 });
 
 app.get('/api/groupMembers/:name', (req, res) =>{
+    res.setHeader("Access-Control-Allow-Origin", "*");
     const people = groupMembers.find(c=> c.name === req.params.name);
     if (!people) return res.status(404).send('That person was not found');
     res.send(people);
 });
 
 app.post('/api/groupMembers', (req, res) => {
+    res.setHeader("Access-Control-Allow-Origin", "*");
     const result = validatepeople(req.body);
     const { error } = validatepeople(req.body);
     if (error) return res.status(400).send(result.error.details[0].message);
