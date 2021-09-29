@@ -46,5 +46,5 @@ async function poststuff() {
         'Content-Type': 'application/json'
     }
     });
-// ...
+	getList();
 }
