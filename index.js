@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 
 app.use(express.json());
-app.use(express.static('public'));
+app.use(express.static('staticstuff'));
 
 const groupMembers = [
     {id:1, name:'Jennifer', team:'Backend'},
