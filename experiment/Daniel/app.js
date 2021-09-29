@@ -2,8 +2,11 @@
 const button = document.getElementById("get-button");
 const div = document.getElementById("display-container");
 
+
+
 // define a function for the button's onclick behaviour
 button.onclick = () => getList();
+
 
 // make an asynchronous function by prefixing "async" - this is
 // important when using fetch(), although you don't necessarily
@@ -30,4 +33,18 @@ async function getList() {
     // we can display it on the webpage. be sure to use JSON stringify to turn the
     // raw JSON into a normal string
     div.innerText = "RESPONSE:\n" + JSON.stringify(response);
+}
+//New function that posts what we put into the boxes
+async function poststuff() {
+    const name = document.getElementById("name");
+    const team = document.getElementById("team");
+    const object = { name:name.value, team: team.value };
+    const response = await fetch('http://scrimpr.com/api/groupMembers', {
+    method: 'POST',
+    body: JSON.stringify(object),
+    headers: {
+        'Content-Type': 'application/json'
+    }
+    });
+// ...
 }
