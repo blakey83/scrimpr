@@ -1,0 +1,35 @@
+.container {
+    border: 1px solid black;
+    width: 90%;
+    margin: auto;
+    display: flex;
+}
+
+.shopping-list {
+    width: 600px;
+    min-height: 100vh;
+    margin: auto;
+    background: white;
+    box-shadow: 10px 10px 24px 0 black rgba(0, 0, 0, 0.5);
+
+}
+
+.shopping list i {
+    font-size: 2rem;
+    color: pink;
+}
+
+.shopping-list input {
+    outline: 0;
+    border: 0;
+    border-bottom: 3px solid black;
+    width: 70%;
+    font-size: 1.5rem;
+}
+
+#allItems h3 {
+    margin-Left: 50px;
+    margin-right: 10px;
+    margin-top: 15px;
+    font-size: 2rem;
+}
