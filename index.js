@@ -16,6 +16,10 @@ const groupMembers = [
     {id:6, name:'"ladyhat" Harrison', team:'Frontend'},
 ];
 
+app.get('/fetch', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'fetch/fetch.html'));
+   });
+
 app.get('/api/groupMembers', (req, res) =>{
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.send(groupMembers);
