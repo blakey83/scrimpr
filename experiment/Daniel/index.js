@@ -20,14 +20,29 @@ const shoppingList = [];
 
 
 app.post('/api/shoppingList', (req, res) =>{
+    let i = 0;
     const list ={
         id: shoppingList.length + 1,
         name:req.body.name,
-        items:req.body.items,
+        items:
+        {
+            item1: req.body.item1,
+            item2: req.body.item+i,
+        }            
     };
+    
+    for(i=2; i<=4; i++){
+        let newItem = "item" + i;
+        let newValue = req.body.item+i;
+        console.log(newValue);
+        console.log(req.body.name)
+        list.items[newItem]=newValue ;
+    }
+
     shoppingList.push(list);
     res.send(list);
 });
+
 
 app.get('/api/shoppingList', (req, res) =>{
     res.send(shoppingList);
@@ -43,7 +58,7 @@ app.get('/api/groupMembers', (req, res) =>{
 });
 
 app.get('/api/groupMembers/:name', (req, res) =>{
-    res.setHeader("Access-Control-Allow-Origin", "*");
+//    res.setHeader("Access-Control-Allow-Origin", "*");
     const people = groupMembers.find(c=> c.name === req.params.name);
     if (!people) return res.status(404).send('That person was not found');
     res.send(people);
