@@ -12,11 +12,16 @@
         <div id="display-container">RESPONSE:</div>
     </div>
     <div id="members">
-        <form>
-            Name:<input type="text" id="name"/><br>
-            Team:<input type="text" id="team"/>
-            <input type="button" value="submit" onclick="poststuff(); getList() ;"/>
-        </form>
+        Name:<input type="text" id="name"/><br>
+        Team:<input type="text" id="team"/>
+        <input type="button" value="submit" onclick="poststuff();"/>
+    </div>
+    <br><br><br><br>
+    <div id = "search">
+        <h1>Search People</h1>
+        Name:<input type="text" id="searchName"/>
+        <input type="button" value="Search" onclick="searchTeam();"/>
+
     </div>
 </body>
 
