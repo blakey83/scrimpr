@@ -12,7 +12,7 @@ button.onclick = () => getList();
 // important when using fetch(), although you don't necessarily
 // need to understand why at this stage
 async function getList() {
-    const response = await fetch("http://localhost:3000/api/groupMembers", {
+    const response = await fetch("http://scrimpr.com/api/groupMembers", {
         "Access-Control-Allow-Origin": "*"})
     .then(data => {
         return data.json()
@@ -32,7 +32,7 @@ async function poststuff() {
     const name = document.getElementById("name");
     const team = document.getElementById("team");
     const object = { name:name.value, team: team.value };
-    const response = await fetch('http://localhost:3000/api/groupMembers', {
+    const response = await fetch('http://scrimpr.com/api/groupMembers', {
     method: 'POST',
     body: JSON.stringify(object),
     headers: {
