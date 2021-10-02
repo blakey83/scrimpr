@@ -9,4 +9,4 @@ app.use(express.json());
 app.use(express.static('staticstuff'));
 app.use('/api/groupMembers', groupMembers);
 
-app.listen(80, () => console.log('listening on port 3000...'));
+app.listen(80, () => console.log('listening on port 80...'));
