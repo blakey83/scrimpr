@@ -1,6 +1,6 @@
 const Joi = require('joi');
 const express = require('express');
-const groupMembers = require('./Routes/groupMembers');
+const groupMembers = require('./routes/groupMembers');
 const app = express();
 var cors = require('cors')
 
