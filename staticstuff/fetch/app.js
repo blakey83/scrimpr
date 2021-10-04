@@ -12,7 +12,7 @@ button.onclick = () => getList();
 // important when using fetch(), although you don't necessarily
 // need to understand why at this stage
 async function getList() {
-    const response = await fetch("http://scrimpr.com/api/groupMembers", {
+    const response = await fetch("http://localhost:80/api/groupMembers", {
         "Access-Control-Allow-Origin": "*"})
     .then(data => {
         return data.json()
@@ -32,7 +32,7 @@ async function poststuff() {
     const name = document.getElementById("name");
     const team = document.getElementById("team");
     const object = { name:name.value, team: team.value };
-    const response = await fetch('http://scrimpr.com/api/groupMembers', {
+    const response = await fetch('http://localhost:80/api/groupMembers', {
     method: 'POST',
     body: JSON.stringify(object),
     headers: {
@@ -46,13 +46,14 @@ getList();
 async function searchTeam() {
     const tname = document.getElementById("searchName");
     const name = document.getElementById("name");
-    const searchValue = "http://scrimpr.com/api/groupmembers/" + (tname.value);
+    const searchValue = "http://localhost:80/api/groupmembers/" + (tname.value);
     const respond = await fetch(searchValue)
     .then(data => {
         return data.json()
     })
-    rawData = JSON.stringify(respond);
+    rawData = JSON.stringify(respond[0]);
     person = JSON.parse(rawData);
+    console.log(person);
     if (person.name !== "Erin") { 
         div.innerText = "You're looking for "+person.name+" who works in the "+person.team+" department, and reports to Erin!";
     }
