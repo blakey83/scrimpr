@@ -21,7 +21,7 @@ async function getList() {
     for(i=0; i<response.length; i++) {
         let rawData = JSON.stringify(response[i])
         let teamMember = JSON.parse(rawData)
-        div.innerText +=teamMember.id+".  "+ teamMember.name+" is on team "+ teamMember.team+"\n";
+        div.innerText +=teamMember.name+" is on team "+ teamMember.team+"\n";
         console.log(teamMember.name);
     };
     
