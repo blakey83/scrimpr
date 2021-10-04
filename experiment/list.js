@@ -21,7 +21,9 @@ function addItem() {
     itemNumber++;
 
     var h3 = document.createElement("h3");
+
     h3.innerHTML = itemNumber + ". " + userInput.value;
+
 
     h3.addEventListener("click", function () {
         h3.style.textDecoration = "line-through";
