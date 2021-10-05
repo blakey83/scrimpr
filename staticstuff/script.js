@@ -4,6 +4,7 @@ const loginButton = document.getElementById("login-button");
 
 loginButton.onclick = () => attemptLogin();
 
+// PLACEHOLDER - UNFINISHED
 async function attemptLogin() {
     const username = usernameField.value;
     const password = passwordField.value;
