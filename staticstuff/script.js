@@ -22,7 +22,7 @@ async function attemptLogin() {
         return data.json();
     });
 
-    if (response.body == "true") {
+    if (response.body.status === "success") {
         console.log(`User ${body.username} has successfully logged in!`);
     }
 }
