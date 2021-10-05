@@ -1,23 +1,28 @@
-let borderButton = document.getElementById("border-button")
-let border = document.getElementById("logo")
+const usernameField = document.getElementById("username-field");
+const passwordField = document.getElementById("password-field");
+const loginButton = document.getElementById("login-button");
 
-let back = document.getElementById("middle")
+loginButton.onclick = () => attemptLogin();
 
-document.querySelector("background-button").addEventListener("")
-document.querySelector("toggle").addEventListener("")
+async function attemptLogin() {
+    const username = usernameField.value;
+    const password = passwordField.value;
 
-let toggle = false;
+    const body = { "username": username, "password": password };
 
-function changeBackground() {
-    let a = Math.floor(Math.random()*256);
-    let b = Math.floor(Math.random()*256);
-    let c = Math.floor(Math.random()*256);
+    usernameField.value = "";
+    passwordField.value = "";
 
-    let colour = "rgb(" + a + "," +  b + "," + c + ")";
+    const response = await fetch("http://scrimpr.com/api/login", {
+        "method": "POST",
+        "body": JSON.stringify(body),
+        "Content-Type": "application/json"
+    }).then(data => {
+        return data.json();
+    });
 
-    document.body.style.background = colour;
+    if (response.body == "true") {
+        console.log(`User ${body.username} has successfully logged in!`);
+    }
 }
-
-
-    
 
