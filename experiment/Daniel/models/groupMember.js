@@ -1,7 +1,7 @@
 const Joi = require('joi');
 const mongoose = require('mongoose');
 
-const GroupMember = mongoose.model('groupMembers', new mongoose.Schema({
+const GroupMember = mongoose.model('GroupMembers', new mongoose.Schema({
     name: {
         type: String,
         required: true,

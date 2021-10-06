@@ -51,8 +51,9 @@ async function searchTeam() {
     .then(data => {
         return data.json()
     })
-    rawData = JSON.stringify(respond);
+    rawData = JSON.stringify(respond[0]);
     person = JSON.parse(rawData);
+    console.log(person);
     if (person.name !== "Erin") { 
         div.innerText = "You're looking for "+person.name+" who works in the "+person.team+" department, and reports to Erin!";
     }

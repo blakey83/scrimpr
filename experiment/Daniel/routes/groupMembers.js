@@ -1,4 +1,4 @@
-const {GroupMember, validate} = require('../models/GroupMember');
+const {GroupMember, validate} = require('../models/groupMember');
 const mongoose = require('mongoose');
 const express = require('express');
 const router = express.Router();
@@ -28,7 +28,7 @@ router.post('/', async (req, res) => {
         team: req.body.team     
     });
 
-    people = await GroupMember.save();
+    people = await people.save();
     res.send(people);
 });
 

@@ -1,23 +1,45 @@
-let borderButton = document.getElementById("border-button")
-let border = document.getElementById("logo")
+const usernameField = document.getElementById("username-field");
+const passwordField = document.getElementById("password-field");
+const loginButton = document.getElementById("login-button");
 
-let back = document.getElementById("middle")
+loginButton.onclick = () => attemptLogin();
 
-document.querySelector("background-button").addEventListener("")
-document.querySelector("toggle").addEventListener("")
+// PLACEHOLDER - UNFINISHED
+async function attemptLogin() {
+    const username = usernameField.value;
+    const password = passwordField.value;
 
-let toggle = false;
+    const body = { "username": username, "password": password };
 
-function changeBackground() {
-    let a = Math.floor(Math.random()*256);
-    let b = Math.floor(Math.random()*256);
-    let c = Math.floor(Math.random()*256);
+    usernameField.value = "";
+    passwordField.value = "";
 
-    let colour = "rgb(" + a + "," +  b + "," + c + ")";
-
-    document.body.style.background = colour;
+    async function addUser() {
+        const firstname = document.getElementById("first-name");
+        const lastname = document.getElementById("last-name");
+        const postcode = document.getElementById("postcode");
+        const Email = document.getElementById("email");
+        const password = document.getElementById(password);
+        const object = { 
+            firstname: firstname.value, 
+            lastname: team.value,
+            postcode: postcode.value,
+            Email: Email.value,
+            password: password.value,
+         };
+        const response = await fetch('http://localhost:3000/api/users', {
+        method: 'POST',
+        body: JSON.stringify(object),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+        });
+    }
 }
-
-
     
+
+//     if (response.body.status === "success") {
+//         console.log(`User ${body.username} has successfully logged in!`);
+//     }
+// }
 
