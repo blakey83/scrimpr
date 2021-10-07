@@ -16,18 +16,20 @@
         <div class="form-container" style="border-radius: 25px;">
             <div class="image-holder" style="width: 316px;border-radius: 25px;background: url(&quot;assets/img/happyscrimpy.jpg&quot;) center / cover no-repeat;border-top-right-radius: 0px;border-bottom-right-radius: 0px;"></div>
             <form method="post" style="border-radius: 25px;border-top-left-radius: 0px;border-top-right-radius: 25px;border-bottom-left-radius: 0px;border-bottom-right-radius: 25px;">
-                <h2 class="text-center" style="color: rgb(0,0,0);"><strong>Create</strong> an account.</h2><input class="form-control" type="text" name="first-name" placeholder="First Name" required="" style="background: rgb(241,241,241);color: rgb(0,0,0);border-radius: 100px;"><input class="form-control" type="text" style="margin-top: 16px;background: rgb(241,241,241);color: rgb(0,0,0);border-radius: 100px;" name="last-name" placeholder="Last Name" required=""><input class="form-control" type="text" style="margin-top: 16px;background: rgb(241,241,241);color: rgb(0,0,0);border-radius: 100px;" name="postcode" placeholder="Postcode" required="">
+                <h2 class="text-center" style="color: rgb(0,0,0);"><strong>Create</strong> an account.</h2><input class="form-control" type="text" name="firstname" placeholder="First Name" required="" style="background: rgb(241,241,241);color: rgb(0,0,0);border-radius: 100px;"><input class="form-control" type="text" style="margin-top: 16px;background: rgb(241,241,241);color: rgb(0,0,0);border-radius: 100px;" name="lastname" placeholder="Last Name" required=""><input class="form-control" type="text" style="margin-top: 16px;background: rgb(241,241,241);color: rgb(0,0,0);border-radius: 100px;" name="postcode" placeholder="Postcode" required="">
                 <div class="mb-3"><input class="form-control" type="email" name="email" placeholder="Email" style="padding-top: 6px;margin-top: 16px;background: rgb(241,241,241);color: rgb(0,0,0);border-radius: 100px;"></div>
                 <div class="mb-3"><input class="form-control" type="password" name="password" placeholder="Password" style="background: rgb(241,241,241);color: rgb(0,0,0);border-radius: 100px;"></div>
                 <div class="mb-3"><input class="form-control" type="password" name="password-repeat" placeholder="Password (repeat)" style="background: rgb(241,241,241);color: rgb(0,0,0);border-radius: 100px;"></div>
                 <div class="mb-3">
                     <div class="form-check"><label class="form-check-label"><input class="form-check-input" type="checkbox">I agree to the licence terms.</label></div>
                 </div>
-                <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit" style="background: rgb(61,87,178);">Sign Up</button></div><a class="already" href="../index.html">Do you already have an account? Login here.</a>
+                <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit" onclick="addUser(this.form)" style="background: rgb(61,87,178);">Sign Up</button></div><a class="already" href="../index.html">Do you already have an account? Login here.</a>
             </form>
+            <input type="button" value="Search" onclick="addUser();"/>
         </div>
     </section>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
+<script src="script.js"></script>
+
 
 </html>
