@@ -1,32 +1,53 @@
-async function attemptLogin() {
-    const username = usernameField.value;
-    const password = passwordField.value;
 
-    // const body = { "username": username, "password": password };
 
-    // usernameField.value = "";
-    // passwordField.value = "";
-}
-    async function addUser() {
-        const firstname = document.getElementsByName("first-name");
-        const lastname = document.getElementsByName("last-name");
-        const postcode = document.getElementsByName("postcode");
-        const Email = document.getElementsByName("email");
-        const password = document.getElementsByName('password');
-        console.log(firstname);
-        const object = { 
-            firstname: firstname.value, 
-            lastname: lastname.value,
-            postcode: postcode.value,
-            Email: Email.value,
-            password: password.value
-         };
-         console.log(object);
-        const response = await fetch('http://localhost:3000/api/users', {
-        method: 'POST',
-        body: JSON.stringify(object),
-        headers: {
-            'Content-Type': 'application/json'
-        }
-        });
+
+async function pressTheButton(form) {
+    try {
+        const user = await addUser(form);
+        const respone = await saveUser(user);
+        const forward = await userPage(user);
+        console.log("Done");    
     }
+    catch (err){
+        console.log('Error', err.message);
+    }
+    
+}
+
+function addUser(form) {
+    return new Promise ((resolve, reject) => {
+        const user = { 
+            firstname: form.firstname.value, 
+            lastname: form.lastname.value,
+            postcode: form.postcode.value,
+            Email: form.email.value,
+            password: form.password.value
+        }
+     resolve (user);
+    });
+}
+
+function saveUser(user) {
+    return new Promise ((resolve, reject) => {
+        fetch('http://localhost:3000/api/users', {
+            method: 'POST',
+            cache: "no-cache",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(user),
+            
+        })
+        .next (resolve(fetch))
+        .catch(e => {
+            console.log("Error", e);
+        })
+    })
+}
+    
+function userPage(user){
+    return new Promise ((resolve, reject) => {
+        console.log(user);
+        resolve (window.location.replace("http://localhost:3000/api/users"));
+     })
+}

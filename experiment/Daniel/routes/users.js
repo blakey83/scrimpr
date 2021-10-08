@@ -9,6 +9,12 @@ router.get('/', async (req, res) =>{
     const Users = await User.find().sort('firstname');
     res.send(Users);
 });
+router.get('/:Email', async (req, res) =>{
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    const Users = await User.find({Email: req.params.Email});
+    if (!Users) return res.status(404).send('That person was not found');
+    res.send(Users);
+});
 
 router.post('/', async (req, res) => {
     res.setHeader("Access-Control-Allow-Origin", "*");

@@ -14,16 +14,32 @@ async function attemptLogin() {
     usernameField.value = "";
     passwordField.value = "";
 
-    const response = await fetch("http://scrimpr.com/api/login", {
-        "method": "POST",
-        "body": JSON.stringify(body),
-        "Content-Type": "application/json"
-    }).then(data => {
-        return data.json();
-    });
-
-    if (response.body.status === "success") {
-        console.log(`User ${body.username} has successfully logged in!`);
+    async function addUser() {
+        const firstname = document.getElementById("first-name");
+        const lastname = document.getElementById("last-name");
+        const postcode = document.getElementById("postcode");
+        const Email = document.getElementById("email");
+        const password = document.getElementById(password);
+        const object = { 
+            firstname: firstname.value, 
+            lastname: team.value,
+            postcode: postcode.value,
+            Email: Email.value,
+            password: password.value,
+         };
+        const response = await fetch('http://localhost:3000/api/users', {
+        method: 'POST',
+        body: JSON.stringify(object),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+        });
     }
 }
+    
+
+//     if (response.body.status === "success") {
+//         console.log(`User ${body.username} has successfully logged in!`);
+//     }
+// }
 
