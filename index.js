@@ -6,7 +6,7 @@ const users = require('./routes/users')
 const app = express();
 var cors = require('cors')
 
-mongoose.connect('mongodb+srv://Scrimpr_App:z20Nx3ifk9vUDzBh@cluster0.otxks.mongodb.net/ScrimprApp')
+mongoose.connect('mongodb+srv://Scrimpr_Admin:kaRzAy68Vh9hR6sq@cluster0.otxks.mongodb.net/ScrimprApp')
     .then(() => console.log('connecting to MongoDB...'))
     .catch(err => console.error('could not connect to MongoDB', err));
 

@@ -3,13 +3,23 @@
 
 async function pressTheButton(form) {
     try {
+        const validate = await validatePassword(form);
         const user = await addUser(form);
         const respone = await saveUser(user);
         const forward = await userPage(user);
         console.log("Done");    
     }
-    catch (err){
-        console.log('Error', err.message);
+    catch (e){
+        console.error(e);
+    }
+    
+}
+
+function validatePassword(form) {
+    password = form.password.value;
+    passwordrepeat = form.passwordrepeat.value;
+    if (password !== passwordrepeat){
+        throw 'Passwords do not match'
     }
     
 }
@@ -38,7 +48,9 @@ function saveUser(user) {
             body: JSON.stringify(user),
             
         })
-        .next (resolve(fetch))
+        .then(setTimeout(() => {
+            resolve(fetch)
+        }), 2000)
         .catch(e => {
             console.log("Error", e);
         })
@@ -48,6 +60,6 @@ function saveUser(user) {
 function userPage(user){
     return new Promise ((resolve, reject) => {
         console.log(user);
-        resolve (window.location.replace("http://localhost:3000/api/users"));
-     })
+        resolve (window.location.replace('../index.html'));       
+    })
 }

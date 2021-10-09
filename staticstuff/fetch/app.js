@@ -1,18 +1,11 @@
-// store page elements in variables
+
 const button = document.getElementById("get-button");
 const div = document.getElementById("display-container");
 
-
-
-// define a function for the button's onclick behaviour
 button.onclick = () => getList();
 
-
-// make an asynchronous function by prefixing "async" - this is
-// important when using fetch(), although you don't necessarily
-// need to understand why at this stage
 async function getList() {
-    const response = await fetch("http://scrimpr.com/api/groupMembers", {
+    const response = await fetch("http://localhost:3000/api/groupMembers", {
         "Access-Control-Allow-Origin": "*"})
     .then(data => {
         return data.json()
@@ -32,21 +25,21 @@ async function poststuff() {
     const name = document.getElementById("name");
     const team = document.getElementById("team");
     const object = { name:name.value, team: team.value };
-    const response = await fetch('http://scrimpr.com/api/groupMembers', {
+    const response = await fetch('http://localhost:3000/api/groupMembers', {
     method: 'POST',
     body: JSON.stringify(object),
     headers: {
         'Content-Type': 'application/json'
     }
-    });
-getList();
+    })
+    .then(window.location.href = "http://localhost:3000/api/users")
 }
 
 // Search functionalitiy
 async function searchTeam() {
     const tname = document.getElementById("searchName");
     const name = document.getElementById("name");
-    const searchValue = "http://scrimpr.com/api/groupmembers/" + (tname.value);
+    const searchValue = "http://localhost:3000/api/groupmembers/" + (tname.value);
     const respond = await fetch(searchValue)
     .then(data => {
         return data.json()
