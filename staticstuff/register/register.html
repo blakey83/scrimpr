@@ -21,11 +21,13 @@
                 <div class="mb-3"><input class="form-control" type="password" name="password" placeholder="Password" style="background: rgb(241,241,241);color: rgb(0,0,0);border-radius: 100px;"></div>
                 <div class="mb-3"><input class="form-control" type="password" name="passwordrepeat" placeholder="Password (repeat)" style="background: rgb(241,241,241);color: rgb(0,0,0);border-radius: 100px;"></div>
                 <div class="mb-3">
-                    <div class="form-check"><label class="form-check-label"><input class="form-check-input" type="checkbox">I agree to the licence terms.</label></div>
+                    <div class="form-check"><label class="form-check-label"><input class="form-check-input" id="termscheck" type="checkbox">I agree to the licence terms.</label></div>
                 </div>
                 <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit" onclick="pressTheButton(this.form)" style="background: rgb(61,87,178);">Sign Up</button></div><a class="already" href="../index.html">Do you already have an account? Login here.</a>
+                <div id=error style="text-align: center; text-decoration-color: red;"></div>
             </form>
         </div>
+       
     </section>
 </body>
 <script src="script.js"></script>
