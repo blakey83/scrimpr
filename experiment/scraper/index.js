@@ -20,10 +20,19 @@ const puppeteer = require("puppeteer");
     await page.goto(`file:${  path.join(__dirname, "content.html")  }`);
 
     await page.evaluate(() => {
-        return document.querySelectorAll(".product");
+        console.log("Searching page for divs with class 'product-name'...");
+        let results = document.querySelectorAll("span[class='product-name']");
+        let array = [];
+        for (let i = 0; i < results.length; i++) {
+            array.push(results[i].innerText);
+        }
+        return array;
     }).then(data => {
+        console.log("full data:", data);
+        console.log("Looping over divs to print innerText:");
         for (let i = 0; i < data.length; i++) {
-            console.log(data[i].innerText);
+            console.log("Loop number", i);
+            console.log(data[i]);
         }
     });
 
