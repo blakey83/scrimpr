@@ -4,11 +4,7 @@ const puppeteer = require("puppeteer");
 
 (async () => {
     const browser = await puppeteer.launch({
-        headless: false,
-        args: [
-            '--disable-extensions-except=/path/to/manifest/folder/',
-            '--load-extension=/path/to/manifest/folder/',
-        ]
+        headless: true
     });
     const page = await browser.newPage();
 
@@ -17,7 +13,8 @@ const puppeteer = require("puppeteer");
 
     let content = await page.content();
     fs.writeFile("content.html", content, "utf8", (e) => {
-        //console.log("Error when writing file:", e);
+        if (err) throw err;
+        console.log("A file was created: content.html");
     });
 
     await page.goto(`file:${  path.join(__dirname, "content.html")  }`);
