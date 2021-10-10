@@ -1,6 +1,19 @@
 const puppeteer = require("puppeteer");
 
-const searchTerm = "cordial";
+let searchTerm = "";
+
+const readline = require("readline").createInterface({
+    input: process.stdin,
+    output: process.stdout,
+});
+
+readline.question("What would you like to search for?\n> ", input => {
+    console.log(`Searching for ${input}...`);
+    searchTerm = input.replace(/\s/g, "%20");
+    readline.close();
+
+    scraper(searchTerm);
+});
 
 async function scraper(searchTerm) {
     const browser = await puppeteer.launch();
@@ -37,8 +50,9 @@ async function scraper(searchTerm) {
     
             return productsOnPage;
         }).then(data => {
-            for (let k = 0; k < data.length; k++) {
-                products.push(data[k]);
+            //for (let k = 0; k < data.length; k++) {
+            for (let product in data) {
+                products.push(data[product]);
             }
         });
     }
@@ -47,7 +61,5 @@ async function scraper(searchTerm) {
 
     await browser.close();
 }
-
-scraper(searchTerm);
 
 
