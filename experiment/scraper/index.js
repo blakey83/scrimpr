@@ -4,7 +4,8 @@ const puppeteer = require("puppeteer");
 
 (async () => {
     const browser = await puppeteer.launch({
-        headless: true
+        //headless: false,
+        //devtools: true,
     });
     const page = await browser.newPage();
 
@@ -20,20 +21,24 @@ const puppeteer = require("puppeteer");
     await page.goto(`file:${  path.join(__dirname, "content.html")  }`);
 
     await page.evaluate(() => {
-        console.log("Searching page for divs with class 'product-name'...");
-        let results = document.querySelectorAll("span[class='product-name']");
-        let array = [];
-        for (let i = 0; i < results.length; i++) {
-            array.push(results[i].innerText);
+        const productNodes = document.querySelectorAll("div[class='product-main-info']");
+        let products = [];
+
+        for (let i = 0; i < productNodes.length; i++) {
+            const productObj = {
+                brand: productNodes[i].querySelector("span[class='product-brand']").innerText,
+                item: productNodes[i].querySelector("span[class='product-name']").innerText,
+                price: productNodes[i].querySelector("span[class='dollar-value']").innerText.concat(
+                    productNodes[i].querySelector("span[class='cent-value']").innerText
+                ),
+            }
+
+            products.push(productObj);
         }
-        return array;
+
+        return products;
     }).then(data => {
-        console.log("full data:", data);
-        console.log("Looping over divs to print innerText:");
-        for (let i = 0; i < data.length; i++) {
-            console.log("Loop number", i);
-            console.log(data[i]);
-        }
+        console.log(data);
     });
 
     await browser.close();
