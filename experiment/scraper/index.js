@@ -12,7 +12,7 @@ const puppeteer = require("puppeteer");
     await page.goto("https://shop.coles.com.au/a/national/everything/search/milk");
 
     let content = await page.content();
-    fs.writeFile("content.html", content, "utf8", (e) => {
+    fs.writeFile("content.html", content, "utf8", (err) => {
         if (err) throw err;
         console.log("A file was created: content.html");
     });
@@ -20,10 +20,11 @@ const puppeteer = require("puppeteer");
     await page.goto(`file:${  path.join(__dirname, "content.html")  }`);
 
     await page.evaluate(() => {
-        return document.querySelectorAll(".product-name");
+        return document.querySelectorAll(".product");
     }).then(data => {
-        console.log(data);
-        console.log("Reached then then() block.");
+        for (let i = 0; i < data.length; i++) {
+            console.log(data[i].innerText);
+        }
     });
 
     await browser.close();
