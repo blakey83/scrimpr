@@ -38,8 +38,8 @@ async function scraper(searchTerm) {
     
             for (let j = 0; j < productNodes.length; j++) {
                 const productObj = {
-                    brand: productNodes[j].querySelector("span[class='product-brand']").innerText,
-                    item: productNodes[j].querySelector("span[class='product-name']").innerText,
+                    item: productNodes[j].querySelector("span[class='product-brand']").innerText + " " +
+                        productNodes[j].querySelector("span[class='product-name']").innerText,
                     price: productNodes[j].querySelector("span[class='dollar-value']").innerText.concat(
                         productNodes[j].querySelector("span[class='cent-value']").innerText
                     ),
