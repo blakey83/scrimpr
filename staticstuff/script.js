@@ -23,7 +23,7 @@ async function attemptLogin(usernameField, passwordField) {
 function getDetails(usernameField, passwordField) {
     return new Promise ((resolve, reject) => {
         const username = usernameField.value;        
-        searchValue = 'http://localhost:3000/api/users/'+ username;
+        searchValue = 'http://scrimpr.com/api/users/'+ username;
         resolve (searchValue)
     });
 }
