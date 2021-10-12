@@ -17,9 +17,6 @@ readline.question("What would you like to search for?\n> ", input => {
 });
 
 async function scraper(searchTerm) {
-    const browser = await puppeteer.launch();
-    //const page = await browser.newPage();
-
     let numPages = 1;
     let products = [];
 
@@ -74,8 +71,6 @@ async function scraper(searchTerm) {
     await cluster.close();
 
     console.log(products);
-
-    await browser.close();
 }
 
 
