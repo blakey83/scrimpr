@@ -1,4 +1,5 @@
 const puppeteer = require("puppeteer");
+const { Cluster } = require("puppeteer-cluster");
 
 let searchTerm = "";
 
@@ -19,18 +20,24 @@ async function scraper(searchTerm) {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
 
-    await page.setJavaScriptEnabled(true);
-
     await page.goto(`https://shop.coles.com.au/a/national/everything/search/${searchTerm}`);
-    const pages = await page.evaluate(() => {
+    const numPages = await page.evaluate(() => {
         return document.querySelector(".pagination").getElementsByTagName("li").length;
     }).then(result => result);
-    console.log("Detected " + pages + " pages!");
+    console.log("Detected " + numPages + " pages!");
 
     let products = [];
 
-    for (let i = 1; i <= pages; i++) {
-        await page.goto(`https://shop.coles.com.au/a/national/everything/search/${searchTerm}?pageNumber=${i}`);
+    const cluster = await Cluster.launch({
+        concurrency: Cluster.CONCURRENCY_PAGE,
+        maxConcurrency: 3,
+        puppeteerOptions: {
+            headless: true,
+        }
+    });
+
+    await cluster.task(async ({ page, data: url }) => {
+        await page.goto(url);
 
         await page.evaluate(() => {
             const productNodes = document.querySelectorAll("div[class='product-main-info']");
@@ -50,12 +57,16 @@ async function scraper(searchTerm) {
     
             return productsOnPage;
         }).then(data => {
-            //for (let k = 0; k < data.length; k++) {
-            for (let product in data) {
-                products.push(data[product]);
-            }
+            products.push(data);
         });
-    }
+    });
+
+    for (let i = 1; i <= numPages; i++) {
+        cluster.queue(`https://shop.coles.com.au/a/national/everything/search/${searchTerm}?pageNumber=${i}`);
+    };
+
+    await cluster.idle();
+    await cluster.close();
 
     console.log(products);
 
