@@ -41,7 +41,7 @@ function addUser(form) {
 
 function saveUser(user) {
     return new Promise ((resolve, reject) => {
-        fetch('http:/scrimpr.com/api/users', {
+        fetch('http://scrimpr.com/api/users', {
             method: 'POST',
             cache: "no-cache",
             headers: {
