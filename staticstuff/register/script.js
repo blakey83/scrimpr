@@ -1,6 +1,4 @@
 
-
-
 async function pressTheButton(form) {
     try {
         const validate = await validatePassword(form);
@@ -12,8 +10,7 @@ async function pressTheButton(form) {
     catch (e){
         console.error(e);
         error.innerHTML = e
-    }
-    
+    }  
 }
 
 function validatePassword(form) {
@@ -44,7 +41,7 @@ function addUser(form) {
 
 function saveUser(user) {
     return new Promise ((resolve, reject) => {
-        fetch('http://scrimpr.com/api/users', {
+        fetch('http://localhost:3000/api/users', {
             method: 'POST',
             cache: "no-cache",
             headers: {
