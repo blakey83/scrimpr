@@ -18,14 +18,9 @@ readline.question("What would you like to search for?\n> ", input => {
 
 async function scraper(searchTerm) {
     const browser = await puppeteer.launch();
-    const page = await browser.newPage();
+    //const page = await browser.newPage();
 
-    await page.goto(`https://shop.coles.com.au/a/national/everything/search/${searchTerm}`);
-    const numPages = await page.evaluate(() => {
-        return document.querySelector(".pagination").getElementsByTagName("li").length;
-    }).then(result => result);
-    console.log("Detected " + numPages + " pages!");
-
+    let numPages = 1;
     let products = [];
 
     const cluster = await Cluster.launch({
@@ -38,6 +33,14 @@ async function scraper(searchTerm) {
 
     await cluster.task(async ({ page, data: url }) => {
         await page.goto(url);
+
+        if (url.slice(-2) === "=1") {
+            let num = await page.evaluate(() => {
+                return document.querySelector(".pagination").getElementsByTagName("li").length;
+            }).then(result => result);
+            console.log("Detected " + num + " pages!");
+            numPages = num;
+        }
 
         await page.evaluate(() => {
             const productNodes = document.querySelectorAll("div[class='product-main-info']");
@@ -57,7 +60,9 @@ async function scraper(searchTerm) {
     
             return productsOnPage;
         }).then(data => {
-            products.push(data);
+            for (let i in data) {
+                products.push(data[i]);
+            }
         });
     });
 
