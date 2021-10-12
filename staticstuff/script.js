@@ -66,6 +66,6 @@ function parseData(data) {
  function userPage(user){
     return new Promise ((resolve, reject) => {
         console.log(user);
-        resolve (window.location.replace('./userpage/userPage.html'));       
+        resolve (window.location.replace('./homePage/index.html'));       
     })
 }
