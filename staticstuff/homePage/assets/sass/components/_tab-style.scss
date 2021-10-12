@@ -23,7 +23,7 @@
 				right: 50%;
 				width: 0%;
 				height: 2px;
-				background: $color-green;
+				background: $color-blue;
 				transition: $transition3ms;
 				@include breakpoint(medium){bottom: 0px;}
 			}

@@ -85,7 +85,7 @@
             background: $color-white-1;
             &:hover{
                 color: $color-white;
-                background: $color-green;
+                background: $color-blue;
             }
         }
 
@@ -115,7 +115,7 @@
             text-decoration: none !important;
             display: block;
             &:hover{
-                color: $color-green;
+                color: $color-blue;
                 padding-left: 10px;
             }
         }
@@ -162,7 +162,7 @@
         }
        p{ margin: 0;}
        a{
-           color: $color-green;
+           color: $color-blue;
            &:hover{text-decoration: underline;}
         }
     }

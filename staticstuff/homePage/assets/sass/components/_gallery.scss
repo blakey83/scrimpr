@@ -71,7 +71,7 @@
 .product__stock{
     font-weight: 700;
     color: $color-gray-1;
-    i{color: $color-green;}
+    i{color: $color-blue;}
 }
 
 .product-var  {
@@ -123,7 +123,7 @@
 
             &:hover{
                 color: $color-white;
-                background: $color-green;
+                background: $color-blue;
                 border: 1px solid transparent;
             }
            

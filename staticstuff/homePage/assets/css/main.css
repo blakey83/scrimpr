@@ -543,7 +543,7 @@ ul {
   margin-left: 80px;
   color: #666;
   background: #eef0f1;
-  border-left: 5px solid #79a206;
+  border-left: 5px solid #3D57B2;
   padding: 15px 30px;
   margin: 30px 0 30px 40px;
   text-align: justify;
@@ -1360,7 +1360,7 @@ button.close {
   left: 10px;
   padding: 0 14px;
   font-size: 14px;
-  color: #fff;
+  color: black;
   border-radius: 30px;
   font-weight: 300;
 }
@@ -1369,8 +1369,8 @@ button.close {
   background: #333;
 }
 
-.product__label--sale-out {
-  background: #79a206;
+.product__label--special {
+  background: yellow;
 }
 
 .product__counter-box {
@@ -1815,7 +1815,7 @@ button.close {
 }
 
 .newsletter__form-content button:hover {
-  color: #79a206;
+  color: #3D57B2;
 }
 
 .company-logo.m-t-100 {
@@ -2044,7 +2044,7 @@ button.close {
 }
 
 .page-breadcrumb__nav a:hover {
-  color: #79a206;
+  color: #3D57B2;
 }
 
 .page-breadcrumb__nav.active {
@@ -2217,7 +2217,7 @@ button.close {
 
 .page-pagination__link:hover,
 .page-pagination__link.active {
-  background: #79a206;
+  background: #;
   color: #fff;
 }
 
@@ -2459,7 +2459,7 @@ button.close {
 }
 
 .product__stock i {
-  color: #79a206;
+  color: #3D57B2;
 }
 
 .product-var {
@@ -2515,7 +2515,7 @@ button.close {
 
 .product-social a:hover {
   color: #fff;
-  background: #79a206;
+  background: #3D57B2;
   border: 1px solid transparent;
 }
 
@@ -2544,7 +2544,7 @@ button.close {
   right: 50%;
   width: 0%;
   height: 2px;
-  background: #79a206;
+  background: #3D57B2;
   transition: all 0.3s ease;
 }
 
@@ -2774,7 +2774,7 @@ label>span {
 }
 
 .product-color-select[value=color-blue]::after {
-  background: #79a206 !important;
+  background: #3D57B2 !important;
 }
 
 .product-color-select[value=color-blue]::after {
@@ -2804,7 +2804,7 @@ input[type=checkbox]:checked::after {
   content: "";
   font-family: "Font Awesome 5 Light";
   color: #fff;
-  background: #79a206;
+  background: #3D57B2;
 }
 
 input[type=radio].shipping-select::after {
@@ -2815,7 +2815,7 @@ input[type=radio].shipping-select::after {
   text-align: center;
   transition: all 0.3s ease;
   top: -20px;
-  color: #79a206;
+  color: #3D57B2;
   font-size: 20px;
 }
 
@@ -2886,7 +2886,7 @@ input.round-input {
 }
 
 .round-input-btn:hover {
-  color: #79a206;
+  color: #3D57B2;
 }
 
 .shop__list-link {
@@ -2998,7 +2998,7 @@ input.round-input {
 
 .error-section-top h1 {
   font-size: 100px;
-  color: #79a206;
+  color: #3D57B2;
   font-weight: 700;
 }
 
@@ -3031,7 +3031,7 @@ input.round-input {
 }
 
 .accordian-item-header.active {
-  background: #79a206;
+  background: #3D57B2;
   color: #fff;
 }
 
@@ -4026,7 +4026,7 @@ input.round-input {
 
 .footer .footer__social-link:hover {
   color: #fff;
-  background: #79a206;
+  background: #3D57B2;
 }
 
 .footer__menu {
@@ -4057,7 +4057,7 @@ input.round-input {
 }
 
 .footer__link:hover {
-  color: #79a206;
+  color: #3D57B2;
   padding-left: 10px;
 }
 
@@ -4105,7 +4105,7 @@ input.round-input {
 }
 
 .footer__copyright-text a {
-  color: #79a206;
+  color: #3D57B2;
 }
 
 .footer__copyright-text a:hover {

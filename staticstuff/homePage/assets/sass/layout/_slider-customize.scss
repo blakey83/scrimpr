@@ -171,12 +171,12 @@
             background: $color-white;
         }
     }
-    &-style--fill-white-active-green{
+    &-style--fill-white-active-blue{
         .slick-dots li button{
             background: $color-white;
         }
         .slick-dots li.slick-active button{
-            background: $color-green;
+            background: $color-blue;
         }
     }
 }

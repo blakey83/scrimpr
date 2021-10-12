@@ -59,8 +59,8 @@ label > span{
     &-select[value="color-red"]::after{
         background: $color-youtube !important;
     }
-    &-select[value="color-green"]::after{
-        background: $color-green !important;
+    &-select[value="color-blue"]::after{
+        background: $color-blue !important;
     }
     &-select[value="color-blue"]::after{
         background: $color-primary !important;
@@ -90,7 +90,7 @@ input[type=checkbox]:checked::after{
     content: "\f00c";
     font-family: "Font Awesome 5 Light";
     color: $color-white;
-    background: $color-green;
+    background: $color-blue;
 }
 
 
@@ -102,7 +102,7 @@ input[type=radio].shipping-select::after{
         text-align: center;
 		transition: all .3s ease;
 		top: -20px;
-        color: $color-green;
+        color: $color-blue;
         font-size: 20px;
 }
 
@@ -160,6 +160,6 @@ input.round-input {
     width: 45px;
     height: 100%;
     border-radius: 0px 25px 25px 0px;
-    &:hover{color: $color-green;}
+    &:hover{color: $color-blue;}
 }
 

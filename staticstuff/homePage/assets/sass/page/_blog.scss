@@ -18,7 +18,7 @@
         font-weight: 500;
         color: $color-secondary;
         transition: $transition3ms;
-        &:hover{color: $color-green;}
+        &:hover{color: $color-blue;}
     }
 
     // Blog Feed
@@ -56,7 +56,7 @@
             text-decoration: none !important;
             transition: $transition3ms;
             &:hover{
-                color: $color-green;
+                color: $color-blue;
             }
 
         }
@@ -64,8 +64,8 @@
         &__post-meta{
             font-size: 13px;
             &--link{
-                color: $color-green;
-                &:hover{color: $color-green;}
+                color: $color-blue;
+                &:hover{color: $color-blue;}
             }
         }
 
@@ -140,7 +140,7 @@
     width: 50px;
     height: 50px;
     line-height: 50px;
-    background: $color-green;
+    background: $color-blue;
     text-align: center;
     border-radius: 50%;
 }

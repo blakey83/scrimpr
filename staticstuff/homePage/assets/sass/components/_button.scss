@@ -61,7 +61,7 @@
     &--border{
         &-black{
             border: 1px solid $color-secondary;
-            &-hover-green:hover{
+            &-hover-blue:hover{
                 color: $color-white;
                 background: $color-primary;
                 border-color: $color-primary;
@@ -69,16 +69,16 @@
         }
         &-gray{
             border: 1px solid $color-white-3;
-            &-hover-green:hover{
+            &-hover-blue:hover{
                 color: $color-white;
                 background: $color-primary;
                 border-color: $color-primary;
             }
         }
-        &-green{
+        &-blue{
             color: $color-primary;
             border: 1px solid $color-primary;
-            &-hover-green:hover{
+            &-hover-blue:hover{
                 color: $color-white;
                 background: $color-primary;
                 border-color: $color-primary;
@@ -120,7 +120,7 @@
     // Button Color
     &--gray{
         background: $color-white-3;
-        &-hover-green{
+        &-hover-blue{
             color: $color-white;
             &:hover{ 
                 color: $color-white;
@@ -130,7 +130,7 @@
     }
     &--black{
         background: $color-black-1;
-        &-hover-green{
+        &-hover-blue{
             color: $color-white;
             &:hover{ 
                 color: $color-white;
@@ -138,7 +138,7 @@
             }
         }
     }
-    &--green{
+    &--blue{
         background: $color-primary;
         color: $color-white;
         &-hover-black{
@@ -150,7 +150,7 @@
         }
     }
 
-    &.color-green{
+    &.color-blue{
         color: $color-primary;
         &:hover{color: $color-primary;}
     }
@@ -181,12 +181,12 @@ button.close{
             color: $color-primary;
         }
     }
-    &--green{
-        color: $color-green;
+    &--blue{
+        color: $color-blue;
         text-decoration: none !important;
         font-weight: 500;
         &:hover{
-            color: $color-green;
+            color: $color-blue;
         }
     }
 

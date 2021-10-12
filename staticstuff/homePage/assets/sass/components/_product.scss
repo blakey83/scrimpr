@@ -32,7 +32,7 @@
         font-weight: 300;
 
         &--sale-dis{background: $color-black-2;}
-        &--sale-out{background: $color-green;}
+        &--special{background: $color-blue;}
     }
 
     &__counter-box{
@@ -252,7 +252,7 @@
 }
 
 .cdown {
-    background: #89C74A;
+    background: #3D57B2;
     color: $color-white;
     height: 50px;
     width: 50px;
