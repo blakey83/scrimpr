@@ -2,109 +2,126 @@
 13 - Component - Modal
 *****************************/
 
-.modal{
+.modal {
     z-index: 99999;
     background: rgba($color-black-1, .5);
-    &-product-image--large{margin-bottom: 20px;}
-    &-dialog{
+
+    &-product-image--large {
+        margin-bottom: 20px;
+    }
+
+    &-dialog {
         max-width: calc(100% - 20px) !important;
         margin: 0 auto !important;
 
-        @include breakpoint(medium){
+        @include breakpoint(medium) {
             max-width: 730px !important;
         }
-        @include breakpoint(large){
+
+        @include breakpoint(large) {
             max-width: 870px !important;
         }
-        @include breakpoint(xlarge){
+
+        @include breakpoint(xlarge) {
             min-width: 825px !important;
         }
     }
-    
+
     padding-right: 0 !important;
+
     // Modal Top
-    &-header{
+    &-header {
         align-items: center;
         justify-content: space-between;
         padding: 15px;
         background: $color-silver;
         color: $color-white;
 
-        @include breakpoint(large){
+        @include breakpoint(large) {
             padding: 0;
         }
 
-        & .close{
+        & .close {
             margin: 0 !important;
             color: $color-white;
         }
     }
 
-    &-title{
+    &-title {
         text-align: center;
         margin: 0 auto;
     }
 
     // Modal Body
-    &__border{
-        border-left:none;
+    &__border {
+        border-left: none;
 
-        @include breakpoint(large){
+        @include breakpoint(large) {
             border-left: 1px solid #ddd;
         }
     }
 
-    &__product-img{
+    &__product-img {
         text-align: center;
     }
-    &__product-title{
+
+    &__product-title {
         margin-top: 25px;
-        @include breakpoint(medium){
+
+        @include breakpoint(medium) {
             margin-top: 0px;
         }
     }
+
     &__product-title,
-    &__product-price{
+    &__product-price {
         display: block;
         font-weight: 500
     }
 
     &__product-info,
-    &__product-shipping-info{
+    &__product-shipping-info {
         font-weight: 500;
-        li{
+
+        li {
             margin-bottom: 10px;
-            &:last-child{margin-bottom: 0;}
+
+            &:last-child {
+                margin-bottom: 0;
+            }
         }
-        span{
+
+        span {
             font-weight: 300;
             padding-left: 5px;
         }
     }
 
-    &__product-cart-buttons{
+    &__product-list-buttons {
         display: flex;
         flex-direction: column;
-        a{
+
+        a {
             margin-bottom: 15px;
 
-            &:last-child{
+            &:last-child {
                 margin-bottom: 0;
             }
         }
-        
 
-        @include breakpoint(medium){
+
+        @include breakpoint(medium) {
             flex-direction: row;
-            a{
+
+            a {
                 margin-bottom: 0;
                 margin-right: 30px;
 
-                &:last-child{
+                &:last-child {
                     margin-right: 0;
                 }
             }
-            
+
         }
     }
 }

@@ -1,4 +1,3 @@
-
 /******************************
 Template Name: Gsore
 Template Description: Gsore - Grocery and Organic Food Shop HTML Template
@@ -35,7 +34,7 @@ Template URL: https://hasthemes.com/
 22 - Page - Shop
 23 - Page - Product Single
 24 - Page - Blog
-25 - Page - Cart
+25 - Page - List
 26 - Page - Checkout
 27 - Page - 404 
 28 - Page - My Account
@@ -51,7 +50,7 @@ Template URL: https://hasthemes.com/
 37 - Layout - Custom Layout
 38 - Layout - Table
 39 - Layout - Offcanvas
-40 - Layout - Addcart Offcanvas
+40 - Layout - Addlist Offcanvas
 41 - Layout - Slider Customize
 42 - Layout - Utilities
 ******************************/
@@ -93,7 +92,7 @@ Template URL: https://hasthemes.com/
 @import 'page/shop';
 @import 'page/product-single';
 @import 'page/blog';
-@import 'page/cart';
+@import 'page/list';
 @import 'page/checkout';
 @import 'page/404';
 @import 'page/my-account';
@@ -111,6 +110,6 @@ Template URL: https://hasthemes.com/
 @import 'layout/custom-layout';
 @import 'layout/table';
 @import 'layout/offcanvas';
-@import 'layout/offcanvas-add-cart';
+@import 'layout/offcanvas-add-list';
 @import 'layout/slider-customize';
 @import 'base/utilities';

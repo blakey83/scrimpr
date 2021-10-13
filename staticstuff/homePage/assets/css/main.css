@@ -1969,30 +1969,30 @@ button.close {
   padding-left: 5px;
 }
 
-.modal__product-cart-buttons {
+.modal__product-list-buttons {
   display: flex;
   flex-direction: column;
 }
 
-.modal__product-cart-buttons a {
+.modal__product-list-buttons a {
   margin-bottom: 15px;
 }
 
-.modal__product-cart-buttons a:last-child {
+.modal__product-list-buttons a:last-child {
   margin-bottom: 0;
 }
 
 @media (min-width: 768px) {
-  .modal__product-cart-buttons {
+  .modal__product-list-buttons {
     flex-direction: row;
   }
 
-  .modal__product-cart-buttons a {
+  .modal__product-list-buttons a {
     margin-bottom: 0;
     margin-right: 30px;
   }
 
-  .modal__product-cart-buttons a:last-child {
+  .modal__product-list-buttons a:last-child {
     margin-right: 0;
   }
 }
@@ -2217,8 +2217,8 @@ button.close {
 
 .page-pagination__link:hover,
 .page-pagination__link.active {
-  background: #;
-  color: #fff;
+  background: #3D57B2;
+  color: #3D57B2;
 }
 
 .sidebar {
@@ -4219,7 +4219,7 @@ table tbody>tr td a:hover {
   width: 435px;
 }
 
-.product-price-cart {
+.product-price-list {
   width: 435px;
 }
 
@@ -4375,12 +4375,12 @@ table tbody>tr td a:hover {
   transform: translateX(0%);
 }
 
-.offcanvas-add-cart {
+.offcanvas-add-list {
   background: #fff;
   overflow-y: auto;
 }
 
-.offcanvas-add-cart__list {
+.offcanvas-add-list__list {
   display: flex;
   font-size: 14px;
   padding: 20px 0;
@@ -4389,43 +4389,43 @@ table tbody>tr td a:hover {
   border-top: 1px solid #ebebeb;
 }
 
-.offcanvas-add-cart__list:last-child {
+.offcanvas-add-list__list:last-child {
   margin-bottom: 0;
 }
 
-.offcanvas-add-cart__img-box {
+.offcanvas-add-list__img-box {
   margin-right: 15px;
   overflow: hidden;
 }
 
-.offcanvas-add-cart__img {
+.offcanvas-add-list__img {
   width: 100%;
 }
 
-.offcanvas-add-cart__link {
+.offcanvas-add-list__link {
   display: block;
   color: #323232;
 }
 
-.offcanvas-add-cart__link:hover {
+.offcanvas-add-list__link:hover {
   color: #3D57B2;
 }
 
-.offcanvas-add-cart__detail span {
+.offcanvas-add-list__detail span {
   display: block;
 }
 
-.offcanvas-add-cart__item-dismiss {
+.offcanvas-add-list__item-dismiss {
   font-size: 14px;
   color: #666;
   background: transparent;
 }
 
-.offcanvas-add-cart__item-dismiss:hover {
+.offcanvas-add-list__item-dismiss:hover {
   color: #e81212;
 }
 
-.offcanvas-add-cart__item-count {
+.offcanvas-add-list__item-count {
   left: 0;
   top: 0;
   color: #fff;
@@ -4437,19 +4437,19 @@ table tbody>tr td a:hover {
   border-radius: 50%;
 }
 
-.offcanvas-add-cart__price {
+.offcanvas-add-list__price {
   color: #222;
   font-weight: 600;
   font-size: 16px;
   margin: 5px 0;
 }
 
-.offcanvas-add-cart__info {
+.offcanvas-add-list__info {
   font-size: 12px;
   color: #777;
 }
 
-.offcanvas-add-cart__checkout-list {
+.offcanvas-add-list__checkout-list {
   margin-top: 10px;
   display: flex;
   justify-content: space-between;
@@ -4457,24 +4457,24 @@ table tbody>tr td a:hover {
   font-weight: 500;
 }
 
-.offcanvas-add-cart__checkout-info {
+.offcanvas-add-list__checkout-info {
   padding-top: 25px;
 }
 
-.offcanvas-add-cart__checkout-left-info {
+.offcanvas-add-list__checkout-left-info {
   color: #777;
 }
 
-.offcanvas-add-cart__checkout-right-info {
+.offcanvas-add-list__checkout-right-info {
   font-weight: 600;
   color: #546583;
 }
 
-.offcanvas-add-cart__btn-checkout {
+.offcanvas-add-list__btn-checkout {
   margin-top: 50px;
 }
 
-.offcanvas-add-cart__checkout-box-bottom {
+.offcanvas-add-list__checkout-box-bottom {
   padding-bottom: 15px;
 }
 

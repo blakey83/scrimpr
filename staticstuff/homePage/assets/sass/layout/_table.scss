@@ -2,17 +2,17 @@
 38 - Layout - Table
 *****************************/
 
-table{
+table {
     border: 1px solid $color-white-3;
     width: 100%;
 
     // Table Header
-    thead > tr {
+    thead>tr {
         background-color: #f9f9f9;
         border: 1px solid $color-white-3;
     }
 
-    thead > tr > th {
+    thead>tr>th {
         color: #1d1d1d;
         font-size: 14px;
         font-weight: 600;
@@ -24,28 +24,31 @@ table{
     }
 
     // Table Body
-    tbody > tr {
+    tbody>tr {
         border-bottom: 1px solid $color-white-3;
     }
 
-    tbody > tr td {
+    tbody>tr td {
         color: $color-black-1;
         font-size: 15px;
         padding: 30px 15px;
         text-align: center;
-        
+
     }
 
-    tbody > tr td a{
+    tbody>tr td a {
         color: $color-black-1;
         text-decoration: none !important;
         display: inline-block;
-        &:hover{color: $color-red}
+
+        &:hover {
+            color: $color-red
+        }
     }
 
 }
 
-// Cart Page Table:: Style
+// List Page Table:: Style
 .product-thumbnail {
     width: 150px;
 }
@@ -54,7 +57,7 @@ table{
     width: 435px;
 }
 
-.product-price-cart {
+.product-price-list {
     width: 435px;
 }
 
@@ -62,17 +65,17 @@ table{
     width: 435px;
 }
 
-.product-subtotal{
+.product-subtotal {
     width: 435px;
 }
 
 .product-remove {
     width: 100px;
 
-    a{
+    a {
         color: #666;
         font-size: 16px;
-        margin: 0 10px; 
+        margin: 0 10px;
     }
 }
 
@@ -83,8 +86,9 @@ table{
     padding: 25px 30px;
     vertical-align: middle;
     border-bottom: 1px solid $color-white-3;
-    border-left:1px solid $color-white-3;
+    border-left: 1px solid $color-white-3;
 }
+
 .first-column {
     min-width: 160px;
     font-size: 18px;
@@ -126,4 +130,3 @@ table{
 .pro-remove button:hover {
     color: $color-youtube;
 }
-
