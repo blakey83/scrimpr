@@ -72,5 +72,3 @@ async function scraper(searchTerm) {
 
     console.log(products);
 }
-
-

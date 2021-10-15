@@ -11,6 +11,7 @@ const puppeteer = require("puppeteer");
     let products = [];
 
     await page.goto("https://www.woolworths.com.au/shop/search/products?searchTerm=milk", {
+        headless: true,
         waitUntil: "networkidle2",
     });
 
