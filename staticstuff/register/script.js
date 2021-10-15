@@ -1,6 +1,4 @@
 
-
-
 async function pressTheButton(form) {
     try {
         const validate = await validatePassword(form);
@@ -12,8 +10,7 @@ async function pressTheButton(form) {
     catch (e){
         console.error(e);
         error.innerHTML = e
-    }
-    
+    }  
 }
 
 function validatePassword(form) {

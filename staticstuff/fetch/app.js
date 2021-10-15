@@ -32,7 +32,6 @@ async function poststuff() {
         'Content-Type': 'application/json'
     }
     })
-    .then(window.location.href = "http://scrimpr.com/api/users")
 }
 
 // Search functionalitiy
