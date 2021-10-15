@@ -1,7 +1,7 @@
 const puppeteer = require("puppeteer");
 const { Cluster } = require("puppeteer-cluster");
 
-function colesScraper() {
+function scraper() {
     let searchTerm = "";
 
     const readline = require("readline").createInterface({
@@ -10,7 +10,7 @@ function colesScraper() {
     });
 
     readline.question("What would you like to search for?\n> ", input => {
-        console.log(`Searching for ${input}...`);
+        console.log(`Searching Coles catalogue for ${input}...`);
         searchTerm = input.replace(/\s/g, "%20");
         readline.close();
 
@@ -94,4 +94,4 @@ function colesScraper() {
     }
 }
 
-module.exports = colesScraper;
+module.exports = scraper;
