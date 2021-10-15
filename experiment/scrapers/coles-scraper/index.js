@@ -33,23 +33,34 @@ async function scraper(searchTerm) {
 
         if (url.slice(-2) === "=1") {
             let num = await page.evaluate(() => {
-                return document.querySelector(".pagination").getElementsByTagName("li").length;
+                if (document.querySelector(".pagination") === null) {
+                    return 1;
+                } else {
+                    return document.querySelector(".pagination").getElementsByTagName("li").length;
+                }
             }).then(result => result);
             console.log("Detected " + num + " pages!");
             numPages = num;
         }
 
         await page.evaluate(() => {
-            const productNodes = document.querySelectorAll("div[class='product-main-info']");
+            const productNodes = document.querySelectorAll(".product-main-info");
             let productsOnPage = [];
     
             for (let j = 0; j < productNodes.length; j++) {
+                let brandName = productNodes[j].querySelector(".product-brand") ?? "ERROR";
+                let productName = productNodes[j].querySelector(".product-name") ?? "ERROR";
+                let dollars = productNodes[j].querySelector(".dollar-value") ?? "ERROR";
+                let cents = productNodes[j].querySelector(".cent-value") ?? "ERROR";
+
+                if (brandName != "ERROR") brandName = brandName.innerText;
+                if (productName != "ERROR") productName = productName.innerText;
+                if (dollars != "ERROR") dollars = dollars.innerText;
+                if (cents != "ERROR") cents = cents.innerText;
+
                 const productObj = {
-                    item: productNodes[j].querySelector("span[class='product-brand']").innerText + " " +
-                        productNodes[j].querySelector("span[class='product-name']").innerText,
-                    price: productNodes[j].querySelector("span[class='dollar-value']").innerText.concat(
-                        productNodes[j].querySelector("span[class='cent-value']").innerText
-                    ),
+                    item: brandName + " " + productName,
+                    price: dollars.concat(cents),
                 }
     
                 productsOnPage.push(productObj);
@@ -57,18 +68,26 @@ async function scraper(searchTerm) {
     
             return productsOnPage;
         }).then(data => {
+            console.log("Returned from evaluate() block!");
             for (let i in data) {
                 products.push(data[i]);
             }
         });
     });
 
-    for (let i = 1; i <= numPages; i++) {
-        cluster.queue(`https://shop.coles.com.au/a/national/everything/search/${searchTerm}?pageNumber=${i}`);
-    };
+    try {
+        for (let i = 1; i <= numPages; i++) {
+            console.log("Loop number", i);
+            await cluster.execute(`https://shop.coles.com.au/a/national/everything/search/${searchTerm}?pageNumber=${i}`);
+        };
+    } catch (err) {
+        console.log("ERROR:", err);
+    }
+    
 
     await cluster.idle();
     await cluster.close();
 
     console.log(products);
+    console.log("Finished scrape, collected " + products.length + " items.");
 }
