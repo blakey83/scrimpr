@@ -14,10 +14,10 @@ function scraper() {
         searchTerm = input.replace(/\s/g, "%20");
         readline.close();
 
-        scraper(searchTerm);
+        scrape(searchTerm);
     });
 
-    async function scraper(searchTerm) {
+    async function scrape(searchTerm) {
         let numPages = 1;
         let products = [];
 
@@ -87,10 +87,9 @@ function scraper() {
         await cluster.idle();
         await cluster.close();
 
-        for (let i in products) {
-            console.log(products[i]);
-        }
+        for (let i in products) { console.log(products[i]) };
         console.log("\nFinished scrape, collected " + products.length + " items.");
+        return products;
     }
 }
 

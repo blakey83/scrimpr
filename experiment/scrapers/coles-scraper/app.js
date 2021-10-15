@@ -1,3 +1,3 @@
-const scraper = require("./index.js");
+const scraper = require("./scraper.js");
 
 scraper();
