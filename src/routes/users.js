@@ -1,11 +1,10 @@
 const {User, validate} = require('../models/user');
-const mongoose = require('mongoose');
 const express = require('express');
 const router = express.Router();
 
 
 router.get('/', async (req, res) =>{
-    const Users = await User.find().sort('firstname');
+    const Users = await User.find().sort('firstName');
     res.send(Users);
 });
 router.get('/:email', async (req, res) =>{

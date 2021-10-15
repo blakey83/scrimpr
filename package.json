@@ -1,0 +1,30 @@
+{
+  "name": "scrimpr",
+  "version": "1.0.0",
+  "description": "groceries scraper",
+  "author": "Scrimpr Team",
+  "license": "ISC",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blakey83/scrimpr.git"
+  },
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node src/index.js",
+    "watch": "nodemon --watch src src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "joi": "^17.4.2",
+    "mongoose": "^6.0.11",
+    "puppeteer": "^5.5.0",
+    "puppeteer-cluster": "^0.22.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "nodemon": "^2.0.13"
+  }
+}

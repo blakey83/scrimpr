@@ -1,4 +1,3 @@
-
 async function pressTheButton(form) {
     try {
         const validate = await validatePassword(form);
@@ -29,8 +28,8 @@ function validatePassword(form) {
 function addUser(form) {
     return new Promise ((resolve, reject) => {
         const user = { 
-            firstName: form.firstname.value, 
-            lastName: form.lastname.value,
+            firstName: form.firstName.value, 
+            lastName: form.lastName.value,
             postcode: form.postcode.value,
             email: form.email.value,
             password: form.password.value

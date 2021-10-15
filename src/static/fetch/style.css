@@ -1,0 +1,19 @@
+#main-content-container {
+    display: grid;
+}
+
+#get-button {
+    margin: 20px auto;
+    width: 15%;
+}
+#post-button {
+    margin: 20px auto;
+    width: 15%;
+}
+
+#display-container {
+    margin: auto;
+    width: 33%;
+    border-style: solid;
+    border: 1px solid black;
+}
