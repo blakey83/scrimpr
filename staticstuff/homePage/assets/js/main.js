@@ -1,20 +1,20 @@
 (function ($) {
     "use strict";
-    
+
     /*****************************
     * Commons Variables
     *****************************/
     var $window = $(window),
         $body = $('body');
 
-     /**********************
-     * Sticky Menu
-     ***********************/
-    $(window).on('scroll', function(event) {    
+    /**********************
+    * Sticky Menu
+    ***********************/
+    $(window).on('scroll', function (event) {
         var scroll = $(window).scrollTop();
         if (scroll < 350) {
             $(".sticky-header").removeClass("is-sticky");
-        } else{
+        } else {
             $(".sticky-header").addClass("is-sticky");
         }
     });
@@ -85,7 +85,7 @@
      * Vertical Menu
      ***********************/
     $('.header-menu-vertical .menu-title').on('click', function (event) {
-      $('.header-menu-vertical .menu-content').slideToggle(500);
+        $('.header-menu-vertical .menu-content').slideToggle(500);
     });
 
     $('.menu-content').each(function () {
@@ -130,24 +130,24 @@
     /******************************
      * Hero Slider - [Single Grid]
      *****************************/
-        $('.hero').slick({
-            arrows: true,
-            fade: true,
-            dots: true,
-            easing: 'linear',
-            speed: 2000,
-            prevArrow: '<button type="button" class="hero-slider__arrow hero-slider__arrow--left"><i class="far fa-chevron-left"></i></button>',
-            nextArrow: '<button type="button" class="hero-slider__arrow hero-slider__arrow--right"><i class="far fa-chevron-right"></i></button>',
-            responsive: [
+    $('.hero').slick({
+        arrows: true,
+        fade: true,
+        dots: true,
+        easing: 'linear',
+        speed: 2000,
+        prevArrow: '<button type="button" class="hero-slider__arrow hero-slider__arrow--left"><i class="far fa-chevron-left"></i></button>',
+        nextArrow: '<button type="button" class="hero-slider__arrow hero-slider__arrow--right"><i class="far fa-chevron-right"></i></button>',
+        responsive: [
 
-                {
-                    breakpoint: 768,
-                    settings: {
-                        arrows: false,
-                    }
-                },
-            ]
-        });
+            {
+                breakpoint: 768,
+                settings: {
+                    arrows: false,
+                }
+            },
+        ]
+    });
 
 
 
@@ -235,50 +235,7 @@
         prevArrow: '<button type="button" class="default-slider__arrow default-slider__arrow--left prevArrow"><i class="far fa-chevron-left"></button>',
         nextArrow: '<button type="button"  class="default-slider__arrow default-slider__arrow--right nextArrow"><i class="far fa-chevron-right"></button>',
     });
-        
 
-    /************************************************
-     * Blog Slider - Style: Feed [3 Grid, 1 Rows]
-     ***********************************************/
-    $('.blog-feed-slider-3grid').slick({
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        easing: 'linear',
-        speed: 1000,
-        prevArrow: '<button type="button" class="default-slider__arrow default-slider__arrow--left prevArrow"><i class="far fa-chevron-left"></button>',
-        nextArrow: '<button type="button"  class="default-slider__arrow default-slider__arrow--right nextArrow"><i class="far fa-chevron-right"></button>',
-        responsive: [
-
-            {
-                breakpoint: 1470,
-                settings: {
-                    slidesToShow: 3
-                }
-            },
-            {
-                breakpoint: 992,
-                settings: {
-                    slidesToShow: 2,
-                }
-            },
-            {
-                breakpoint: 768,
-                settings: {
-                    arrows: false,
-                    slidesToShow: 2,
-                    autoplay: true,
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    arrows: false,
-                    autoplay: true,
-                }
-            }
-        ]
-    });
 
 
     /************************************************
@@ -330,7 +287,7 @@
     /***********************************
     * Gallery - Horizontal
     ************************************/
-   $('.product-image--large-horizontal').slick({
+    $('.product-image--large-horizontal').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: false,
@@ -346,7 +303,7 @@
     /***********************************
     * Gallery - Vertical 
     ************************************/
-   $('.product-image--large-vertical').slick({
+    $('.product-image--large-vertical').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: false,
@@ -365,7 +322,7 @@
     /***********************************
     * Gallery - Slider 
     ************************************/
-   $('.product-gallery-box--single-slider').slick({
+    $('.product-gallery-box--single-slider').slick({
         slidesToShow: 3,
         slidesToScroll: 1,
         focusOnSelect: true,
@@ -416,7 +373,7 @@
     /***********************************
     * Team Slider
     ************************************/
-   $('.inner-slider-grid-4').slick({
+    $('.inner-slider-grid-4').slick({
         slidesToShow: 4,
         slidesToScroll: 1,
         focusOnSelect: true,
@@ -450,28 +407,28 @@
      * Price Range
      ***********************/
     $("#slider-range").slider({
-      range: true,
-      orientation: "horizontal",
-      min: 0,
-      max: 1000,
-      values: [0, 1000],
-      step: 100,
-    
-      slide: function (event, ui) {
-        if (ui.values[0] == ui.values[1]) {
-          return false;
+        range: true,
+        orientation: "horizontal",
+        min: 0,
+        max: 1000,
+        values: [0, 1000],
+        step: 100,
+
+        slide: function (event, ui) {
+            if (ui.values[0] == ui.values[1]) {
+                return false;
+            }
+
+            $("#min_price").val(ui.values[0]);
+            $("#max_price").val(ui.values[1]);
         }
-        
-        $("#min_price").val(ui.values[0]);
-        $("#max_price").val(ui.values[1]);
-      }
     });
 
 
-  /********************************
-  *  Product Gallery - Image Zoom
-  **********************************/
-  $("#img-zoom").elevateZoom({
+    /********************************
+    *  Product Gallery - Image Zoom
+    **********************************/
+    $("#img-zoom").elevateZoom({
         gallery: "gallery-zoom",
         galleryActiveClass: "zoom-active",
         containLensZoom: true,
@@ -480,48 +437,21 @@
     });
 
 
-    /*******************
-     * Video Popup
-     *******************/
-    $('.vinobox-popup').venobox();
-
-
-    /*****************************
-    *   Countdown
-    **************************** */
-    $('[data-countdown]').each(function () {
-        var $this = $(this),
-            finalDate = $(this).data('countdown');
-        $this.countdown(finalDate, function (event) {
-            $this.html(event.strftime('<div class="cdown day">%-D <p>Days</p></div> <div class="cdown hour">%-H <p>Hours</p></div> <div class="cdown minutes">%M <p>Mins</p></div> <div class="cdown second">%S <p>Sec</p></div>'));
-        });
-    });
-
-    /*****************************
-    * Create an account toggle
-    *****************************/
-    $(".creat-account").on("click", function () {
-      $(".open-create-account").slideToggle(1000);
-    });
-
-    $(".shipping-account").on("click", function () {
-      $(".open-shipping-account").slideToggle(1000);
-    });
 
 
     /****************************
     * Password Hide/ Show Toggle
     *****************************/
-    $(".password__toggle--btn").on("click", function() {
+    $(".password__toggle--btn").on("click", function () {
 
         $(this).toggleClass("fa-eye fa-eye-slash");
         var input = $($(this).attr("data-bs-toggle"));
         if (input.attr("type") == "password") {
-          input.attr("type", "text");
+            input.attr("type", "text");
         } else {
-          input.attr("type", "password");
+            input.attr("type", "password");
         }
-      });
+    });
 
 
     /****************************
@@ -530,25 +460,25 @@
     const accordianItemHeaders = document.querySelectorAll(".accordian-item-header");
 
     accordianItemHeaders.forEach(accordianItemHeader => {
-      accordianItemHeader.addEventListener("click", () => {
-        const current = document.querySelector(".accordian-item-header.active");
+        accordianItemHeader.addEventListener("click", () => {
+            const current = document.querySelector(".accordian-item-header.active");
 
-        if (current && current !== accordianItemHeader) {
-          current.classList.toggle("active");
-          current.nextElementSibling.style.maxHeight = 0;
-        }
-        accordianItemHeader.classList.toggle("active");
+            if (current && current !== accordianItemHeader) {
+                current.classList.toggle("active");
+                current.nextElementSibling.style.maxHeight = 0;
+            }
+            accordianItemHeader.classList.toggle("active");
 
-        const accordianItemBody = accordianItemHeader.nextElementSibling;
+            const accordianItemBody = accordianItemHeader.nextElementSibling;
 
-        if (accordianItemHeader.classList.contains("active")) {
-          accordianItemBody.style.maxHeight = accordianItemBody.scrollHeight + "px";
-        } else {
-          accordianItemBody.style.maxHeight = 0;
-        }
-      });
+            if (accordianItemHeader.classList.contains("active")) {
+                accordianItemBody.style.maxHeight = accordianItemBody.scrollHeight + "px";
+            } else {
+                accordianItemBody.style.maxHeight = 0;
+            }
+        });
     });
-    
+
     /*----------------------------------
         Scroll To Top Active
     -----------------------------------*/
