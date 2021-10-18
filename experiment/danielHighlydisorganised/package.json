@@ -1,0 +1,40 @@
+{
+  "name": "scrimpr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.0",
+    "connect-mongo": "^3.2.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "email-validator": "^2.0.4",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "http-errors": "^1.8.0",
+    "joi": "^13.1.0",
+    "mongoose": "^6.0.10",
+    "passport": "^0.5.0",
+    "passport-local": "^1.0.0",
+    "pug": "^3.0.2",
+    "pug-cli": "^1.0.0-alpha6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blakey83/scrimpr.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/blakey83/scrimpr/issues"
+  },
+  "homepage": "https://github.com/blakey83/scrimpr#readme"
+}
