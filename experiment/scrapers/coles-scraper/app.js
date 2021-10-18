@@ -12,7 +12,7 @@ async function commandLineScrape() {
         console.log(`Searching Coles catalogue for ${input}...`);
         readline.close();
 
-        scraper(searchTerm);
+        scraper(input);
     });
 }
 

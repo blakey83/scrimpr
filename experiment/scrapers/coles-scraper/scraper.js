@@ -68,7 +68,6 @@ async function scraper(searchTerm) {
         console.log("ERROR:", err);
     }
 
-
     await cluster.idle();
     await cluster.close();
 
