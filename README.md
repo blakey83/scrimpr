@@ -16,9 +16,10 @@ Sensitive credentials are not to be committed to the code base, and must be adde
 Simply run the command `npm install` from your terminal.
 
 ### 3. Launch 🚀
-Run `npm watch` to start the Express server in "development" mode, which enables the following features:
+Run `npm run watch` to start the Express server in "development" mode, which enables the following features:
 - any file changes will automatically restart the server for you
 - the frontend will direct all API requests to your local running server
+This will enable you to tinker in localhost.
 
 ## Deployment
 Run `npm start` to start the Express server
