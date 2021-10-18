@@ -1,8 +1,6 @@
 const scraper = require("./scraper.js");
 
 async function commandLineScrape() {
-    let searchTerm = "";
-
     const readline = require("readline").createInterface({
         input: process.stdin,
         output: process.stdout,
