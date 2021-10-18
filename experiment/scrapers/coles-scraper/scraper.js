@@ -77,7 +77,31 @@ async function scraper(searchTerm) {
     await cluster.idle();
     await cluster.close();
 
-    for (let i in products) { console.log(products[i]) };
+    function generatePrice(price) {
+        const percent = (Math.random() * 0.21).toFixed(3);
+        const diff = price * percent;
+        const coinFlip = Math.round(Math.random());
+
+        let result = 0.00;
+
+        if (coinFlip) {
+          result = price + diff;
+        } else {
+          result = price - diff;
+        }
+
+        return parseFloat(result).toFixed(2);
+    }
+
+    for (let i in products) {
+        if (products[i].item.indexOf("Coles ") === -1) {
+            products[i].wooliesPrice = generatePrice(products[i].price); 
+        } else {
+            products[i].wooliesPrice = null;
+        }
+
+        console.log(products[i]) 
+    };
     console.log("\nFinished scrape, collected " + products.length + " items.");
     return products;
 }
