@@ -1,4 +1,3 @@
-const puppeteer = require("puppeteer");
 const { Cluster } = require("puppeteer-cluster");
 
 async function scraper(searchTerm) {
@@ -30,23 +29,30 @@ async function scraper(searchTerm) {
         }
 
         await page.evaluate(() => {
-            const productNodes = document.querySelectorAll(".product-main-info");
+            let productNodes = document.querySelectorAll(".product");
             let productsOnPage = [];
 
             for (let j = 0; j < productNodes.length; j++) {
-                let brandName = productNodes[j].querySelector(".product-brand") ?? "ERROR";
-                let productName = productNodes[j].querySelector(".product-name") ?? "ERROR";
-                let dollars = productNodes[j].querySelector(".dollar-value") ?? "ERROR";
-                let cents = productNodes[j].querySelector(".cent-value") ?? "ERROR";
+                let brand = productNodes[j].querySelector(".product-brand");
+                let product = productNodes[j].querySelector(".product-name");
+                let dollars = productNodes[j].querySelector(".dollar-value");
+                let cents = productNodes[j].querySelector(".cent-value");
+                let imgURL = productNodes[j].querySelector(".product-image");
 
-                if (brandName != "ERROR") brandName = brandName.innerText;
-                if (productName != "ERROR") productName = productName.innerText;
-                if (dollars != "ERROR") dollars = dollars.innerText;
-                if (cents != "ERROR") cents = cents.innerText;
+                if (brand == null | product == null | dollars == null | cents == null | imgURL == null) {
+                    continue;
+                } else {
+                    brand = brand.innerText;
+                    product = product.innerText;
+                    dollars = dollars.innerText;
+                    cents = cents.innerText;
+                    imgURL = imgURL.getElementsByTagName("img")[0].src;
+                }
 
                 const productObj = {
-                    item: brandName + " " + productName,
+                    item: brand + " " + product,
                     price: dollars.concat(cents),
+                    img: imgURL,
                 }
 
                 productsOnPage.push(productObj);
