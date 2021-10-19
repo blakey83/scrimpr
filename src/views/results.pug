@@ -1,0 +1,525 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  title Scrimpr | Insert text
+  meta(name='description' content='')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  link(rel='shortcut icon' href='/images/favicon.png' type='image/png')
+  link(rel='stylesheet' href='/css/vendor/vendor.min.css')
+  link(rel='stylesheet' href='/css/plugin/plugins.min.css')
+  link(rel='stylesheet' href='/css/main.min.css')
+  link(rel='stylesheet' href='/css/main.css')
+header
+  .header.d-none.d-lg-block
+    .header__top
+      .container
+        .row
+          .col-12
+            .header__top-content.d-flex.justify-content-between.align-items-center
+              .header__top-content--left
+    .header__center.sticky-header.p-tb-10
+      .container
+        .row
+          .col-12.d-flex.justify-content-between.align-items-center
+            .header__logo
+              a.header__logo-link.img-responsive(href='/')
+                img.header__logo-img.img-fluid(src='/images/logo/scrimprlogolargerls.jpg' alt='')
+            .header-menu
+              nav
+                ul.header__nav
+                  li.header__nav-item.pos-relative
+                    a.header__nav-link(href='/') Home
+                  li.header__nav-item.pos-relative
+                    a.header__nav-link(href='#')
+                      | Lists
+                      i.fal.fa-chevron-down
+                    ul.mega-menu.pos-absolute
+                      li.mega-menu__box
+                        .mega-menu__item-box
+                          span.mega-menu__title List Menu
+                          ul.mega-menu__item
+                        .mega-menu__item-box
+                          ul.mega-menu__item
+                            li.mega-menu__banner
+                              a.mega-menu__banner-link(href='#')
+                                img.mega-menu__banner-img.mega-menu__banner-img--vertical(src='/images/banner/menu-banner.jpg' alt='')
+                  li.header__nav-item.pos-relative
+                    a.header__nav-link(href='#') Empty
+                  li.header__nav-item.pos-relative
+                    a.header__nav-link(href='#') Empty
+                  li.header__nav-item.pos-relative
+                    a.header__nav-link(href='#') Empty
+                  li.header__nav-item.pos-relative
+                    a.header__nav-link(href='#') Empty
+            ul.header__user-action-icon
+              li
+                a(href='#')
+                  i.icon-users
+              li
+                a(href='#')
+                  i.icon-heart
+    .header__bottom.p-tb-30
+      .container
+        .row.justify-content-between.align-items-center
+          .col-xl-3.col-lg-3
+            .header-menu-vertical.pos-relative
+              h4.menu-title.link--icon-left
+                i.far.fa-align-left
+                | CATEGORIES
+              ul.menu-content.pos-absolute
+                li.menu-item
+                  a(href='#') Fruits and Vegetables
+                li.menu-item
+                  a(href='#') Bakery
+                li.menu-item
+                  a(href='#') Fridge
+                li.menu-item
+                  a(href='#') Freezer
+                li.menu-item
+                  a(href='#') Pantry
+                li.menu-item
+                  a(href='#') Drinks
+                li.menu-item
+                  a(href='#') Bathroom
+                li.menu-item
+                  a(href='#') Laundry
+                li.menu-item
+                  a(href='#') Pet
+          .col-xl-7.col-lg-6
+            form.header-search(action='#' method='post')
+              .header-search__content.pos-relative
+                input(type='search' name='header-search' placeholder='Search products' required='')
+                button.pos-absolute(type='submit')
+                  i.icon-search
+          .col-xl-2.col-lg-3
+            .header-phone.text-end
+              span
+  #offcanvas-mobile-menu.offcanvas.offcanvas-mobile-menu
+    .offcanvas__top
+      span.offcanvas__top-text
+      button.offcanvas-close
+        i.fal.fa-times
+    .offcanvas-inner
+      ul.user-set-role.d-flex.justify-content-between.m-tb-15
+        form.header-search.m-tb-15(action='#' method='post')
+          .header-search__content.pos-relative
+            input(type='search' name='header-search' placeholder='Search our store' required='')
+            button.pos-absolute(type='submit')
+              i.icon-search
+        ul.header__user-action-icon.m-tb-15.text-center
+          li
+            a(href='#')
+              i.icon-users
+          li
+            a(href='#')
+              i.icon-heart
+          li
+            a(href='#')
+        .offcanvas-menu
+          ul
+            li
+              a(href='/')
+                span Home
+            ul.sub-menu
+              li
+                a(href='#') Shop Pages
+                ul.sub-menu
+                  li
+                    a(href='#') Wishlist
+                  li
+                    a(href='my-account.html') My Account
+                  li
+                    a(href='login.html') Login
+        .offcanvas-overlay
+main#main-container.main-container
+  .container
+    .row.flex-column-reverse.flex-lg-row
+      .col-lg-3
+        .sidebar
+          .sidebar__widget
+          .sidebar__widget
+            .sidebar__box
+      .col-lg-9
+        .row
+          .col-12
+            .product__catagory
+              .product__catagory--single
+                .product__content.product__content--catagory
+                  a.product__link(href='#') Fruits and Vegetables
+                .product__img-box.product__img-box--catagory
+                  a.product__img--link(href='#')
+                    img.product__img.img-fluid(src='/images/product/category/fruits-and-vegetables.png' alt='')
+              .product__catagory--single
+                .product__content.product__content--catagory
+                  a.product__link(href='#') Bakery
+                .product__img-box.product__img-box--catagory
+                  a.product__img--link(href='#')
+                    img.product__img.img-fluid(src='/images/product/category/bread.png' alt='')
+              .product__catagory--single
+                .product__content.product__content--catagory
+                  a.product__link(href='#') Fridge
+                .product__img-box.product__img-box--catagory
+                  a.product__img--link(href='#')
+                    img.product__img.img-fluid(src='/images/product/category/fridge.png' alt='')
+              .product__catagory--single
+                .product__content.product__content--catagory
+                  a.product__link(href='#') Freezer
+                .product__img-box.product__img-box--catagory
+                  a.product__img--link(href='#')
+                    img.product__img.img-fluid(src='/images/product/category/freezer.png' alt='')
+              .product__catagory--single
+                .product__content.product__content--catagory
+                  a.product__link(href='#') Pantry
+                .product__img-box.product__img-box--catagory
+                  a.product__img--link(href='#')
+                    img.product__img.img-fluid(src='/images/product/category/pantry.png' alt='')
+              .product__catagory--single
+                .product__content.product__content--catagory
+                  a.product__link(href='#') Drinks
+                .product__img-box.product__img-box--catagory
+                  a.product__img--link(href='#')
+                    img.product__img.img-fluid(src='/images/product/category/drinks.png' alt='')
+              .product__catagory--single
+                .product__content.product__content--catagory
+                  a.product__link(href='#') Bathroom
+                .product__img-box.product__img-box--catagory
+                  a.product__img--link(href='#')
+                    img.product__img.img-fluid(src='/images/product/category/bathroom.png' alt='')
+              .product__catagory--single
+                .product__content.product__content--catagory
+                  a.product__link(href='#') Laundry
+                .product__img-box.product__img-box--catagory
+                  a.product__img--link(href='#')
+                    img.product__img.img-fluid(src='/images/product/category/laundry.png' alt='')
+              .product__catagory--single
+                .product__content.product__content--catagory
+                  a.product__link(href='#') Pet
+                .product__img-box.product__img-box--catagory
+                  a.product__img--link(href='#')
+                    img.product__img.img-fluid(src='/images/product/category/pet.png' alt='')
+              .product__catagory--single
+                .product__content.product__content--catagory
+                  a.product__link(href='#') Empty
+                .product__img-box.product__img-box--catagory
+                  a.product__img--link(href='#')
+                    img.product__img.img-fluid(src='/images/product/category/category-home-1-img-10.jpg' alt='')
+        .sort-box.m-tb-40
+          .sort-box-item
+            .sort-box__tab
+              ul.sort-box__tab-list.nav
+                li
+                  a.sort-nav-link(data-bs-toggle='tab' href='#sort-grid')
+                    i.fas.fa-th
+                li
+                  a.sort-nav-link.active(data-bs-toggle='tab' href='#sort-list')
+                    i.fas.fa-list-ul
+          .sort-box-item.d-flex.align-items-center.flex-warp
+            span Sort By:
+            .sort-box__option
+              label.select-sort__arrow
+                select.select-sort(name='select-sort')
+                  option(value='1') Relevance
+                  option(value='2') Name, A to Z
+                  option(value='3')  Name, Z to A 
+                  option(value='4')  Price, low to high
+                  option(value='5') Price, high to low
+          .sort-box-item
+            span Showing 1 - x of x results
+        .product-tab-area
+          .tab-content.tab-animate-zoom
+            #sort-grid.tab-pane.shop-grid
+              .row
+                .col-md-4.col-12
+                  .product__box.product__default--single.text-center
+                    .product__img-box.pos-relative
+                      a.product__img--link(href='#')
+                        img.product__img.img-fluid(src='/images/product/size-normal/product-home-1-img-6.jpg' alt='')
+                      ul.product__action--link.pos-absolute
+                        li
+                          a(href='#')
+                            i.icon-heart
+                        li
+                          a(href='#' data-bs-toggle='modal')
+                            i.icon-eye
+                    .product__content.m-t-20
+                      a.product__link(href='#') Item
+                      .product__price.m-t-5
+                        span.product__price $00.00
+                .col-md-4.col-sm-6.col-12
+                  .product__box.product__default--single.text-center
+                    .product__img-box.pos-relative
+                      a.product__img--link(href='#')
+                        img.product__img.img-fluid(src='/images/product/size-normal/product-home-1-img-7.jpg' alt='')
+                      ul.product__action--link.pos-absolute
+                        li
+                          a(href='#')
+                            i.icon-heart
+                        li
+                          a(href='#modalQuickView' data-bs-toggle='modal')
+                            i.icon-eye
+                    .product__content.m-t-20
+                      a.product__link(href='#') Item
+                      .product__price.m-t-5
+                        span.product__price $00.00
+                .col-md-4.col-sm-6.col-12
+                  .product__box.product__default--single.text-center
+                    .product__img-box.pos-relative
+                      a.product__img--link(href='#')
+                        img.product__img.img-fluid(src='/images/product/size-normal/product-home-1-img-8.jpg' alt='')
+                      ul.product__action--link.pos-absolute
+                        li
+                          a(href='#')
+                            i.icon-heart
+                        li
+                          a(href='#modalQuickView' data-bs-toggle='modal')
+                            i.icon-eye
+                    .product__content.m-t-20
+                      a.product__link(href='#') Item
+                      .product__price.m-t-5
+                        span.product__price $00.00
+                .col-md-4.col-sm-6.col-12
+                  .product__box.product__default--single.text-center
+                    .product__img-box.pos-relative
+                      a.product__img--link(href='#')
+                        img.product__img.img-fluid(src='/images/product/size-normal/product-home-1-img-9.jpg' alt='')
+                      span.product__label.product__label--special Special
+                      ul.product__action--link.pos-absolute
+                        li
+                          a(href='#')
+                            i.icon-heart
+                        li
+                          a(href='#modalQuickView' data-bs-toggle='modal')
+                            i.icon-eye
+                    .product__content.m-t-20
+                      a.product__link(href='#') Item
+                      .product__price.m-t-5
+                        span.product__price $00.00
+                .col-md-4.col-sm-6.col-12
+                  .product__box.product__default--single.text-center
+                    .product__img-box.pos-relative
+                      a.product__img--link(href='#')
+                        img.product__img.img-fluid(src='/images/product/size-normal/product-home-1-img-10.jpg' alt='')
+                      span.product__label.product__label--special Special
+                      ul.product__action--link.pos-absolute
+                        li
+                          a(href='#')
+                            i.icon-heart
+                        li
+                          a(href='#modalQuickView' data-bs-toggle='modal')
+                            i.icon-eye
+                    .product__content.m-t-20
+                      a.product__link(href='#') Item
+                      .product__price.m-t-5
+                        span.product__price $00.00
+                .col-md-4.col-sm-6.col-12
+                  .product__box.product__default--single.text-center
+                    .product__img-box.pos-relative
+                      a.product__img--link(href='#')
+                        img.product__img.img-fluid(src='/images/product/size-normal/product-home-1-img-1.jpg' alt='')
+                      ul.product__action--link.pos-absolute
+                        li
+                          a(href='#')
+                            i.icon-heart
+                        li
+                          a(href='#modalQuickView' data-bs-toggle='modal')
+                            i.icon-eye
+                    .product__content.m-t-20
+                      a.product__link(href='#') Item
+                      .product__price.m-t-5
+                        span.product__price $00.00
+                .col-md-4.col-sm-6.col-12
+                  .product__box.product__default--single.text-center
+                    .product__img-box.pos-relative
+                      a.product__img--link(href='#')
+                        img.product__img.img-fluid(src='/images/product/size-normal/product-home-1-img-2.jpg' alt='')
+                      ul.product__action--link.pos-absolute
+                        li
+                          a(href='#')
+                            i.icon-heart
+                        li
+                          a(href='#modalQuickView' data-bs-toggle='modal')
+                            i.icon-eye
+                    .product__content.m-t-20
+                      a.product__link(href='#') Item
+                      .product__price.m-t-5
+                        span.product__price $00.00
+                .col-md-4.col-sm-6.col-12
+                  .product__box.product__default--single.text-center
+                    .product__img-box.pos-relative
+                      a.product__img--link(href='#')
+                        img.product__img.img-fluid(src='/images/product/size-normal/product-home-1-img-3.jpg' alt='')
+                      ul.product__action--link.pos-absolute
+                        li
+                          a(href='#')
+                            i.icon-heart
+                        li
+                          a(href='#modalQuickView' data-bs-toggle='modal')
+                            i.icon-eye
+                    .product__content.m-t-20
+                      a.product__link(href='#') Item
+                      .product__price.m-t-5
+                        span.product__price $00.00
+                .col-md-4.col-sm-6.col-12
+                  .product__box.product__default--single.text-center
+                    .product__img-box.pos-relative
+                      a.product__img--link(href='#')
+                        img.product__img.img-fluid(src='/images/product/size-normal/product-home-1-img-4.jpg' alt='')
+                      ul.product__action--link.pos-absolute
+                        li
+                          a(href='#')
+                            i.icon-heart
+                        li
+                          a(href='#modalQuickView' data-bs-toggle='modal')
+                            i.icon-eye
+                    .product__content.m-t-20
+                      a.product__link(href='#') Item
+                      .product__price.m-t-5
+                        span.product__price $00.00
+            #sort-list.tab-pane.show.active.shop-list
+              .row
+                .col-12
+                  .product__box.product__box--list
+                    .product__img-box.pos-relative.text-center
+                      a.product__img--link(href='#')
+                        img.product__img.img-fluid(src='/images/product/size-normal/product-home-1-img-5.jpg' alt='')
+                    .product__content
+                      a.product__link(href='#')
+                        h5.font--regular Item
+                      .product__price.m-t-5
+                        span.product__price $00.00
+                      ul.product__action--link-list.m-t-30
+                        li
+                          a.btn--black.btn--black-hover-blue(href='#modalAddCart' data-bs-toggle='modal') Compare
+                        li
+                          a(href='#')
+                            i.icon-heart
+                .col-12
+                  .product__box.product__box--list
+                    .product__img-box.pos-relative.text-center
+                      a.product__img--link(href='#')
+                        img.product__img.img-fluid(src='/images/product/size-normal/product-home-1-img-8.jpg' alt='')
+                    .product__content
+                      a.product__link(href='#')
+                        h5.font--regular Item
+                      .product__price.m-t-5
+                        span.product__price $00.00
+                      ul.product__action--link-list.m-t-30
+                        li
+                          a.btn--black.btn--black-hover-blue(href='#modalAddCart' data-bs-toggle='modal') Compare
+                        li
+                          a(href='#')
+                            i.icon-heart
+                .col-12
+                  .product__box.product__box--list
+                    .product__img-box.pos-relative.text-center
+                      a.product__img--link(href='#')
+                        img.product__img.img-fluid(src='/images/product/size-normal/product-home-1-img-4.jpg' alt='')
+                    .product__content
+                      a.product__link(href='#')
+                        h5.font--regular Item
+                      .product__price.m-t-5
+                        span.product__price $00.00
+                      ul.product__action--link-list.m-t-30
+                        li
+                          a.btn--black.btn--black-hover-blue(href='#modalAddCart' data-bs-toggle='modal') Compare
+                        li
+                          a(href='#')
+                            i.icon-heart
+                .col-12
+                  .product__box.product__box--list
+                    .product__img-box.pos-relative.text-center
+                      a.product__img--link(href='#')
+                        img.product__img.img-fluid(src='/images/product/size-normal/product-home-1-img-9.jpg' alt='')
+                      span.product__label.product__label--special Special
+                    .product__content
+                      a.product__link(href='#')
+                        h5.font--regular Item
+                      .product__price.m-t-5
+                        span.product__price $00.00
+                      ul.product__action--link-list.m-t-30
+                        li
+                          a.btn--black.btn--black-hover-blue(href='#modalAddCart' data-bs-toggle='modal') Compare
+                        li
+                          a(href='#')
+                            i.icon-heart
+        .page-pagination
+          ul.page-pagination__list
+            li.page-pagination__item
+              a.page-pagination__link(href='#') Prev
+            li.page-pagination__item
+              a.page-pagination__link.active(href='#') 1
+            li.page-pagination__item
+              a.page-pagination__link(href='#') 2
+            li.page-pagination__item
+              a.page-pagination__link(href='#') Next
+footer.footer.m-t-100
+  .container
+    .footer__top
+      .row
+        .col-lg-4.col-md-5
+          .footer__about
+            .footer__logo
+              a.footer__logo-link(href='/')
+                img.footer__logo-img(src='/images/logo/scrimprlogolarger.png' alt='')
+            ul.footer__address
+              li.footer__address-item
+                i.fa.fa-envelope
+                | support@somemail.com
+            ul.footer__social-nav
+              li.footer__social-list
+                a.footer__social-link(href='#')
+                  i.fab.fa-facebook-f
+              li.footer__social-list
+                a.footer__social-link(href='#')
+                  i.fab.fa-twitter
+              li.footer__social-list
+                a.footer__social-link(href='#')
+                  i.fab.fa-youtube
+              li.footer__social-list
+                a.footer__social-link(href='#')
+                  i.fab.fa-google-plus-g
+        .col-lg-2.col-md-3.col-sm-6.col-12
+          .footer__menu
+            h4.footer__nav-title.footer__nav-title--dash.footer__nav-title--dash-red
+              | APPLICATION
+            ul.footer__nav
+              li.footer__list
+                a.footer__link(href='') Search Products
+              li.footer__list
+                a.footer__link(href='') Create New List
+        .col-lg-2.col-md-3.col-sm-6.col-12
+          .footer__menu
+            h4.footer__nav-title.footer__nav-title--dash.footer__nav-title--dash-red
+              | SCRIMPR
+            ul.footer__nav
+              li.footer__list
+                a.footer__link(href='') Legal Notice
+              li.footer__list
+                a.footer__link(href='') About us
+              li.footer__list
+                a.footer__link(href='') Careers
+        .col-lg-2.col-md-3.col-sm-6.col-12
+          .footer__menu
+            h4.footer__nav-title.footer__nav-title--dash.footer__nav-title--dash-red
+              | MY ACCOUNT
+            ul.footer__nav
+              li.footer__list
+                a.footer__link(href='') My Lists
+              li.footer__list
+                a.footer__link(href='') My Favourites
+              li.footer__list
+                a.footer__link(href='') Helps &amp; Faqs
+  .footer__bottom
+    .row
+      .col-lg-8.col-md-6.col-12
+        .footer__copyright-text
+          p
+            | Copyright &copy; 
+            a(href='#') Scrimpr
+            | . All Rights Reserved
+        .col-lg-4.col-md-6.col-12
+button.material-scrolltop(type='button')
+script(src='/js/vendor/vendor.min.js')
+script(src='/js/plugin/plugins.min.js')
+script(src='/env.js')
+script(src='/js/main.js')

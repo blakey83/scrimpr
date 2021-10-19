@@ -1,0 +1,16 @@
+doctype html
+head
+  title Products Page
+div(style='margin: 1rem 1.5rem;')
+  // search panel
+  fieldset
+    h1(style='margin-top: 0;') Search Products
+    label(for='searchTerm') Name:
+    input#searchTerm(type='text')
+    input(type='button' value='Search' onclick='searchProducts();')
+  // products list
+  div(style='margin-top: 1rem;')
+    ul#products-list
+      // empty/initial state
+script(src='/env.js')
+script(src='/js/products.js')

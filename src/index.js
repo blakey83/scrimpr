@@ -1,35 +1,49 @@
 // 3rd-party dependencies
-const dotenv = require('dotenv');
-const mongoose = require('mongoose');
-const express = require('express');
-const cors = require('cors');
-// Relative imports
-const groupMembers = require('./routes/groupMembers');
-const products = require('./routes/products');
-const users = require('./routes/users');
+import { config } from 'dotenv';
+import express, { json } from 'express';
+import cors from 'cors';
+import mongoose from 'mongoose';
+import bodyParser from 'body-parser';
+import cookieParser from 'cookie-parser';
+import session from 'express-session';
+import MongoStore from 'connect-mongo';
+
+import { registerRoutes } from './routes/index.js';
+import * as auth from './utils/auth.js';
 
 // Load environment variables from .env
-dotenv.config();
+config();
 
 // Connect to DB
 mongoose.connect(process.env.DB_URI)
-.then(() => console.log('Connected to MongoDB'))
-.catch(err => console.error('Could not connect to MongoDB', err));
+    .then(() => console.log('Connected to MongoDB'))
+    .catch(err => console.error('Could not connect to MongoDB', err));
 
 // Set up express router
 const app = express();
 app.use(cors()); // disable cors
-app.use(express.json()); // enable JSON request body support
-// conditionally load env-specific assets
-const isProduction = process.env.NODE_ENV === 'production';
-app.use('/env.js', express.static(isProduction ? 'src/static/env.prod.js' : 'src/static/env.js'));
-// serve static files from src/static directory
-app.use(express.static('src/static'));
+app.use(json()); // enable JSON request body support
+app.use(cookieParser());
+app.use(bodyParser.urlencoded({ extended: true }));
 
-// Initialise routes
-app.use('/api/groupMembers', groupMembers);
-app.use('/api/products', products);
-app.use('/api/users', users);
+// Use Pug to render HTML 
+app.set('view engine', 'pug');
+app.set('views', './src/views');
+
+// Use session information to keep the user logged in
+app.use(session ({
+    secret: 'very secret 1234',
+    resave: true,
+    saveUninitialized: false,
+    store: MongoStore.create({ mongoUrl: process.env.DB_URI })
+}));
+
+// So the app uses authorization to do it's thing
+app.use(auth.initialize);
+app.use(auth.session);
+app.use(auth.setUser);
+
+registerRoutes(app);
 
 // Start HTTP listener
 const port = Number(process.env.PORT || 80);

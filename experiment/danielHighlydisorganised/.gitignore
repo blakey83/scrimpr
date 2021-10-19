@@ -1,5 +1,0 @@
-# do not commit dependencies
-node_modules
-
-# do not commit sensitive credentials
-.env

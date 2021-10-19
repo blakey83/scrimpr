@@ -1,0 +1,333 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  title Scrimpr | Insert text
+  meta(name='description' content='')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  link(rel='shortcut icon' href='/images/favicon.png' type='image/png')
+  link(rel='stylesheet' href='/css/vendor/vendor.min.css')
+  link(rel='stylesheet' href='/css/plugin/plugins.min.css')
+  link(rel='stylesheet' href='/css/main.min.css')
+  link(rel='stylesheet' href='/css/main.css')
+header
+  .header.d-none.d-lg-block
+    .header__top
+      .container
+        .row
+          .col-12
+            .header__top-content.d-flex.justify-content-between.align-items-center
+              .header__top-content--left
+    .header__center.sticky-header.p-tb-10
+      .container
+        .row
+          .col-12.d-flex.justify-content-between.align-items-center
+            .header__logo
+              a.header__logo-link.img-responsive(href='/')
+                img.header__logo-img.img-fluid(src='/images/logo/scrimprlogolargerls.jpg' alt='')
+            .header-menu
+              nav
+                ul.header__nav
+                  li.header__nav-item.pos-relative
+                    a.header__nav-link(href='/') Home
+                  li.header__nav-item.pos-relative
+                    a.header__nav-link(href='#')
+                      | Lists
+                      i.fal.fa-chevron-down
+                    ul.mega-menu.pos-absolute
+                      li.mega-menu__box
+                        .mega-menu__item-box
+                          span.mega-menu__title List Menu
+                          ul.mega-menu__item
+                        .mega-menu__item-box
+                          ul.mega-menu__item
+                            li.mega-menu__banner
+                              a.mega-menu__banner-link(href='#')
+                                img.mega-menu__banner-img.mega-menu__banner-img--vertical(src='/images/banner/menu-banner.jpg' alt='')
+                  li.header__nav-item.pos-relative
+                    a.header__nav-link(href='#') Empty
+                  li.header__nav-item.pos-relative
+                    a.header__nav-link(href='#') Empty
+                  li.header__nav-item.pos-relative
+                    a.header__nav-link(href='#') Empty
+                  li.header__nav-item.pos-relative
+                    a.header__nav-link(href='#') Empty
+            ul.header__user-action-icon
+              li
+                a(href='#')
+                  i.icon-users
+              li
+                a(href='#')
+                  i.icon-heart
+    .header__bottom.p-tb-30
+      .container
+        .row.justify-content-between.align-items-center
+          .col-xl-3.col-lg-3
+            .header-menu-vertical.pos-relative
+              h4.menu-title.link--icon-left
+                i.far.fa-align-left
+                | CATEGORIES
+              ul.menu-content.pos-absolute
+                li.menu-item
+                  a(href='#') Fruits and Vegetables
+                li.menu-item
+                  a(href='#') Bakery
+                li.menu-item
+                  a(href='#') Fridge
+                li.menu-item
+                  a(href='#') Freezer
+                li.menu-item
+                  a(href='#') Pantry
+                li.menu-item
+                  a(href='#') Drinks
+                li.menu-item
+                  a(href='#') Bathroom
+                li.menu-item
+                  a(href='#') Laundry
+                li.menu-item
+                  a(href='#') Pet
+          .col-xl-7.col-lg-6
+            form.header-search(action='#' method='post')
+              .header-search__content.pos-relative
+                input(type='search' name='header-search' placeholder='Search products' required='')
+                button.pos-absolute(type='submit')
+                  i.icon-search
+          .col-xl-2.col-lg-3
+            .header-phone.text-end
+              span
+  .header__mobile.mobile-header--1.d-block.d-lg-none.p-tb-20
+    .container-fluid
+      .row
+        .col-12.d-flex.align-items-center.justify-content-between
+          ul.header__mobile--leftside.d-flex.align-items-center.justify-content-start
+            li
+              .header__mobile-logo
+                a.header__mobile-logo-link(href='/')
+                  img.header__mobile-logo-img(src='/images/logo/scrimprlogolargerls.jpg' alt='')
+          ul.header__mobile--rightside.header__user-action-icon.d-flex.align-items-center.justify-content-end
+            li
+              a.offcanvas-toggle(href='#offcanvas-mobile-menu')
+                i.far.fa-bars
+      .row
+        .col-12
+          .header-menu-vertical.pos-relative.m-t-30
+            h4.menu-title.link--icon-left
+              i.far.fa-align-left
+              | CATEGORIES
+            ul.menu-content.pos-absolute
+              li.menu-item
+                a(href='#') Fruits and Vegetables
+              li.menu-item
+                a(href='#') Bakery
+              li.menu-item
+                a(href='#') Fridge
+              li.menu-item
+                a(href='#') Freezer
+              li.menu-item
+                a(href='#') Pantry
+              li.menu-item
+                a(href='#') Drinks
+              li.menu-item
+                a(href='#') Bathroom
+              li.menu-item
+                a(href='#') Laundry
+              li.menu-item
+                a(href='#') Pet
+  #offcanvas-mobile-menu.offcanvas.offcanvas-mobile-menu
+    .offcanvas__top
+      span.offcanvas__top-text
+      button.offcanvas-close
+        i.fal.fa-times
+    .offcanvas-inner
+      form.header-search.m-tb-15(action='#' method='post')
+        .header-search__content.pos-relative
+          input(type='search' name='header-search' placeholder='Search products' required='')
+          button.pos-absolute(type='submit')
+            i.icon-search
+      ul.header__user-action-icon.m-tb-15.text-center
+        li
+          a(href='#')
+            i.icon-users
+        li
+          a(href='#')
+            i.icon-heart
+      .offcanvas-menu
+        ul
+          li
+            a(href='/')
+              span Home
+          li
+            a(href='#')
+              span My Lists
+            ul.sub-menu
+              li
+                a(href='#') Shopping Lists
+                ul.sub-menu
+                  li
+                    a(href='shop-sidebar-grid-left.html') Empty
+            ul.sub-menu
+              li
+                a(href='#') Title
+                ul.sub-menu
+                  li
+                    a(href='#') My Account
+                  li
+                    a(href='#') Login
+            ul.offcanvas__social-nav.m-t-50
+              li.offcanvas__social-list
+                a.offcanvas__social-link(href='#')
+                  i.fab.fa-facebook-f
+              li.offcanvas__social-list
+                a.offcanvas__social-link(href='#')
+                  i.fab.fa-twitter
+              li.offcanvas__social-list
+                a.offcanvas__social-link(href='#')
+                  i.fab.fa-youtube
+              li.offcanvas__social-list
+                a.offcanvas__social-link(href='#')
+                  i.fab.fa-google-plus-g
+              li.offcanvas__social-list
+                a.offcanvas__social-link(href='#')
+                  i.fab.fa-instagram
+.page-breadcrumb
+  .container
+    .row
+      .col-12
+        ul.page-breadcrumb__menu
+          li.page-breadcrumb__nav
+            a(href='#') Home
+          li.page-breadcrumb__nav.active Favourites
+main#main-container.main-container
+  .container
+    .row
+      .col-12
+        .section-content
+          h5.section-content__title Your Favourite items
+        .table-content.table-responsive.list-table-content.m-t-30
+          table
+            thead
+              tr
+                th Image
+                th Product Name
+                th Unit Price
+                th Qty
+                th Subtotal
+            tbody
+              tr
+                td.product-thumbnail
+                  a(href='#')
+                    img.img-fluid(src='/images/product/size-small/product-home-1-img-1.jpg' alt='')
+                td.product-name
+                  a(href='#') Product Name
+                td.product-price-list
+                  span.amount $00.00
+                td.product-quantity
+                  .quantity.d-inline-block
+                    input(type='number' min='1' step='1' value='1')
+                td.product-subtotal $00.00
+                td.product-add-list
+                  a.btn.btn--box.btn--small.btn--radius.btn--blue.btn--blue-hover-black.btn--uppercase.font--semi-bold(href='#modalAddList' data-bs-toggle='modal')
+                    | ADD
+                    | TO LIST
+              tr
+                td.product-thumbnail
+                  a(href='#')
+                    img.img-fluid(src='/images/product/size-small/product-home-1-img-2.jpg' alt='')
+                td.product-name
+                  a(href='#') Product Name
+                td.product-price-list
+                  span.amount $00.00
+                td.product-quantity
+                  .quantity.d-inline-block
+                    input(type='number' min='1' step='1' value='1')
+                td.product-subtotal $00.00
+                td.product-add-list
+                  a.btn.btn--box.btn--small.btn--radius.btn--blue.btn--blue-hover-black.btn--uppercase.font--semi-bold(href='#modalAddList' data-bs-toggle='modal')
+                    | ADD
+                    | TO LIST
+              tr
+                td.product-thumbnail
+                  a(href='#')
+                    img.img-fluid(src='/images/product/size-small/product-home-1-img-3.jpg' alt='')
+                td.product-name
+                  a(href='#') Product Name
+                td.product-price-list
+                  span.amount $00.00
+                td.product-quantity
+                  .quantity.d-inline-block
+                    input(type='number' min='1' step='1' value='1')
+                td.product-subtotal $00.00
+                td.product-add-list
+                  a.btn.btn--box.btn--small.btn--radius.btn--blue.btn--blue-hover-black.btn--uppercase.font--semi-bold(href='#modalAddList' data-bs-toggle='modal')
+                    | ADD
+                    | TO LIST
+footer.footer.m-t-100
+  .container
+    .footer__top
+      .row
+        .col-lg-4.col-md-5
+          .footer__about
+            .footer__logo
+              a.footer__logo-link(href='/')
+                img.footer__logo-img(src='/images/logo/scrimprlogolarger.png' alt='')
+            ul.footer__address
+              li.footer__address-item
+                i.fa.fa-envelope
+                | support@somemail.com
+            ul.footer__social-nav
+              li.footer__social-list
+                a.footer__social-link(href='#')
+                  i.fab.fa-facebook-f
+              li.footer__social-list
+                a.footer__social-link(href='#')
+                  i.fab.fa-twitter
+              li.footer__social-list
+                a.footer__social-link(href='#')
+                  i.fab.fa-youtube
+              li.footer__social-list
+                a.footer__social-link(href='#')
+                  i.fab.fa-google-plus-g
+        .col-lg-2.col-md-3.col-sm-6.col-12
+          .footer__menu
+            h4.footer__nav-title.footer__nav-title--dash.footer__nav-title--dash-red
+              | APPLICATION
+            ul.footer__nav
+              li.footer__list
+                a.footer__link(href='') Search Products
+              li.footer__list
+                a.footer__link(href='') Create New List
+        .col-lg-2.col-md-3.col-sm-6.col-12
+          .footer__menu
+            h4.footer__nav-title.footer__nav-title--dash.footer__nav-title--dash-red
+              | SCRIMPR
+            ul.footer__nav
+              li.footer__list
+                a.footer__link(href='') Legal Notice
+              li.footer__list
+                a.footer__link(href='') About us
+              li.footer__list
+                a.footer__link(href='') Careers
+        .col-lg-2.col-md-3.col-sm-6.col-12
+          .footer__menu
+            h4.footer__nav-title.footer__nav-title--dash.footer__nav-title--dash-red
+              | MY ACCOUNT
+            ul.footer__nav
+              li.footer__list
+                a.footer__link(href='') My Lists
+              li.footer__list
+                a.footer__link(href='') My Favourites
+              li.footer__list
+                a.footer__link(href='') Helps &amp; Faqs
+  .footer__bottom
+    .row
+      .col-lg-8.col-md-6.col-12
+        .footer__copyright-text
+          p
+            | Copyright &copy; 
+            a(href='#') Scrimpr
+            | . All Rights Reserved
+        .col-lg-4.col-md-6.col-12
+button.material-scrolltop(type='button')
+script(src='/js/vendor/vendor.min.js')
+script(src='/js/plugin/plugins.min.js')
+script(src='/env.js')
+script(src='/js/main.js')

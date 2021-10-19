@@ -5,6 +5,7 @@
   "author": "Scrimpr Team",
   "license": "ISC",
   "main": "src/index.js",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/blakey83/scrimpr.git"
@@ -15,11 +16,22 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.0",
+    "connect-mongo": "^4.6.0",
+    "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
+    "email-validator": "^2.0.4",
     "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "http-errors": "^1.8.0",
     "joi": "^17.4.2",
     "mongoose": "^6.0.11",
+    "passport": "^0.5.0",
+    "passport-local": "^1.0.0",
+    "pug": "^3.0.2",
+    "pug-cli": "^1.0.0-alpha6",
     "puppeteer": "^5.5.0",
     "puppeteer-cluster": "^0.22.0"
   },

@@ -1,12 +1,14 @@
-const express = require('express');
+import { Router } from 'express';
 
-const scraper = require("../../experiment/scrapers/coles-scraper/scraper");
+import { scraper } from "../utils/scrapers/coles/scraper.js";
 
-const router = express.Router();
+const router = Router();
 
 router.get("/:searchTerm", async (req, res) => {
     const products = await scraper(req.params.searchTerm);
     res.send(products);
 });
 
-module.exports = router;
+export {
+    router,
+}
