@@ -16,18 +16,17 @@ html(lang="en")
           div
             div(style="width: 300px;")
               div
-              form(action='/users/login', method='POST', style='border-radius: 25px;border-top-left-radius: 0px;border-top-right-radius: 25px;border-bottom-left-radius: 0px;border-bottom-right-radius: 25px;')
-                p(style='font-size: 25px;font-family:  sans-serif;') User Login
-                div(style='padding: 10px;background: rgb(241,241,241);border-radius: 100px;color: var(--bs-blue);height: 44px;border-color: rgb(113,136,170);width: 300px;')
-                  i(class='fa fa-user', style='color: rgb(251,251,251);padding-right: 0px;padding-left: 10px;border-color: var(--bs-orange);')
-                  input(class='form-control', type='text', name='email', placeholder='Email', required='', style='padding-top: 0px;padding-bottom: 0px;padding-left: 15px;margin: 0px;margin-left: 10px;margin-bottom: 0px;margin-top: -2px;background: rgba(255,255,241,0);border-style: none;')
-                  div(style='padding: 10px;background: rgb(241, 241, 241);border-radius: 100px;margin-top: 15px;color: var(--bs-blue);height: 44px;width: 300px;')
-                    i(class='fa fa-lock', style='padding: 0px;color: rgb(255,255,255);padding-left: 10px;')
-                    input(class='form-control', type='password', name='password', placeholder='Password', style='padding-top: 0px;padding-bottom: 0px;padding-left: 15px;margin: 0px;margin-left: 10px;margin-bottom: 0px;margin-top: -2px;background: rgba(255,255,255,0);border-style: none;')
-                div(class='mb-3')
-                  button(class='btn btn-primary d-block w-100', type='submit', style='padding: 10px;background: rgb(52,177,31);border-radius: 100px;margin-top: 15px;color: var(--bs-white);width: 300px;') Login
-                #error(style='text-align: center; text-decoration-color: red;')
-              p(style='border-color: var(--bs-body-bg);margin: 0px;color: rgb(249,251,254);text-align: center;') Login
-            div
-                p(style="text-align: center;color: rgb(82,78,78);font-size: 10px;margin-top: 10px;") Do you want to create a new account? 
-                  a(href="./register") Click here
+              div
+              form(style='font-size: 25px;font-family: ' Source Sans Pro', sans-serif;') User Login
+              div(style='padding: 10px;background: rgb(241,241,241);border-radius: 100px;color: var(--bs-blue);height: 44px;border-color: rgb(113,136,170);width: 300px;')
+                i(class='fa fa-user', style='color: rgb(251,251,251);padding-right: 0px;padding-left: 10px;border-color: var(--bs-orange);')
+                input#username-field(Name='username-field' type='text', style='padding-top: 0px;padding-bottom: 0px;padding-left: 15px;margin: 0px;margin-left: 10px;margin-bottom: 0px;margin-top: -2px;background: rgba(255,255,241,0);border-style: none;', placeholder='Username')
+              div(style='padding: 10px;background: rgb(241, 241, 241);border-radius: 100px;margin-top: 15px;color: var(--bs-blue);height: 44px;width: 300px;')
+                i(class='fa fa-lock', style='padding: 0px;color: rgb(255,255,255);padding-left: 10px;')
+                input#password-field(Name='password-field' type='password', style='padding-top: 0px;padding-bottom: 0px;padding-left: 15px;margin: 0px;margin-left: 10px;margin-bottom: 0px;margin-top: -2px;background: rgba(255,255,255,0);border-style: none;', placeholder='Password')
+              #login-button(class='btn btn-primary d-block w-100' onclick='loginAttempt(this.form)' type ='submit' style='padding: 10px;background: rgb(52,177,31);border-radius: 100px;margin-top: 15px;color: var(--bs-white);width: 300px;')
+                p(style='border-color: var(--bs-body-bg);margin: 0px;color: rgb(249,251,254);text-align: center;') Login
+              div
+                p(style='text-align: center;color: rgb(82,78,78);font-size: 10px;margin-top: 10px;') Do you want to create a new account? 
+                  a(href='./register') Click here
+  script(src='/js/login.js')
