@@ -46,5 +46,5 @@ app.use(auth.setUser);
 registerRoutes(app);
 
 // Start HTTP listener
-const port = Number(process.env.PORT || 80);;
+const port = Number(process.env.PORT || 80);
 app.listen(port, () => console.log(`Listening on port ${port}...`));
