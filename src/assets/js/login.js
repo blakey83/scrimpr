@@ -11,7 +11,8 @@ try {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(credentials)
-})
+    })
+    window.location.replace('./home');
 }
 catch {
     console.log('Error', e);
