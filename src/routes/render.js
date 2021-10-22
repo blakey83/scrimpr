@@ -24,8 +24,8 @@ router.get('/register', (_, res) => void res.render('register'));
 router.get('/results', (_, res) => void res.render('results'));
 
 
-router.post('/users/login', passport.authenticate('local', {
-  successRedirect: '../home',
+router.post('/login', passport.authenticate('local', {
+  successRedirect: '/home',
   failureRedirect: '../?error=true',
 }));
 
@@ -38,16 +38,8 @@ router.post('/users', async (req, res, next) => {
       email: req.body.email,
       password: req.body.password
     });
-    const password = req.body.password
-    const password2 = req.body.passwordrepeat
-    if (password === password2) {
-      await user.save();
-      res.redirect('../');
-    } else {
-      console.error('Password mismatch');
-      res.redirect('./register')
-      return next();
-    }
+    await user.save();
+    return next();
   } catch (e) {
     console.error(e);
   }

@@ -12,7 +12,7 @@ html(lang='en')
     section.register-photo(style='background: rgba(241,247,252,0);border-radius: 0px;')
       .form-container(style='border-radius: 25px;')
         .image-holder(style='width: 316px;border-radius: 25px;background: url(images/happyscrimpy.jpg) center / cover no-repeat;border-top-right-radius: 0px;border-bottom-right-radius: 0px;')
-        form(action='/users', method='POST', style='border-radius: 25px;border-top-left-radius: 0px;border-top-right-radius: 25px;border-bottom-left-radius: 0px;border-bottom-right-radius: 25px;')
+        form(style='border-radius: 25px;border-top-left-radius: 0px;border-top-right-radius: 25px;border-bottom-left-radius: 0px;border-bottom-right-radius: 25px;')
           h2.text-center(style='color: rgb(0,0,0);')
             strong Create
             |  an account.
@@ -31,7 +31,7 @@ html(lang='en')
                 input#termscheck.form-check-input(type='checkbox')
                 | I agree to the licence terms.
           .mb-3
-            button(class="btn btn-primary d-block w-100" type="submit" onclick="validatePassword(this.form)" href=('./') style="background: rgb(61,87,178);") Sign Up
+            button(class="btn btn-primary d-block w-100" type="submit" onclick="pressTheButton(this.form)" href=('./') style="background: rgb(61,87,178);") Sign Up
           a(class="already") Do you already have an account? Login here.
           #error(style="text-align: center; text-decoration-color: red;")
   script(src="/js/register.js")
