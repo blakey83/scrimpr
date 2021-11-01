@@ -44,10 +44,10 @@ const commandLineScrape = async () => {
 };
 
 // Uncomment this to immediately invoke
-// (async () => {
-//     await commandLineScrape();
-// })();
+(async () => {
+    await commandLineScrape();
+})();
 
-export {
-    commandLineScrape,
-}
+// export {
+//     commandLineScrape,
+// }
