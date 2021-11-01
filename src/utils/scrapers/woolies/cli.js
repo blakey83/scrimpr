@@ -1,4 +1,4 @@
-const puppeteer = require("puppeteer");
+import puppeteer from "puppeteer";
 
 const commandLineScrape = async () => {
     const browser = await puppeteer.launch({

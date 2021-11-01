@@ -1,7 +1,8 @@
 import { scraper } from "./scraper.js";
+import { createInterface } from 'readline';
 
 async function commandLineScrape() {
-    const readline = require("readline").createInterface({
+    const readline = createInterface({
         input: process.stdin,
         output: process.stdout,
     });
