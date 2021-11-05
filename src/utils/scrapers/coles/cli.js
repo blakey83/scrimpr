@@ -19,7 +19,3 @@ async function commandLineScrape() {
 (async () => {
     await commandLineScrape();
 })();
-
-// export {
-//     commandLineScrape,
-// }

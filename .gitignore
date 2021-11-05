@@ -3,3 +3,6 @@ node_modules
 
 # do not commit sensitive credentials
 .env
+
+# misc. ignores
+.DS_Store
