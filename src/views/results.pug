@@ -1,9 +1,9 @@
-mixin listItem(itemData)
+mixin listItemGrid(itemData)
   .col-md-4.col-sm-6.col-12
                     .product__box.product__default--single.text-center
                       .product__img-box.pos-relative
                         a.product__img--link(href='#')
-                          img.product__img.img-fluid(src=itemData.img alt='')
+                          img.product__img.img-fluid.product-items(src=itemData.img alt='')
                         ul.product__action--link.pos-absolute
                           li
                             a(href='#')
@@ -18,6 +18,30 @@ mixin listItem(itemData)
                           span.product__price= itemData.wooliesPrice
                           img(src='images/icons/coles/colessquare.png' alt='HTML5 Icon' width='46' height='35')
                           span.product__price=itemData.price
+
+mixin listItemList(itemData)
+  .col-12
+                    .product__box.product__box--list
+                      .product__img-box.pos-relative.text-center
+                        a.product__img--link(href='#')
+                          img.product__img.img-fluid.product-images(src=itemData.img alt='')
+                      .product__content
+                        a.product__link(href='#')
+                          h5.font--regular= itemData.item
+                        .product__price.m-t-5
+                          img(src='images/icons/woolworths/wwsquare.png' alt='HTML5 Icon' width='46' height='35')
+                          span.product__price= itemData.wooliesPrice
+                          img(src='images/icons/coles/colessquare.png' alt='HTML5 Icon' width='46' height='35')
+                          span.product__price= itemData.price
+                          p.special-p
+                            span.product__label--special-woolworths-both SPECIAL
+                            span.product__label--special-coles-both SPECIAL
+                        ul.product__action--link-list.m-t-30
+                          li
+                            a.btn--black.btn--black-hover-blue(href='#modalAddList' data-bs-toggle='modal') Add to List
+                          li
+                            a(href='#')
+                              i.icon-heart
 
 doctype html
 head
@@ -301,293 +325,12 @@ main#main-container.main-container
           .tab-content.tab-animate-zoom
             #sort-grid.tab-pane.shop-grid
               .row
-                .col-md-4.col-12
-                  .product__box.product__default--single.text-center
-                    .product__img-box.pos-relative
-                      a.product__img--link(href='#')
-                        img.product__img.img-fluid(src='images/product/size-normal/3706832-twisties.jpg' alt='')
-                      ul.product__action--link.pos-absolute
-                        li
-                          a(href='#')
-                            i.icon-heart
-                        li
-                          a(href='#' data-bs-toggle='modal')
-                            i.icon-eye
-                    .product__content.m-t-20
-                      a.product__link(href='#') Twisties Cheese 90g
-                      .product__price.m-t-5
-                        img(src='images/icons/woolworths/wwsquare.png' alt='HTML5 Icon' width='46' height='35')
-                        span.product__price $1.00
-                        img(src='images/icons/coles/colessquare.png' alt='HTML5 Icon' width='46' height='35')
-                        span.product__price $2.20
-                        p.special-p
-                          span.product__label--special-woolworths SPECIAL
                 for item in data
-                  +listItem(item)          
-                .col-md-4.col-sm-6.col-12
-                  .product__box.product__default--single.text-center
-                    .product__img-box.pos-relative
-                      a.product__img--link(href='#')
-                        img.product__img.img-fluid(src='images/product/size-normal/7879468-cheezels.jpg' alt='')
-                      ul.product__action--link.pos-absolute
-                        li
-                          a(href='#')
-                            i.icon-heart
-                        li
-                          a(href='#modalQuickView' data-bs-toggle='modal')
-                            i.icon-eye
-                    .product__content.m-t-20
-                      a.product__link(href='#')
-                        | Cheezels Original Cheese Snacks
-                        | 125g
-                      .product__price.m-t-5
-                        img(src='images/icons/woolworths/wwsquare.png' alt='HTML5 Icon' width='46' height='35')
-                        span.product__price $2.50
-                        img(src='images/icons/coles/colessquare.png' alt='HTML5 Icon' width='46' height='35')
-                        span.product__price $2.50
-                .col-md-4.col-sm-6.col-12
-                  .product__box.product__default--single.text-center
-                    .product__img-box.pos-relative
-                      a.product__img--link(href='#')
-                        img.product__img.img-fluid(src='images/product/size-normal/1786182-chips.jpg' alt='')
-                      ul.product__action--link.pos-absolute
-                        li
-                          a(href='#')
-                            i.icon-heart
-                        li
-                          a(href='#modalQuickView' data-bs-toggle='modal')
-                            i.icon-eye
-                    .product__content.m-t-20
-                      a.product__link(href='#')
-                        | Red Rock Deli Potato Chips Sweet
-                        | Chilli And Sour Cream
-                      .product__price.m-t-5
-                        img(src='images/icons/woolworths/wwsquare.png' alt='HTML5 Icon' width='46' height='35')
-                        span.product__price $3.50
-                        img(src='images/icons/coles/colessquare.png' alt='HTML5 Icon' width='46' height='35')
-                        span.product__price $3.25
-                        p.special-p
-                          span.product__label--special-woolworths-both SPECIAL
-                          span.product__label--special-coles-both SPECIAL
-                .col-md-4.col-sm-6.col-12
-                  .product__box.product__default--single.text-center
-                    .product__img-box.pos-relative
-                      a.product__img--link(href='#')
-                        img.product__img.img-fluid(src='images/product/size-normal/3706107-burgerrings.jpg' alt='')
-                      ul.product__action--link.pos-absolute
-                        li
-                          a(href='#')
-                            i.icon-heart
-                        li
-                          a(href='#modalQuickView' data-bs-toggle='modal')
-                            i.icon-eye
-                    .product__content.m-t-20
-                      a.product__link(href='#') Burger Rings Snacks 125g
-                      .product__price.m-t-5
-                        img(src='images/icons/woolworths/wwsquare.png' alt='HTML5 Icon' width='46' height='35')
-                        span.product__price $1.00
-                        img(src='images/icons/coles/colessquare.png' alt='HTML5 Icon' width='46' height='35')
-                        span.product__price $2.20
-                        p.special-p
-                          span.product__label--special-woolworths SPECIAL
-                .col-md-4.col-sm-6.col-12
-                  .product__box.product__default--single.text-center
-                    .product__img-box.pos-relative
-                      a.product__img--link(href='#')
-                        img.product__img.img-fluid(src='images/product/size-normal/2358275-smithsoriginal.jpg' alt='')
-                      ul.product__action--link.pos-absolute
-                        li
-                          a(href='#')
-                            i.icon-heart
-                        li
-                          a(href='#modalQuickView' data-bs-toggle='modal')
-                            i.icon-eye
-                    .product__content.m-t-20
-                      a.product__link(href='#')
-                        | Smiths Crinkle Cut Original Potato
-                        | Chips 170g
-                      .product__price.m-t-5
-                        img(src='images/icons/woolworths/wwsquare.png' alt='HTML5 Icon' width='46' height='35')
-                        span.product__price $3.75
-                        img(src='images/icons/coles/colessquare.png' alt='HTML5 Icon' width='46' height='35')
-                        span.product__price $3.75
-                .col-md-4.col-sm-6.col-12
-                  .product__box.product__default--single.text-center
-                    .product__img-box.pos-relative
-                      a.product__img--link(href='#')
-                        img.product__img.img-fluid(src='images/product/size-normal/2358300-smithschicken.jpg' alt='')
-                      ul.product__action--link.pos-absolute
-                        li
-                          a(href='#')
-                            i.icon-heart
-                        li
-                          a(href='#modalQuickView' data-bs-toggle='modal')
-                            i.icon-eye
-                    .product__content.m-t-20
-                      a.product__link(href='#')
-                        | Smiths Crinkle Cut Chicken Potato
-                        | Chips 170g
-                      .product__price.m-t-5
-                        img(src='images/icons/woolworths/wwsquare.png' alt='HTML5 Icon' width='46' height='35')
-                        span.product__price $3.75
-                        img(src='images/icons/coles/colessquare.png' alt='HTML5 Icon' width='46' height='35')
-                        span.product__price $3.75
-                .col-md-4.col-sm-6.col-12
-                  .product__box.product__default--single.text-center
-                    .product__img-box.pos-relative
-                      a.product__img--link(href='#')
-                        img.product__img.img-fluid(src='images/product/size-normal/8156535-kettle.jpg' alt='')
-                      ul.product__action--link.pos-absolute
-                        li
-                          a(href='#')
-                            i.icon-heart
-                        li
-                          a(href='#modalQuickView' data-bs-toggle='modal')
-                            i.icon-eye
-                    .product__content.m-t-20
-                      a.product__link(href='#') Kettle Sea Salt Potato Chips
-                      .product__price.m-t-5
-                        img(src='images/icons/woolworths/wwsquare.png' alt='HTML5 Icon' width='46' height='35')
-                        span.product__price $4.65
-                        img(src='images/icons/coles/colessquare.png' alt='HTML5 Icon' width='46' height='35')
-                        span.product__price $3.50
-                        p.special-p
-                          span.product__label--special-coles SPECIAL
-                .col-md-4.col-sm-6.col-12
-                  .product__box.product__default--single.text-center
-                    .product__img-box.pos-relative
-                      a.product__img--link(href='#')
-                        img.product__img.img-fluid(src='images/product/size-normal/7117775-frenchfries.jpg' alt='')
-                      ul.product__action--link.pos-absolute
-                        li
-                          a(href='#')
-                            i.icon-heart
-                        li
-                          a(href='#modalQuickView' data-bs-toggle='modal')
-                            i.icon-eye
-                    .product__content.m-t-20
-                      a.product__link(href='#') French Fries Original Potato Chips
-                      .product__price.m-t-5
-                        img(src='images/icons/woolworths/wwsquare.png' alt='HTML5 Icon' width='46' height='35')
-                        span.product__price $1.75
-                        img(src='images/icons/coles/colessquare.png' alt='HTML5 Icon' width='46' height='35')
-                        span.product__price $1.75
-                        p.special-p
-                          span.product__label--special-woolworths-both SPECIAL
-                          span.product__label--special-coles-both SPECIAL
-                .col-md-4.col-sm-6.col-12
-                  .product__box.product__default--single.text-center
-                    .product__img-box.pos-relative
-                      a.product__img--link(href='#')
-                        img.product__img.img-fluid(src='images/product/size-normal/6833927-lighttangy.jpg' alt='')
-                      ul.product__action--link.pos-absolute
-                        li
-                          a(href='#')
-                            i.icon-heart
-                        li
-                          a(href='#modalQuickView' data-bs-toggle='modal')
-                            i.icon-eye
-                    .product__content.m-t-20
-                      a.product__link(href='#')
-                        | Thins Light and Tangy Potato Chips
-                        | 175g
-                      .product__price.m-t-5
-                        img(src='images/icons/woolworths/wwsquare.png' alt='HTML5 Icon' width='46' height='35')
-                        span.product__price $1.75
-                        img(src='images/icons/coles/colessquare.png' alt='HTML5 Icon' width='46' height='35')
-                        span.product__price $3.50
-                        p.special-p
-                          span.product__label--special-woolworths SPECIAL
+                  +listItemGrid(item)          
             #sort-list.tab-pane.show.active.shop-list
               .row
-                .col-12
-                  .product__box.product__box--list
-                    .product__img-box.pos-relative.text-center
-                      a.product__img--link(href='#')
-                        img.product__img.img-fluid(src='images/product/size-normal/1786182-chips.jpg' alt='')
-                    .product__content
-                      a.product__link(href='#')
-                        h5.font--regular
-                          | Red Rock Deli Potato Chips Sweet
-                          | Chilli And Sour Cream
-                      .product__price.m-t-5
-                        img(src='images/icons/woolworths/wwsquare.png' alt='HTML5 Icon' width='46' height='35')
-                        span.product__price $3.50
-                        img(src='images/icons/coles/colessquare.png' alt='HTML5 Icon' width='46' height='35')
-                        span.product__price $3.25
-                        p.special-p
-                          span.product__label--special-woolworths-both SPECIAL
-                          span.product__label--special-coles-both SPECIAL
-                      ul.product__action--link-list.m-t-30
-                        li
-                          a.btn--black.btn--black-hover-blue(href='#modalAddList' data-bs-toggle='modal') Add to List
-                        li
-                          a(href='#')
-                            i.icon-heart
-                .col-12
-                  .product__box.product__box--list
-                    .product__img-box.pos-relative.text-center
-                      a.product__img--link(href='#')
-                        img.product__img.img-fluid(src='images/product/size-normal/3706832-twisties.jpg' alt='')
-                    .product__content
-                      a.product__link(href='#')
-                        h5.font--regular Twisties Cheese 90g
-                      .product__price.m-t-5
-                        img(src='images/icons/woolworths/wwsquare.png' alt='HTML5 Icon' width='46' height='35')
-                        span.product__price $1.00
-                        img(src='images/icons/coles/colessquare.png' alt='HTML5 Icon' width='46' height='35')
-                        span.product__price $2.20
-                        p.special-p
-                          span.product__label--special-woolworths-list SPECIAL
-                      ul.product__action--link-list.m-t-30
-                        li
-                          a.btn--black.btn--black-hover-blue(href='#modalAddList' data-bs-toggle='modal') Add to List
-                        li
-                          a(href='#')
-                            i.icon-heart
-                .col-12
-                  .product__box.product__box--list
-                    .product__img-box.pos-relative.text-center
-                      a.product__img--link(href='#')
-                        img.product__img.img-fluid(src='images/product/size-normal/8156535-kettle.jpg' alt='')
-                    .product__content
-                      a.product__link(href='#')
-                        h5.font--regular Kettle Sea Salt Potato Chips 175g
-                      .product__price.m-t-5
-                        img(src='images/icons/woolworths/wwsquare.png' alt='HTML5 Icon' width='46' height='35')
-                        span.product__price $4.65
-                        img(src='images/icons/coles/colessquare.png' alt='HTML5 Icon' width='46' height='35')
-                        span.product__price $3.50
-                        p.special-p
-                          span.product__label--special-coles SPECIAL
-                      ul.product__action--link-list.m-t-30
-                        li
-                          a.btn--black.btn--black-hover-blue(href='#modalAddList' data-bs-toggle='modal') Add to List
-                        li
-                          a(href='#')
-                            i.icon-heart
-                .col-12
-                  .product__box.product__box--list
-                    .product__img-box.pos-relative.text-center
-                      a.product__img--link(href='#')
-                        img.product__img.img-fluid(src='images/product/size-normal/6833927-lighttangy.jpg' alt='')
-                    .product__content
-                      a.product__link(href='#')
-                        h5.font--regular
-                          | Thins Light and Tangy Potato Chips 175g
-                      .product__price.m-t-5
-                        img(src='images/icons/woolworths/wwsquare.png' alt='HTML5 Icon' width='46' height='35')
-                        span.product__price $1.75
-                        img(src='images/icons/coles/colessquare.png' alt='HTML5 Icon' width='46' height='35')
-                        span.product__price $3.50
-                        p.special-p
-                          span.product__label--special-woolworths-list SPECIAL
-                      ul.product__action--link-list.m-t-30
-                        li
-                          a.btn--black.btn--black-hover-blue(href='#modalAddList' data-bs-toggle='modal') Add to List
-                        li
-                          a(href='#')
-                            i.icon-heart
+                for item in data
+                  +listItemList(item)
         .page-pagination
           ul.page-pagination__list
             li.page-pagination__item
