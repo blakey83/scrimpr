@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import passport from 'passport';
+import { scraper } from '../utils/scrapers/coles/scraper.js';
 
 import { User } from '../models/user.js';
 
@@ -21,7 +22,9 @@ router.get('/list', (_, res) => void res.render('list'));
 router.get('/mylists', (_, res) => void res.render('mylists'));
 router.get('/products', (_, res) => void res.render('products'));
 router.get('/register', (_, res) => void res.render('register'));
-router.get('/results', (_, res) => void res.render('results'));
+router.get('/results', async function(_, res) {
+  res.render('results', { data: await scraper("toothpaste") } );
+});
 
 
 router.post('/login', passport.authenticate('local', {
