@@ -784,7 +784,7 @@ ul {
 }
 
 .btn--border-black-hover-blue:hover {
-  color: #fff;
+
   background: #3D57B2;
   border-color: #3D57B2;
 }
@@ -1041,12 +1041,8 @@ button.close {
   padding-left: 0;
   padding-right: 0;
 
-  background: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(4.5px);
-  -webkit-backdrop-filter: blur(4.5px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: white;
+  border-radius: 25px;
 
 }
 
@@ -1371,6 +1367,65 @@ button.close {
 
 .product__label--special {
   background: yellow;
+}
+
+.special-p {
+  color: black;
+}
+
+.product__label--special-woolworths-both {
+  margin-left: 20px;
+  padding: 10px;
+  background: green;
+  font-size: 10px;
+  color: white;
+  font-weight: 600;
+  width: 30%;
+  border-radius: 25px;
+}
+
+.product__label--special-woolworths {
+  margin-left: -85px;
+  padding: 10px;
+  background: green;
+  font-size: 10px;
+  color: white;
+  font-weight: 600;
+  width: 30%;
+  border-radius: 25px;
+}
+
+.product__label--special-woolworths-list {
+  margin-left: 20px;
+  padding: 10px;
+  background: green;
+  font-size: 10px;
+  color: white;
+  font-weight: 600;
+  width: 30%;
+  border-radius: 25px;
+}
+
+.product__label--special-coles-both {
+  margin-left: 40px;
+  padding: 10px;
+  background: red;
+  font-size: 10px;
+  color: white;
+  font-weight: 600;
+  width: 30%;
+  border-radius: 25px;
+}
+
+.product__label--special-coles {
+  margin-left: 110px;
+  padding: 10px;
+  background: red;
+  font-size: 10px;
+  color: white;
+  font-weight: 600;
+  width: 30%;
+  border-radius: 25px;
 }
 
 .product__counter-box {
@@ -6388,4 +6443,119 @@ table tbody>tr td a:hover {
 
 .border-top-1 {
   border-top: 1px solid #ddd;
+}
+
+#fruits-vegetables-icon {
+  font-size: 50px;
+  color: orange;
+  margin-right: 20px;
+}
+
+#bakery-icon {
+  font-size: 50px;
+  color: #D4B37F;
+  margin-right: 20px;
+}
+
+#fridge-icon {
+  font-size: 50px;
+  color: brown;
+  margin-right: 20px;
+}
+
+#freezer-icon {
+  font-size: 50px;
+  color: pink;
+  margin-right: 20px;
+}
+
+#pantry-icon {
+  font-size: 50px;
+  color: yellow;
+  margin-right: 20px;
+}
+
+#drinks-icon {
+  font-size: 50px;
+  color: lightblue;
+  margin-right: 20px;
+}
+
+#bathroom-icon {
+  font-size: 50px;
+  color: purple;
+  margin-right: 20px;
+}
+
+#laundry-icon {
+  font-size: 50px;
+  color: #F7DA63;
+  margin-right: 20px;
+}
+
+#pet-icon {
+  font-size: 50px;
+  color: red;
+  margin-right: 20px;
+}
+
+#home-page-lists {
+  background-color: #3D57B2;
+  border-radius: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#button-center {
+  margin-left: 200px;
+  background-color: #3D57B2;
+}
+
+.ticked {
+  text-decoration: line-through;
+}
+
+.un-ticked {
+  text-decoration: none;
+}
+
+.ticked-green {
+  background-color: lightgreen;
+}
+
+.un-ticked-white {
+  background-color: white;
+}
+
+.purchased-button {
+  background-color: #3D57B2;
+  border: none;
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin-bottom: 10%;
+}
+
+.action-icon {
+  font-size: 25px;
+}
+
+.add-list-button {
+  border-radius: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 25px;
+  padding-right: 25px;
+  background-color: #3D57B2;
+}
+
+.heart-icon-red {
+  color: red;
+}
+
+.heart-icon {
+  color: white;
 }

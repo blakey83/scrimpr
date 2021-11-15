@@ -1355,8 +1355,37 @@ button.close {
     background: #333
 }
 
-.product__label--special {
-    background: yellow
+.product__label--special-woolworths-both {
+    margin-left: 20px;
+    padding: 10px;
+    background: green;
+    font-size: 10px;
+    color: white;
+    font-weight: 600;
+    width: 30%;
+    border-radius: 25px;
+}
+
+.product__label--special-woolworths {
+    margin-left: 0px;
+    padding: 10px;
+    background: green;
+    font-size: 10px;
+    color: white;
+    font-weight: 600;
+    width: 30%;
+    border-radius: 25px;
+}
+
+.product__label--special-coles-both {
+    margin-left: 40px;
+    padding: 10px;
+    background: red;
+    font-size: 10px;
+    color: white;
+    font-weight: 600;
+    width: 30%;
+    border-radius: 25px;
 }
 
 .product__counter-box {
