@@ -1,3 +1,24 @@
+mixin listItem(itemData)
+  .col-md-4.col-sm-6.col-12
+                    .product__box.product__default--single.text-center
+                      .product__img-box.pos-relative
+                        a.product__img--link(href='#')
+                          img.product__img.img-fluid(src=itemData.img alt='')
+                        ul.product__action--link.pos-absolute
+                          li
+                            a(href='#')
+                              i.icon-heart
+                          li
+                            a(href='#modalQuickView' data-bs-toggle='modal')
+                              i.icon-eye
+                      .product__content.m-t-20
+                        a.product__link(href='#')= itemData.item
+                        .product__price.m-t-5
+                          img(src='images/icons/woolworths/wwsquare.png' alt='HTML5 Icon' width='46' height='35')
+                          span.product__price= itemData.wooliesPrice
+                          img(src='images/icons/coles/colessquare.png' alt='HTML5 Icon' width='46' height='35')
+                          span.product__price=itemData.price
+
 doctype html
 head
   meta(charset='UTF-8')
@@ -301,6 +322,8 @@ main#main-container.main-container
                         span.product__price $2.20
                         p.special-p
                           span.product__label--special-woolworths SPECIAL
+                for item in data
+                  +listItem(item)          
                 .col-md-4.col-sm-6.col-12
                   .product__box.product__default--single.text-center
                     .product__img-box.pos-relative
