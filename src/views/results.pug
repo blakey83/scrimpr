@@ -4,11 +4,11 @@ head
   title Scrimpr | Insert text
   meta(name='description' content='')
   meta(name='viewport' content='width=device-width, initial-scale=1')
-  link(rel='shortcut icon' href='/images/favicon.png' type='image/png')
-  link(rel='stylesheet' href='/css/vendor/vendor.min.css')
-  link(rel='stylesheet' href='/css/plugin/plugins.min.css')
-  link(rel='stylesheet' href='/css/main.min.css')
-  link(rel='stylesheet' href='/css/main.css')
+  link(rel='shortcut icon' href='assets/img/favicon.png' type='image/png')
+  link(rel='stylesheet' href='assets/css/vendor/vendor.min.css')
+  link(rel='stylesheet' href='assets/css/plugin/plugins.min.css')
+  link(rel='stylesheet' href='assets/css/main.min.css')
+  link(rel='stylesheet' href='assets/css/main.css')
 header
   .header.d-none.d-lg-block
     .header__top
@@ -22,41 +22,42 @@ header
         .row
           .col-12.d-flex.justify-content-between.align-items-center
             .header__logo
-              a.header__logo-link.img-responsive(href='/')
-                img.header__logo-img.img-fluid(src='/images/logo/scrimprlogolargerls.jpg' alt='')
+              a.header__logo-link.img-responsive(href='index.html')
+                img.header__logo-img.img-fluid(src='assets/img/logo/scrimprlogolargerls.jpg' alt='')
             .header-menu
               nav
                 ul.header__nav
                   li.header__nav-item.pos-relative
-                    a.header__nav-link(href='/') Home
+                    a.header__nav-link(href='index.html') Home
                   li.header__nav-item.pos-relative
-                    a.header__nav-link(href='#')
+                    a.header__nav-link(href='mylists.html')
                       | Lists
                       i.fal.fa-chevron-down
                     ul.mega-menu.pos-absolute
                       li.mega-menu__box
                         .mega-menu__item-box
-                          span.mega-menu__title List Menu
+                          a(href='list.html' mega-menu__title='') List 1
+                          span.mega-menu__title List 2
+                          span.mega-menu__title List 3
                           ul.mega-menu__item
                         .mega-menu__item-box
                           ul.mega-menu__item
                             li.mega-menu__banner
                               a.mega-menu__banner-link(href='#')
-                                img.mega-menu__banner-img.mega-menu__banner-img--vertical(src='/images/banner/menu-banner.jpg' alt='')
                   li.header__nav-item.pos-relative
-                    a.header__nav-link(href='#') Empty
+                    a.header__nav-link(href='#')
                   li.header__nav-item.pos-relative
-                    a.header__nav-link(href='#') Empty
+                    a.header__nav-link(href='#')
                   li.header__nav-item.pos-relative
-                    a.header__nav-link(href='#') Empty
+                    a.header__nav-link(href='#')
                   li.header__nav-item.pos-relative
-                    a.header__nav-link(href='#') Empty
+                    a.header__nav-link(href='#')
             ul.header__user-action-icon
               li
-                a(href='#')
+                a(href='index.html')
                   i.icon-users
               li
-                a(href='#')
+                a(href='favourites.html')
                   i.icon-heart
     .header__bottom.p-tb-30
       .container
@@ -94,43 +95,100 @@ header
           .col-xl-2.col-lg-3
             .header-phone.text-end
               span
+  .header__mobile.mobile-header--1.d-block.d-lg-none.p-tb-20
+    .container-fluid
+      .row
+        .col-12.d-flex.align-items-center.justify-content-between
+          ul.header__mobile--leftside.d-flex.align-items-center.justify-content-start
+            li
+              .header__mobile-logo
+                a.header__mobile-logo-link(href='index.html')
+                  img.header__mobile-logo-img(src='assets/img/logo/scrimprlogolargerls.jpg' alt='')
+          ul.header__mobile--rightside.header__user-action-icon.d-flex.align-items-center.justify-content-end
+            li
+              a.offcanvas-toggle(href='#offcanvas-mobile-menu')
+                i.far.fa-bars
+      .row
+        .col-12
+          .header-menu-vertical.pos-relative.m-t-30
+            h4.menu-title.link--icon-left
+              i.far.fa-align-left
+              | CATEGORIES
+            ul.menu-content.pos-absolute
+              li.menu-item
+                a(href='#') Fruits and Vegetables
+              li.menu-item
+                a(href='#') Bakery
+              li.menu-item
+                a(href='#') Fridge
+              li.menu-item
+                a(href='#') Freezer
+              li.menu-item
+                a(href='#') Pantry
+              li.menu-item
+                a(href='#') Drinks
+              li.menu-item
+                a(href='#') Bathroom
+              li.menu-item
+                a(href='#') Laundry
+              li.menu-item
+                a(href='#') Pet
   #offcanvas-mobile-menu.offcanvas.offcanvas-mobile-menu
     .offcanvas__top
       span.offcanvas__top-text
       button.offcanvas-close
         i.fal.fa-times
     .offcanvas-inner
-      ul.user-set-role.d-flex.justify-content-between.m-tb-15
-        form.header-search.m-tb-15(action='#' method='post')
-          .header-search__content.pos-relative
-            input(type='search' name='header-search' placeholder='Search our store' required='')
-            button.pos-absolute(type='submit')
-              i.icon-search
-        ul.header__user-action-icon.m-tb-15.text-center
+      form.header-search.m-tb-15(action='#' method='post')
+        .header-search__content.pos-relative
+          input(type='search' name='header-search' placeholder='Search products' required='')
+          button.pos-absolute(type='submit')
+            i.icon-search
+      ul.header__user-action-icon.m-tb-15.text-center
+        li
+          a(href='#')
+            i.icon-users
+        li
+          a(href='favourites.html')
+            i.icon-heart
+      .offcanvas-menu
+        ul
+          li
+            a(href='index.html')
+              span Home
           li
             a(href='#')
-              i.icon-users
-          li
-            a(href='#')
-              i.icon-heart
-          li
-            a(href='#')
-        .offcanvas-menu
-          ul
-            li
-              a(href='/')
-                span Home
+              span My Lists
             ul.sub-menu
               li
-                a(href='#') Shop Pages
+                a(href='#') Shopping Lists
                 ul.sub-menu
                   li
-                    a(href='#') Wishlist
+                    a(href='shop-sidebar-grid-left.html')
+            ul.sub-menu
+              li
+                a(href='#') Title
+                ul.sub-menu
                   li
-                    a(href='my-account.html') My Account
+                    a(href='#') My Account
                   li
-                    a(href='login.html') Login
-        .offcanvas-overlay
+                    a(href='#') Login
+            ul.offcanvas__social-nav.m-t-50
+              li.offcanvas__social-list
+                a.offcanvas__social-link(href='#')
+                  i.fab.fa-facebook-f
+              li.offcanvas__social-list
+                a.offcanvas__social-link(href='#')
+                  i.fab.fa-twitter
+              li.offcanvas__social-list
+                a.offcanvas__social-link(href='#')
+                  i.fab.fa-youtube
+              li.offcanvas__social-list
+                a.offcanvas__social-link(href='#')
+                  i.fab.fa-google-plus-g
+              li.offcanvas__social-list
+                a.offcanvas__social-link(href='#')
+                  i.fab.fa-instagram
 main#main-container.main-container
   .container
     .row.flex-column-reverse.flex-lg-row
@@ -140,69 +198,62 @@ main#main-container.main-container
           .sidebar__widget
             .sidebar__box
       .col-lg-9
-        .row
-          .col-12
-            .product__catagory
-              .product__catagory--single
-                .product__content.product__content--catagory
-                  a.product__link(href='#') Fruits and Vegetables
-                .product__img-box.product__img-box--catagory
-                  a.product__img--link(href='#')
-                    img.product__img.img-fluid(src='/images/product/category/fruits-and-vegetables.png' alt='')
-              .product__catagory--single
-                .product__content.product__content--catagory
-                  a.product__link(href='#') Bakery
-                .product__img-box.product__img-box--catagory
-                  a.product__img--link(href='#')
-                    img.product__img.img-fluid(src='/images/product/category/bread.png' alt='')
-              .product__catagory--single
-                .product__content.product__content--catagory
-                  a.product__link(href='#') Fridge
-                .product__img-box.product__img-box--catagory
-                  a.product__img--link(href='#')
-                    img.product__img.img-fluid(src='/images/product/category/fridge.png' alt='')
-              .product__catagory--single
-                .product__content.product__content--catagory
-                  a.product__link(href='#') Freezer
-                .product__img-box.product__img-box--catagory
-                  a.product__img--link(href='#')
-                    img.product__img.img-fluid(src='/images/product/category/freezer.png' alt='')
-              .product__catagory--single
-                .product__content.product__content--catagory
-                  a.product__link(href='#') Pantry
-                .product__img-box.product__img-box--catagory
-                  a.product__img--link(href='#')
-                    img.product__img.img-fluid(src='/images/product/category/pantry.png' alt='')
-              .product__catagory--single
-                .product__content.product__content--catagory
-                  a.product__link(href='#') Drinks
-                .product__img-box.product__img-box--catagory
-                  a.product__img--link(href='#')
-                    img.product__img.img-fluid(src='/images/product/category/drinks.png' alt='')
-              .product__catagory--single
-                .product__content.product__content--catagory
-                  a.product__link(href='#') Bathroom
-                .product__img-box.product__img-box--catagory
-                  a.product__img--link(href='#')
-                    img.product__img.img-fluid(src='/images/product/category/bathroom.png' alt='')
-              .product__catagory--single
-                .product__content.product__content--catagory
-                  a.product__link(href='#') Laundry
-                .product__img-box.product__img-box--catagory
-                  a.product__img--link(href='#')
-                    img.product__img.img-fluid(src='/images/product/category/laundry.png' alt='')
-              .product__catagory--single
-                .product__content.product__content--catagory
-                  a.product__link(href='#') Pet
-                .product__img-box.product__img-box--catagory
-                  a.product__img--link(href='#')
-                    img.product__img.img-fluid(src='/images/product/category/pet.png' alt='')
-              .product__catagory--single
-                .product__content.product__content--catagory
-                  a.product__link(href='#') Empty
-                .product__img-box.product__img-box--catagory
-                  a.product__img--link(href='#')
-                    img.product__img.img-fluid(src='/images/product/category/category-home-1-img-10.jpg' alt='')
+        .img-responsive
+          .product__catagory
+            .product__catagory--single
+              .product__content.product__content--catagory
+                a.product__link(href='#') Fruits and Vegetables
+              .product__img-box.product__img-box--catagory
+                a.product__img--link(href='#')
+              i#fruits-vegetables-icon.fas.fa-carrot
+            .product__catagory--single
+              .product__content.product__content--catagory
+                a.product__link(href='#') Bakery
+              .product__img-box.product__img-box--catagory
+                a.product__img--link(href='#')
+              i#bakery-icon.fas.fa-bread-slice
+            .product__catagory--single
+              .product__content.product__content--catagory
+                a.product__link(href='#') Fridge
+              .product__img-box.product__img-box--catagory
+                a.product__img--link(href='#')
+              i#fridge-icon.fas.fa-drumstick-bite
+            .product__catagory--single
+              .product__content.product__content--catagory
+                a.product__link(href='#') Freezer
+              .product__img-box.product__img-box--catagory
+                a.product__img--link(href='#')
+              i#freezer-icon.fas.fa-ice-cream
+            .product__catagory--single
+              .product__content.product__content--catagory
+                a.product__link(href='#') Pantry
+              .product__img-box.product__img-box--catagory
+                a.product__img--link(href='#')
+              i#pantry-icon.fas.fa-cookie
+            .product__catagory--single
+              .product__content.product__content--catagory
+                a.product__link(href='#') Drinks
+              .product__img-box.product__img-box--catagory
+                a.product__img--link(href='#')
+              i#drinks-icon.fas.fa-glass-whiskey
+            .product__catagory--single
+              .product__content.product__content--catagory
+                a.product__link(href='#') Bathroom
+              .product__img-box.product__img-box--catagory
+                a.product__img--link(href='#')
+              i#bathroom-icon.fas.fa-pump-soap
+            .product__catagory--single
+              .product__content.product__content--catagory
+                a.product__link(href='#') Laundry
+              .product__img-box.product__img-box--catagory
+                a.product__img--link(href='#')
+              i#laundry-icon.fas.fa-soap
+            .product__catagory--single
+              .product__content.product__content--catagory
+                a.product__link(href='#') Pet
+              .product__img-box.product__img-box--catagory
+                a.product__img--link(href='#')
+              i#pet-icon.fas.fa-dog
         .sort-box.m-tb-40
           .sort-box-item
             .sort-box__tab
@@ -224,7 +275,7 @@ main#main-container.main-container
                   option(value='4')  Price, low to high
                   option(value='5') Price, high to low
           .sort-box-item
-            span Showing 1 - x of x results
+            span Showing 1 - 9 of 9 results
         .product-tab-area
           .tab-content.tab-animate-zoom
             #sort-grid.tab-pane.shop-grid
@@ -233,7 +284,7 @@ main#main-container.main-container
                   .product__box.product__default--single.text-center
                     .product__img-box.pos-relative
                       a.product__img--link(href='#')
-                        img.product__img.img-fluid(src='/images/product/size-normal/product-home-1-img-6.jpg' alt='')
+                        img.product__img.img-fluid(src='assets/img/product/size-normal/3706832-twisties.jpg' alt='')
                       ul.product__action--link.pos-absolute
                         li
                           a(href='#')
@@ -242,14 +293,19 @@ main#main-container.main-container
                           a(href='#' data-bs-toggle='modal')
                             i.icon-eye
                     .product__content.m-t-20
-                      a.product__link(href='#') Item
+                      a.product__link(href='#') Twisties Cheese 90g
                       .product__price.m-t-5
-                        span.product__price $00.00
+                        img(src='assets/img/icons/woolworths/wwsquare.png' alt='HTML5 Icon' width='46' height='35')
+                        span.product__price $1.00
+                        img(src='assets/img/icons/coles/colessquare.png' alt='HTML5 Icon' width='46' height='35')
+                        span.product__price $2.20
+                        p.special-p
+                          span.product__label--special-woolworths SPECIAL
                 .col-md-4.col-sm-6.col-12
                   .product__box.product__default--single.text-center
                     .product__img-box.pos-relative
                       a.product__img--link(href='#')
-                        img.product__img.img-fluid(src='/images/product/size-normal/product-home-1-img-7.jpg' alt='')
+                        img.product__img.img-fluid(src='assets/img/product/size-normal/7879468-cheezels.jpg' alt='')
                       ul.product__action--link.pos-absolute
                         li
                           a(href='#')
@@ -258,14 +314,19 @@ main#main-container.main-container
                           a(href='#modalQuickView' data-bs-toggle='modal')
                             i.icon-eye
                     .product__content.m-t-20
-                      a.product__link(href='#') Item
+                      a.product__link(href='#')
+                        | Cheezels Original Cheese Snacks
+                        | 125g
                       .product__price.m-t-5
-                        span.product__price $00.00
+                        img(src='assets/img/icons/woolworths/wwsquare.png' alt='HTML5 Icon' width='46' height='35')
+                        span.product__price $2.50
+                        img(src='assets/img/icons/coles/colessquare.png' alt='HTML5 Icon' width='46' height='35')
+                        span.product__price $2.50
                 .col-md-4.col-sm-6.col-12
                   .product__box.product__default--single.text-center
                     .product__img-box.pos-relative
                       a.product__img--link(href='#')
-                        img.product__img.img-fluid(src='/images/product/size-normal/product-home-1-img-8.jpg' alt='')
+                        img.product__img.img-fluid(src='assets/img/product/size-normal/1786182-chips.jpg' alt='')
                       ul.product__action--link.pos-absolute
                         li
                           a(href='#')
@@ -274,15 +335,22 @@ main#main-container.main-container
                           a(href='#modalQuickView' data-bs-toggle='modal')
                             i.icon-eye
                     .product__content.m-t-20
-                      a.product__link(href='#') Item
+                      a.product__link(href='#')
+                        | Red Rock Deli Potato Chips Sweet
+                        | Chilli And Sour Cream
                       .product__price.m-t-5
-                        span.product__price $00.00
+                        img(src='assets/img/icons/woolworths/wwsquare.png' alt='HTML5 Icon' width='46' height='35')
+                        span.product__price $3.50
+                        img(src='assets/img/icons/coles/colessquare.png' alt='HTML5 Icon' width='46' height='35')
+                        span.product__price $3.25
+                        p.special-p
+                          span.product__label--special-woolworths-both SPECIAL
+                          span.product__label--special-coles-both SPECIAL
                 .col-md-4.col-sm-6.col-12
                   .product__box.product__default--single.text-center
                     .product__img-box.pos-relative
                       a.product__img--link(href='#')
-                        img.product__img.img-fluid(src='/images/product/size-normal/product-home-1-img-9.jpg' alt='')
-                      span.product__label.product__label--special Special
+                        img.product__img.img-fluid(src='assets/img/product/size-normal/3706107-burgerrings.jpg' alt='')
                       ul.product__action--link.pos-absolute
                         li
                           a(href='#')
@@ -291,15 +359,19 @@ main#main-container.main-container
                           a(href='#modalQuickView' data-bs-toggle='modal')
                             i.icon-eye
                     .product__content.m-t-20
-                      a.product__link(href='#') Item
+                      a.product__link(href='#') Burger Rings Snacks 125g
                       .product__price.m-t-5
-                        span.product__price $00.00
+                        img(src='assets/img/icons/woolworths/wwsquare.png' alt='HTML5 Icon' width='46' height='35')
+                        span.product__price $1.00
+                        img(src='assets/img/icons/coles/colessquare.png' alt='HTML5 Icon' width='46' height='35')
+                        span.product__price $2.20
+                        p.special-p
+                          span.product__label--special-woolworths SPECIAL
                 .col-md-4.col-sm-6.col-12
                   .product__box.product__default--single.text-center
                     .product__img-box.pos-relative
                       a.product__img--link(href='#')
-                        img.product__img.img-fluid(src='/images/product/size-normal/product-home-1-img-10.jpg' alt='')
-                      span.product__label.product__label--special Special
+                        img.product__img.img-fluid(src='assets/img/product/size-normal/2358275-smithsoriginal.jpg' alt='')
                       ul.product__action--link.pos-absolute
                         li
                           a(href='#')
@@ -308,14 +380,19 @@ main#main-container.main-container
                           a(href='#modalQuickView' data-bs-toggle='modal')
                             i.icon-eye
                     .product__content.m-t-20
-                      a.product__link(href='#') Item
+                      a.product__link(href='#')
+                        | Smiths Crinkle Cut Original Potato
+                        | Chips 170g
                       .product__price.m-t-5
-                        span.product__price $00.00
+                        img(src='assets/img/icons/woolworths/wwsquare.png' alt='HTML5 Icon' width='46' height='35')
+                        span.product__price $3.75
+                        img(src='assets/img/icons/coles/colessquare.png' alt='HTML5 Icon' width='46' height='35')
+                        span.product__price $3.75
                 .col-md-4.col-sm-6.col-12
                   .product__box.product__default--single.text-center
                     .product__img-box.pos-relative
                       a.product__img--link(href='#')
-                        img.product__img.img-fluid(src='/images/product/size-normal/product-home-1-img-1.jpg' alt='')
+                        img.product__img.img-fluid(src='assets/img/product/size-normal/2358300-smithschicken.jpg' alt='')
                       ul.product__action--link.pos-absolute
                         li
                           a(href='#')
@@ -324,14 +401,19 @@ main#main-container.main-container
                           a(href='#modalQuickView' data-bs-toggle='modal')
                             i.icon-eye
                     .product__content.m-t-20
-                      a.product__link(href='#') Item
+                      a.product__link(href='#')
+                        | Smiths Crinkle Cut Chicken Potato
+                        | Chips 170g
                       .product__price.m-t-5
-                        span.product__price $00.00
+                        img(src='assets/img/icons/woolworths/wwsquare.png' alt='HTML5 Icon' width='46' height='35')
+                        span.product__price $3.75
+                        img(src='assets/img/icons/coles/colessquare.png' alt='HTML5 Icon' width='46' height='35')
+                        span.product__price $3.75
                 .col-md-4.col-sm-6.col-12
                   .product__box.product__default--single.text-center
                     .product__img-box.pos-relative
                       a.product__img--link(href='#')
-                        img.product__img.img-fluid(src='/images/product/size-normal/product-home-1-img-2.jpg' alt='')
+                        img.product__img.img-fluid(src='assets/img/product/size-normal/8156535-kettle.jpg' alt='')
                       ul.product__action--link.pos-absolute
                         li
                           a(href='#')
@@ -340,14 +422,19 @@ main#main-container.main-container
                           a(href='#modalQuickView' data-bs-toggle='modal')
                             i.icon-eye
                     .product__content.m-t-20
-                      a.product__link(href='#') Item
+                      a.product__link(href='#') Kettle Sea Salt Potato Chips
                       .product__price.m-t-5
-                        span.product__price $00.00
+                        img(src='assets/img/icons/woolworths/wwsquare.png' alt='HTML5 Icon' width='46' height='35')
+                        span.product__price $4.65
+                        img(src='assets/img/icons/coles/colessquare.png' alt='HTML5 Icon' width='46' height='35')
+                        span.product__price $3.50
+                        p.special-p
+                          span.product__label--special-coles SPECIAL
                 .col-md-4.col-sm-6.col-12
                   .product__box.product__default--single.text-center
                     .product__img-box.pos-relative
                       a.product__img--link(href='#')
-                        img.product__img.img-fluid(src='/images/product/size-normal/product-home-1-img-3.jpg' alt='')
+                        img.product__img.img-fluid(src='assets/img/product/size-normal/7117775-frenchfries.jpg' alt='')
                       ul.product__action--link.pos-absolute
                         li
                           a(href='#')
@@ -356,14 +443,20 @@ main#main-container.main-container
                           a(href='#modalQuickView' data-bs-toggle='modal')
                             i.icon-eye
                     .product__content.m-t-20
-                      a.product__link(href='#') Item
+                      a.product__link(href='#') French Fries Original Potato Chips
                       .product__price.m-t-5
-                        span.product__price $00.00
+                        img(src='assets/img/icons/woolworths/wwsquare.png' alt='HTML5 Icon' width='46' height='35')
+                        span.product__price $1.75
+                        img(src='assets/img/icons/coles/colessquare.png' alt='HTML5 Icon' width='46' height='35')
+                        span.product__price $1.75
+                        p.special-p
+                          span.product__label--special-woolworths-both SPECIAL
+                          span.product__label--special-coles-both SPECIAL
                 .col-md-4.col-sm-6.col-12
                   .product__box.product__default--single.text-center
                     .product__img-box.pos-relative
                       a.product__img--link(href='#')
-                        img.product__img.img-fluid(src='/images/product/size-normal/product-home-1-img-4.jpg' alt='')
+                        img.product__img.img-fluid(src='assets/img/product/size-normal/6833927-lighttangy.jpg' alt='')
                       ul.product__action--link.pos-absolute
                         li
                           a(href='#')
@@ -372,24 +465,39 @@ main#main-container.main-container
                           a(href='#modalQuickView' data-bs-toggle='modal')
                             i.icon-eye
                     .product__content.m-t-20
-                      a.product__link(href='#') Item
+                      a.product__link(href='#')
+                        | Thins Light and Tangy Potato Chips
+                        | 175g
                       .product__price.m-t-5
-                        span.product__price $00.00
+                        img(src='assets/img/icons/woolworths/wwsquare.png' alt='HTML5 Icon' width='46' height='35')
+                        span.product__price $1.75
+                        img(src='assets/img/icons/coles/colessquare.png' alt='HTML5 Icon' width='46' height='35')
+                        span.product__price $3.50
+                        p.special-p
+                          span.product__label--special-woolworths SPECIAL
             #sort-list.tab-pane.show.active.shop-list
               .row
                 .col-12
                   .product__box.product__box--list
                     .product__img-box.pos-relative.text-center
                       a.product__img--link(href='#')
-                        img.product__img.img-fluid(src='/images/product/size-normal/product-home-1-img-5.jpg' alt='')
+                        img.product__img.img-fluid(src='assets/img/product/size-normal/1786182-chips.jpg' alt='')
                     .product__content
                       a.product__link(href='#')
-                        h5.font--regular Item
+                        h5.font--regular
+                          | Red Rock Deli Potato Chips Sweet
+                          | Chilli And Sour Cream
                       .product__price.m-t-5
-                        span.product__price $00.00
+                        img(src='assets/img/icons/woolworths/wwsquare.png' alt='HTML5 Icon' width='46' height='35')
+                        span.product__price $3.50
+                        img(src='assets/img/icons/coles/colessquare.png' alt='HTML5 Icon' width='46' height='35')
+                        span.product__price $3.25
+                        p.special-p
+                          span.product__label--special-woolworths-both SPECIAL
+                          span.product__label--special-coles-both SPECIAL
                       ul.product__action--link-list.m-t-30
                         li
-                          a.btn--black.btn--black-hover-blue(href='#modalAddCart' data-bs-toggle='modal') Compare
+                          a.btn--black.btn--black-hover-blue(href='#modalAddList' data-bs-toggle='modal') Add to List
                         li
                           a(href='#')
                             i.icon-heart
@@ -397,15 +505,20 @@ main#main-container.main-container
                   .product__box.product__box--list
                     .product__img-box.pos-relative.text-center
                       a.product__img--link(href='#')
-                        img.product__img.img-fluid(src='/images/product/size-normal/product-home-1-img-8.jpg' alt='')
+                        img.product__img.img-fluid(src='assets/img/product/size-normal/3706832-twisties.jpg' alt='')
                     .product__content
                       a.product__link(href='#')
-                        h5.font--regular Item
+                        h5.font--regular Twisties Cheese 90g
                       .product__price.m-t-5
-                        span.product__price $00.00
+                        img(src='assets/img/icons/woolworths/wwsquare.png' alt='HTML5 Icon' width='46' height='35')
+                        span.product__price $1.00
+                        img(src='assets/img/icons/coles/colessquare.png' alt='HTML5 Icon' width='46' height='35')
+                        span.product__price $2.20
+                        p.special-p
+                          span.product__label--special-woolworths-list SPECIAL
                       ul.product__action--link-list.m-t-30
                         li
-                          a.btn--black.btn--black-hover-blue(href='#modalAddCart' data-bs-toggle='modal') Compare
+                          a.btn--black.btn--black-hover-blue(href='#modalAddList' data-bs-toggle='modal') Add to List
                         li
                           a(href='#')
                             i.icon-heart
@@ -413,15 +526,20 @@ main#main-container.main-container
                   .product__box.product__box--list
                     .product__img-box.pos-relative.text-center
                       a.product__img--link(href='#')
-                        img.product__img.img-fluid(src='/images/product/size-normal/product-home-1-img-4.jpg' alt='')
+                        img.product__img.img-fluid(src='assets/img/product/size-normal/8156535-kettle.jpg' alt='')
                     .product__content
                       a.product__link(href='#')
-                        h5.font--regular Item
+                        h5.font--regular Kettle Sea Salt Potato Chips 175g
                       .product__price.m-t-5
-                        span.product__price $00.00
+                        img(src='assets/img/icons/woolworths/wwsquare.png' alt='HTML5 Icon' width='46' height='35')
+                        span.product__price $4.65
+                        img(src='assets/img/icons/coles/colessquare.png' alt='HTML5 Icon' width='46' height='35')
+                        span.product__price $3.50
+                        p.special-p
+                          span.product__label--special-coles SPECIAL
                       ul.product__action--link-list.m-t-30
                         li
-                          a.btn--black.btn--black-hover-blue(href='#modalAddCart' data-bs-toggle='modal') Compare
+                          a.btn--black.btn--black-hover-blue(href='#modalAddList' data-bs-toggle='modal') Add to List
                         li
                           a(href='#')
                             i.icon-heart
@@ -429,16 +547,21 @@ main#main-container.main-container
                   .product__box.product__box--list
                     .product__img-box.pos-relative.text-center
                       a.product__img--link(href='#')
-                        img.product__img.img-fluid(src='/images/product/size-normal/product-home-1-img-9.jpg' alt='')
-                      span.product__label.product__label--special Special
+                        img.product__img.img-fluid(src='assets/img/product/size-normal/6833927-lighttangy.jpg' alt='')
                     .product__content
                       a.product__link(href='#')
-                        h5.font--regular Item
+                        h5.font--regular
+                          | Thins Light and Tangy Potato Chips 175g
                       .product__price.m-t-5
-                        span.product__price $00.00
+                        img(src='assets/img/icons/woolworths/wwsquare.png' alt='HTML5 Icon' width='46' height='35')
+                        span.product__price $1.75
+                        img(src='assets/img/icons/coles/colessquare.png' alt='HTML5 Icon' width='46' height='35')
+                        span.product__price $3.50
+                        p.special-p
+                          span.product__label--special-woolworths-list SPECIAL
                       ul.product__action--link-list.m-t-30
                         li
-                          a.btn--black.btn--black-hover-blue(href='#modalAddCart' data-bs-toggle='modal') Compare
+                          a.btn--black.btn--black-hover-blue(href='#modalAddList' data-bs-toggle='modal') Add to List
                         li
                           a(href='#')
                             i.icon-heart
@@ -459,12 +582,12 @@ footer.footer.m-t-100
         .col-lg-4.col-md-5
           .footer__about
             .footer__logo
-              a.footer__logo-link(href='/')
-                img.footer__logo-img(src='/images/logo/scrimprlogolarger.png' alt='')
+              a.footer__logo-link(href='index.html')
+                img.footer__logo-img(src='assets/img/logo/scrimprlogolarger.png' alt='')
             ul.footer__address
               li.footer__address-item
                 i.fa.fa-envelope
-                | support@somemail.com
+                | support@scrimpr.com
             ul.footer__social-nav
               li.footer__social-list
                 a.footer__social-link(href='#')
@@ -484,9 +607,9 @@ footer.footer.m-t-100
               | APPLICATION
             ul.footer__nav
               li.footer__list
-                a.footer__link(href='') Search Products
+                a.footer__link(href='results.html') Search Products
               li.footer__list
-                a.footer__link(href='') Create New List
+                a.footer__link(href='list.html') Create New List
         .col-lg-2.col-md-3.col-sm-6.col-12
           .footer__menu
             h4.footer__nav-title.footer__nav-title--dash.footer__nav-title--dash-red
@@ -504,9 +627,10 @@ footer.footer.m-t-100
               | MY ACCOUNT
             ul.footer__nav
               li.footer__list
-                a.footer__link(href='') My Lists
+                a.footer__link(href='mylists.html') My Lists
               li.footer__list
-                a.footer__link(href='') My Favourites
+                a.footer__link(href='favourites.html')
+                  | Favourites
               li.footer__list
                 a.footer__link(href='') Helps &amp; Faqs
   .footer__bottom
@@ -519,7 +643,6 @@ footer.footer.m-t-100
             | . All Rights Reserved
         .col-lg-4.col-md-6.col-12
 button.material-scrolltop(type='button')
-script(src='/js/vendor/vendor.min.js')
-script(src='/js/plugin/plugins.min.js')
-script(src='/env.js')
-script(src='/js/main.js')
+script(src='assets/js/vendor/vendor.min.js')
+script(src='assets/js/plugin/plugins.min.js')
+script(src='assets/js/main.js')

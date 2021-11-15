@@ -1,22 +1,23 @@
-.col-12
-    div.product__box.product__box--list
-        div.product__img-box.pos-relative.text-center
-            a.product__img--link(href="#")
-                img.product__img.img-fluid(src="../assets/img/product/size-normal/1786182-chips.jpg")
-        div.product__content
-            a.product__link(href="#")
-                h5.font--regular Red Rock Deli Potato Chips Sweet Chilli And Sour Cream
-            div.product__price.m-t-5
-                img(src="../assets/img/icons/woolworths/wwsquare.png" alt="HTML5 Icon" width="46" height="35")
-                span.product__price $3.50
-                img(src="../assets/img/icons/coles/colessquare.png" alt="HTML5 Icon" width="46" height="35")
-                span.product__price $3.25
-                p.special-p
-                    span.product__label--special-woolworths-both SPECIAL 
-                    span.product__label--special-coles-both SPECIAL
-            ul.product__action--link-list.m-t-30
-                li 
-                    a.btn--black.btn--black-hover-blue(href="#modalAddList" data-bs-toggle="modal") Add to List
-                li
-                    a(href="#")
-                        i.icon-heart
+mixin listItem(itemData)
+    .col-12
+        div.product__box.product__box--list
+            div.product__img-box.pos-relative.text-center
+                a.product__img--link(href="#")
+                    img.product__img.img-fluid(src="../assets/img/product/size-normal/1786182-chips.jpg")
+            div.product__content
+                a.product__link(href="#")
+                    h5.font--regular Red Rock Deli Potato Chips Sweet Chilli And Sour Cream
+                div.product__price.m-t-5
+                    img(src="../assets/img/icons/woolworths/wwsquare.png" alt="HTML5 Icon" width="46" height="35")
+                    span.product__price $3.50
+                    img(src="../assets/img/icons/coles/colessquare.png" alt="HTML5 Icon" width="46" height="35")
+                    span.product__price $3.25
+                    p.special-p
+                        span.product__label--special-woolworths-both SPECIAL 
+                        span.product__label--special-coles-both SPECIAL
+                ul.product__action--link-list.m-t-30
+                    li 
+                        a.btn--black.btn--black-hover-blue(href="#modalAddList" data-bs-toggle="modal") Add to List
+                    li
+                        a(href="#")
+                            i.icon-heart
