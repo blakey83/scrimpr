@@ -23,7 +23,7 @@ router.get('/mylists', (_, res) => void res.render('mylists'));
 router.get('/products', (_, res) => void res.render('products'));
 router.get('/register', (_, res) => void res.render('register'));
 router.get('/results', async function(_, res) {
-  res.render('results', { data: await scraper("toothpaste") } );
+  res.render('results', { data: await scraper("coffee") } );
 });
 
 
