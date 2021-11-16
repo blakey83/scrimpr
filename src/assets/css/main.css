@@ -6564,3 +6564,44 @@ table tbody>tr td a:hover {
     width: 300px;
     height: 300px;
 }
+
+.share {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 30%;
+    margin: auto;
+    width: 50%;
+    z-index: 1;
+    padding: 1em;
+    background: white;
+}
+
+.overlay {
+    opacity: 1;
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.share,
+.overlay {
+    display: none;
+}
+
+.show-share {
+    display: block;
+}
+
+.share-h2 {
+    margin: 0;
+
+}
+
+.share-button {
+    font-size: 20px;
+}

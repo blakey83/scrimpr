@@ -73,6 +73,42 @@
 
     </script>
 
+    <!--<script>
+
+        
+
+        const shareButton = document.querySelector('share-button');
+        const overlay = document.querySelector('.overlay');
+        const shareModal = document.querySelector('.share');
+
+        const title = window.document.title;
+        const url = window.document.location.href;
+
+        shareButton.addEventListener('click', () => {
+            if (navigator.share) {
+                navigator.share({
+                    title: `${title}`,
+                    url: `${url}`
+                }).then(() => {
+                    console.log('Thanks');
+                    //alert("List 1 has been shared");
+                })
+                    .catch(console.error);
+                //.catch(alert("Error sharing list"));
+            } else {
+                overlay.classList.add('show-share');
+                shareModal.classList.add('show-share');
+            }
+        })
+
+        overlay.addEventListener('click', () => {
+            overlay.classList.remove('show-share');
+            shareModal.classList.remove('show-share');
+        })
+    -->
+
+    </script>
+
 </head>
 
 <body>
@@ -327,8 +363,58 @@
                 <div class="col-12">
                     <div class="section-content">
                         <h5 class="section-content__title">List title</h5>
-                        <i class="fa fa-share-alt" aria-hidden="true"></i>
+                        <a onclick="webShare()"><i id="share-button" class="fa fa-share-alt share-button"
+                                aria-hidden="true"></i></a>
+
                     </div>
+
+                    <div class="overlay"></div>
+                    <div class="share">
+                        <p>No Message</p>
+                    </div>
+
+                    <script>
+                        let modal = document.querySelector(".overlay");
+
+                        const title = window.document.title;
+                        const url = window.document.location.href;
+                        const list1 = "Cheezels Original Cheese Snacks 125g x 1\n";
+                        const list2 = "Kettle Sea Salt Potato Chips 175g x 1\n";
+                        const list3 = "Twisties Cheese 90g x 1\n";
+                        const fullList = list1 + list2 + list3;
+
+                        const shareData = {
+                            title: `${title}`,
+                            url: `${url}`,
+                            text: `${fullList}`
+                        };
+
+                        let message = "Default Message";
+                        async function webShare() {
+                            if (navigator.share) {
+                                try {
+                                    await navigator.share(shareData);
+                                    message = "<p>Thank You</p>";
+                                    showMsg(message);
+                                } catch (err) {
+                                    message = "<p>Something went wrong</p>";
+                                    showMsg(message);
+                                }
+                            } else {
+                                message = "<p> Web Share API not Supported </p>";
+                                showMsh(message);
+                            }
+                        }
+
+                        function showMsg(msg) {
+                            overlay.innerhtml = msg;
+                            overlay.style.display = "block";
+                            setTimeout(() => {
+                                overlay.style.display = "none";
+                            }, 3000);
+                        }
+
+                    </script>
 
                     <div class="table-content table-responsive-sm list-table-content m-t-30">
                         <table>
@@ -360,7 +446,7 @@
                                             src="../assets/images/icons/woolworths/wwsquare.png" alt="HTML5 Icon"
                                             width="46" height="35"></td>
                                     <td class="product-quantities">
-                                        <div class="quantity d-inline-block">
+                                        <div id="quantity-one" class="quantity d-inline-block">
                                             <input type="number" min="1" step="1" value="1">
                                         </div>
                                     </td>
@@ -386,7 +472,7 @@
                                             src="../assets/images/icons/coles/colessquare.png" alt="HTML5 Icon"
                                             width="46" height="35"></td>
                                     <td class="product-quantities">
-                                        <div class="quantity d-inline-block">
+                                        <div id="quantity-two" class="quantity d-inline-block">
                                             <input type="number" min="1" step="1" value="1">
                                         </div>
                                     </td>
@@ -406,13 +492,13 @@
                                                 alt=""></a>
                                     </td>
                                     <td class="product-name"><a>
-                                            <p id="product-two">Twisties Cheese 90g</p>
+                                            <p id="product-three">Twisties Cheese 90g</p>
                                         </a></td>
                                     <td class="product-price-list"><span class="amount">$1.00</span><img
                                             src="../assets/images/icons/woolworths/wwsquare.png" alt="HTML5 Icon"
                                             width="46" height="35"></td>
                                     <td class="product-quantities">
-                                        <div class="quantity d-inline-block">
+                                        <div id="quantity-three" class="quantity d-inline-block">
                                             <input type="number" min="1" step="1" value="1">
                                         </div>
                                     </td>
@@ -446,6 +532,8 @@
             </div>
 
     </main>
+
+
 
     <footer class="footer m-t-100">
         <div class="container">
