@@ -14,6 +14,19 @@
 
     <script>
 
+        function clearList() {
+
+            let row1 = document.getElementById("row-one");
+            row1.remove();
+
+            let row2 = document.getElementById("row-two");
+            row2.remove();
+
+            let row3 = document.getElementById("row-three");
+            row3.remove();
+
+        }
+
         function itemPurchasedOne() {
 
             document.getElementById('row-one').className = "ticked-green";
@@ -70,42 +83,6 @@
             document.getElementById('row-three').className = "un-ticked-white";
 
         }
-
-    </script>
-
-    <!--<script>
-
-        
-
-        const shareButton = document.querySelector('share-button');
-        const overlay = document.querySelector('.overlay');
-        const shareModal = document.querySelector('.share');
-
-        const title = window.document.title;
-        const url = window.document.location.href;
-
-        shareButton.addEventListener('click', () => {
-            if (navigator.share) {
-                navigator.share({
-                    title: `${title}`,
-                    url: `${url}`
-                }).then(() => {
-                    console.log('Thanks');
-                    //alert("List 1 has been shared");
-                })
-                    .catch(console.error);
-                //.catch(alert("Error sharing list"));
-            } else {
-                overlay.classList.add('show-share');
-                shareModal.classList.add('show-share');
-            }
-        })
-
-        overlay.addEventListener('click', () => {
-            overlay.classList.remove('show-share');
-            shareModal.classList.remove('show-share');
-        })
-    -->
 
     </script>
 
@@ -370,7 +347,7 @@
 
                     <div class="overlay"></div>
                     <div class="share">
-                        <p>No Message</p>
+                        <p></p>
                     </div>
 
                     <script>
@@ -378,10 +355,11 @@
 
                         const title = window.document.title;
                         const url = window.document.location.href;
+                        const listTitle = "List 1\n";
                         const list1 = "Cheezels Original Cheese Snacks 125g x 1\n";
                         const list2 = "Kettle Sea Salt Potato Chips 175g x 1\n";
                         const list3 = "Twisties Cheese 90g x 1\n";
-                        const fullList = list1 + list2 + list3;
+                        const fullList = listTitle + list1 + list2 + list3;
 
                         const shareData = {
                             title: `${title}`,
@@ -518,14 +496,14 @@
 
                     <div class="list-table-button m-t-10">
                         <div class="list-table-button--left">
-                            <a
+                            <a href="index.html"
                                 class="btn btn--box btn--large btn--radius btn--blue btn--blue-hover-black btn--uppercase font--bold m-t-20">CONTINUE
-                                SHOPPING</a>
+                                SEARCHING</a>
                         </div>
                         <div class="list-table-button--right">
-                            <a href="#"
+                            <a onclick="clearList()"
                                 class="btn btn--box btn--large btn--radius btn--black btn--black-hover-blue btn--uppercase font--bold m-t-20">Clear
-                                Shopping List</a>
+                                List</a>
                         </div>
                     </div>
                 </div>
