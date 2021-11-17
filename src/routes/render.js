@@ -22,8 +22,8 @@ router.get('/list', (_, res) => void res.render('list'));
 router.get('/mylists', (_, res) => void res.render('mylists'));
 router.get('/products', (_, res) => void res.render('products'));
 router.get('/register', (_, res) => void res.render('register'));
-router.get('/results', async function(_, res) {
-  res.render('results', { data: await scraper("coffee") } );
+router.get('/results', async function(req, res) {
+  res.render('results', { data: await scraper(req.query.search) } );
 });
 
 
