@@ -1,0 +1,12 @@
+html {
+}
+
+html {
+}
+
+@media (min-width:992px) {
+  .align-items-lg-center {
+    align-items: center!important;
+  }
+}
+
