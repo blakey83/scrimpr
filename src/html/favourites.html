@@ -13,6 +13,29 @@
     <link rel="stylesheet" href="../assets/css/main.min.css">
     <link rel="stylesheet" href="../assets/css/main.css">
 
+    <script>
+
+        function removeOne() {
+
+            let row = document.getElementById("row-one");
+            row.remove();
+        }
+
+        function removeTwo() {
+
+            let row = document.getElementById("row-two");
+            row.remove();
+        }
+
+        function removeThree() {
+
+            let row = document.getElementById("row-three");
+            row.remove();
+
+        }
+
+    </script>
+
 </head>
 
 <body>
@@ -281,7 +304,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                <tr id="row-one">
                                     <td class="product-thumbnail">
                                         <a href="#"><img class="img-fluid"
                                                 src="../assets/images/product/size-normal/2710437-oreo.jpg" alt=""></a>
@@ -297,10 +320,11 @@
                                     <td class="product-add-list">
                                         <li><a href="#" data-bs-toggle="modal"
                                                 class="btn--black btn--black-hover-blue add-list-button">Add</a>
+                                            <a><i class="fa fa-times action-icon" onclick="removeOne()"></i></a>
                                         </li>
                                     </td>
                                 </tr>
-                                <tr>
+                                <tr id="row-two">
                                     <td class="product-thumbnail">
                                         <a href="#"><img class="img-fluid"
                                                 src="../assets/images/product/size-normal/5519494-milk.jpg" alt=""></a>
@@ -316,10 +340,11 @@
                                     <td class="product-add-list">
                                         <li><a href="#" data-bs-toggle="modal"
                                                 class="btn--black btn--black-hover-blue add-list-button">Add</a>
+                                            <a><i class="fa fa-times action-icon" onclick="removeTwo()"></i></a>
                                         </li>
                                     </td>
                                 </tr>
-                                <tr>
+                                <tr id="row-three">
                                     <td class="product-thumbnail">
                                         <a href="#"><img class="img-fluid"
                                                 src="../assets/images/product/size-normal/6711227-bread.jpg" alt=""></a>
@@ -335,6 +360,7 @@
                                     <td class="product-add-list">
                                         <li><a href="#" data-bs-toggle="modal"
                                                 class="btn--black btn--black-hover-blue add-list-button">Add</a>
+                                            <a><i class="fa fa-times action-icon" onclick="removeThree()"></i></a>
                                         </li>
                                     </td>
                                 </tr>
