@@ -1,62 +1,59 @@
-mixin listItemGrid(itemData, heartNum)
-    .col-md-4.col-sm-6.col-12
-                .product__box.product__default--single.text-center
-                  .product__img-box.pos-relative
-                    a.product__img--link(href='#')
-                      img.product__img.img-fluid(src=itemData.img alt='')
-                    ul.product__action--link.pos-absolute
-                      li
-                        a
-                          i.fa.fa-heart(onclick=`heartColour(${heartNum})`)(id=`heart-${heartNum}`)
-                      li
-                        a(href='#modalQuickView' data-bs-toggle='modal')
-                          i.icon-eye
-                  .product__content.m-t-20
-                    a.product__link(href='#')= itemData.item
-                    .product__price.m-t-5
-                      img(src='images/icons/woolworths/wwsquare.png' alt='HTML5 Icon' width='46' height='35')
-                      span.product__price= itemData.wooliesPrice
-                      img(src='images/icons/coles/colessquare.png' alt='HTML5 Icon' width='46' height='35')
-                      span.product__price= itemData.price
+mixin listItemGrid(itemData)
+  .col-md-4.col-sm-6.col-12
+                    .product__box.product__default--single.text-center
+                      .product__img-box.pos-relative
+                        a.product__img--link(href='#')
+                          img.product__img.img-fluid.product-items(src=itemData.img alt='')
+                        ul.product__action--link.pos-absolute
+                          li
+                            a(href='#')
+                              i.icon-heart
+                          li
+                            a(href='#modalQuickView' data-bs-toggle='modal')
+                              i.icon-eye
+                      .product__content.m-t-20
+                        a.product__link(href='#')= itemData.item
+                        .product__price.m-t-5
+                          img(src='images/icons/woolworths/wwsquare.png' alt='HTML5 Icon' width='46' height='35')
+                          span.product__price= itemData.wooliesPrice
+                          img(src='images/icons/coles/colessquare.png' alt='HTML5 Icon' width='46' height='35')
+                          span.product__price=itemData.price
 
-mixin listItemList(itemData, heartNum)
-    .col-12
-                .product__box.product__box--list
-                  .product__img-box.pos-relative.text-center
-                    a.product__img--link(href='#')
-                      img.product__img.img-fluid(src=itemData.img alt='')
-                  .product__content
-                    a.product__link(href='#')
-                      h5.font--regular= itemData.item
-                    .product__price.m-t-5
-                      img(src='images/icons/woolworths/wwsquare.png' alt='HTML5 Icon' width='46' height='35')
-                      span.product__price= itemData.wooliesPrice
-                      img(src='images/icons/coles/colessquare.png' alt='HTML5 Icon' width='46' height='35')
-                      span.product__price=itemData.price
-                    ul.product__action--link-list.m-t-30
-                      li
-                        a.btn--black.btn--black-hover-blue(href='#modalAddList' data-bs-toggle='modal') Add to List
-                      li
-                        a
-                          i.fa.fa-heart(onclick=`heartColour(${heartNum})`)(id=`heart-${heartNum}`)
+mixin listItemList(itemData)
+  .col-12
+                    .product__box.product__box--list
+                      .product__img-box.pos-relative.text-center
+                        a.product__img--link(href='#')
+                          img.product__img.img-fluid.product-images(src=itemData.img alt='')
+                      .product__content
+                        a.product__link(href='#')
+                          h5.font--regular= itemData.item
+                        .product__price.m-t-5
+                          img(src='images/icons/woolworths/wwsquare.png' alt='HTML5 Icon' width='46' height='35')
+                          span.product__price= itemData.wooliesPrice
+                          img(src='images/icons/coles/colessquare.png' alt='HTML5 Icon' width='46' height='35')
+                          span.product__price= itemData.price
+                          p.special-p
+                            span.product__label--special-woolworths-both SPECIAL
+                            span.product__label--special-coles-both SPECIAL
+                        ul.product__action--link-list.m-t-30
+                          li
+                            a.btn--black.btn--black-hover-blue(href='#modalAddList' data-bs-toggle='modal') Add to List
+                          li
+                            a(href='#')
+                              i.icon-heart
 
 doctype html
 head
   meta(charset='UTF-8')
-  title Scrimpr | Compare Products and Save Money
+  title Scrimpr | Insert text
   meta(name='description' content='')
   meta(name='viewport' content='width=device-width, initial-scale=1')
-  link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css')
+  link(rel='shortcut icon' href='images/favicon.png' type='image/png')
   link(rel='stylesheet' href='css/vendor/vendor.min.css')
   link(rel='stylesheet' href='css/plugin/plugins.min.css')
   link(rel='stylesheet' href='css/main.min.css')
   link(rel='stylesheet' href='css/main.css')
-  script.
-    function heartColour(heartNum) {
-        let element = document.getElementById(`heart-${heartNum}`);
-        console.log(element)
-        element.classList.toggle("heart-icon-red");
-    }
 header
   .header.d-none.d-lg-block
     .header__top
@@ -78,12 +75,8 @@ header
                   li.header__nav-item.pos-relative
                     a.header__nav-link(href='index.html') Home
                   li.header__nav-item.pos-relative
-                    a.header__nav-link
-                      | New List
-                      i.header__nav-link
-                  li.header__nav-item.pos-relative
-                    a.header__nav-link
-                      | My Lists
+                    a.header__nav-link(href='mylists.html')
+                      | Lists
                       i.fal.fa-chevron-down
                     ul.mega-menu.pos-absolute
                       li.mega-menu__box
@@ -106,7 +99,7 @@ header
                     a.header__nav-link(href='#')
             ul.header__user-action-icon
               li
-                a(href='#')
+                a(href='index.html')
                   i.icon-users
               li
                 a(href='favourites.html')
@@ -249,56 +242,105 @@ main#main-container.main-container
           .sidebar__widget
           .sidebar__widget
             .sidebar__box
-      .page-breadcrumb
-        .container
-          .row
-            .col-12
-              ul.page-breadcrumb__menu
-                li.page-breadcrumb__nav
-                  a(href='index.html') Home
-                li.page-breadcrumb__nav.active Search Results
-      .sort-box.m-tb-40
-        .sort-box-item
-          .sort-box__tab
-            ul.sort-box__tab-list.nav
-              li
-                a.sort-nav-link(data-bs-toggle='tab' href='#sort-grid')
-                  i.fas.fa-th
-              li
-                a.sort-nav-link.active(data-bs-toggle='tab' href='#sort-list')
-                  i.fas.fa-list-ul
-        .sort-box-item.d-flex.align-items-center.flex-warp
-          span Sort By:
-          .sort-box__option
-            label.select-sort__arrow
-              select.select-sort(name='select-sort')
-                option(value='1') Relevance
-                option(value='2') Name, A to Z
-                option(value='3')  Name, Z to A 
-                option(value='4')  Price, low to high
-                option(value='5') Price, high to low
-        .sort-box-item
-          span Showing 1 - 9 of 9 results
-      .product-tab-area
-        .tab-content.tab-animate-zoom
-          #sort-grid.tab-pane.shop-grid
-            .row
-                for item, num in data
-                    +listItemGrid(item, num)
-          #sort-list.tab-pane.show.active.shop-list
-            .row
-                for item, num in data
-                    +listItemList(item, num)
-      .page-pagination
-        ul.page-pagination__list
-          li.page-pagination__item
-            a.page-pagination__link(href='#') Prev
-          li.page-pagination__item
-            a.page-pagination__link.active(href='#') 1
-          li.page-pagination__item
-            a.page-pagination__link(href='#') 2
-          li.page-pagination__item
-            a.page-pagination__link(href='#') Next
+      .col-lg-9
+        .img-responsive
+          .product__catagory
+            .product__catagory--single
+              .product__content.product__content--catagory
+                a.product__link(href='#') Fruits and Vegetables
+              .product__img-box.product__img-box--catagory
+                a.product__img--link(href='#')
+              i#fruits-vegetables-icon.fas.fa-carrot
+            .product__catagory--single
+              .product__content.product__content--catagory
+                a.product__link(href='#') Bakery
+              .product__img-box.product__img-box--catagory
+                a.product__img--link(href='#')
+              i#bakery-icon.fas.fa-bread-slice
+            .product__catagory--single
+              .product__content.product__content--catagory
+                a.product__link(href='#') Fridge
+              .product__img-box.product__img-box--catagory
+                a.product__img--link(href='#')
+              i#fridge-icon.fas.fa-drumstick-bite
+            .product__catagory--single
+              .product__content.product__content--catagory
+                a.product__link(href='#') Freezer
+              .product__img-box.product__img-box--catagory
+                a.product__img--link(href='#')
+              i#freezer-icon.fas.fa-ice-cream
+            .product__catagory--single
+              .product__content.product__content--catagory
+                a.product__link(href='#') Pantry
+              .product__img-box.product__img-box--catagory
+                a.product__img--link(href='#')
+              i#pantry-icon.fas.fa-cookie
+            .product__catagory--single
+              .product__content.product__content--catagory
+                a.product__link(href='#') Drinks
+              .product__img-box.product__img-box--catagory
+                a.product__img--link(href='#')
+              i#drinks-icon.fas.fa-glass-whiskey
+            .product__catagory--single
+              .product__content.product__content--catagory
+                a.product__link(href='#') Bathroom
+              .product__img-box.product__img-box--catagory
+                a.product__img--link(href='#')
+              i#bathroom-icon.fas.fa-pump-soap
+            .product__catagory--single
+              .product__content.product__content--catagory
+                a.product__link(href='#') Laundry
+              .product__img-box.product__img-box--catagory
+                a.product__img--link(href='#')
+              i#laundry-icon.fas.fa-soap
+            .product__catagory--single
+              .product__content.product__content--catagory
+                a.product__link(href='#') Pet
+              .product__img-box.product__img-box--catagory
+                a.product__img--link(href='#')
+              i#pet-icon.fas.fa-dog
+        .sort-box.m-tb-40
+          .sort-box-item
+            .sort-box__tab
+              ul.sort-box__tab-list.nav
+                li
+                  a.sort-nav-link(data-bs-toggle='tab' href='#sort-grid')
+                    i.fas.fa-th
+                li
+                  a.sort-nav-link.active(data-bs-toggle='tab' href='#sort-list')
+                    i.fas.fa-list-ul
+          .sort-box-item.d-flex.align-items-center.flex-warp
+            span Sort By:
+            .sort-box__option
+              label.select-sort__arrow
+                select.select-sort(name='select-sort')
+                  option(value='1') Relevance
+                  option(value='2') Name, A to Z
+                  option(value='3')  Name, Z to A 
+                  option(value='4')  Price, low to high
+                  option(value='5') Price, high to low
+          .sort-box-item
+            span Showing 1 - 9 of 9 results
+        .product-tab-area
+          .tab-content.tab-animate-zoom
+            #sort-grid.tab-pane.shop-grid
+              .row
+                for item in data
+                  +listItemGrid(item)          
+            #sort-list.tab-pane.show.active.shop-list
+              .row
+                for item in data
+                  +listItemList(item)
+        .page-pagination
+          ul.page-pagination__list
+            li.page-pagination__item
+              a.page-pagination__link(href='#') Prev
+            li.page-pagination__item
+              a.page-pagination__link.active(href='#') 1
+            li.page-pagination__item
+              a.page-pagination__link(href='#') 2
+            li.page-pagination__item
+              a.page-pagination__link(href='#') Next
 footer.footer.m-t-100
   .container
     .footer__top
