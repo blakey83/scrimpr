@@ -57,6 +57,24 @@ head
         console.log(element)
         element.classList.toggle("heart-icon-red");
     }
+
+    function search(event) {
+      event.preventDefault();
+      let searchTerm = document.getElementById('search-field').value.replace(/\s/g, "%20");;
+      window.location = `/results?search=${searchTerm}`;
+    }
+
+    const searchButton = document.getElementById('search-button');
+    searchButton.addEventListener("click", search(event));
+
+    const searchField = document.getElementById('search-field');
+    searchField.addEventListener("keyup", function(event) {
+      // Listen for press of Enter key
+      if (event.keyCode === 13) {
+        event.preventDefault;
+        searchButton.click();
+      }
+    });
 header
   .header.d-none.d-lg-block
     .header__top
@@ -139,10 +157,10 @@ header
                 li.menu-item
                   a(href='#') Pet
           .col-xl-7.col-lg-6
-            form.header-search(action='#' method='post')
+            form.header-search(action='#' method='get')
               .header-search__content.pos-relative
-                input(type='search' name='header-search' placeholder='Search products' required='')
-                button.pos-absolute(type='submit')
+                input(type='search' name='search' id='search-field' placeholder='Search products' required='')
+                button.pos-absolute(type='submit' id='search-button')
                   i.icon-search
           .col-xl-2.col-lg-3
             .header-phone.text-end
