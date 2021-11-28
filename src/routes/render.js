@@ -18,6 +18,7 @@ router.get('/', async (req, res) => {
 
 router.get('/favourites', (_, res) => void res.render('favourites'));
 router.get('/index', (_, res) => void res.render('index'));
+router.get('/home', (_, res) => void res.render('home'));
 router.get('/login', (_, res) => void res.render('login'))
 router.get('/list', (_, res) => void res.render('list'));
 router.get('/mylists', (_, res) => void res.render('mylists'));
