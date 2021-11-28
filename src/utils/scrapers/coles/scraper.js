@@ -9,6 +9,7 @@ async function scraper(searchTerm) {
         concurrency: Cluster.CONCURRENCY_PAGE,
         maxConcurrency: 3,
         puppeteerOptions: {
+            args: ["--no-sandbox"],
             headless: true,
         }
     });
