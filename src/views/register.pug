@@ -1,40 +1,36 @@
 doctype html
-html(lang='en')
-  head
-    meta(charset='utf-8')
-    meta(name='viewport' content='width=device-width, initial-scale=1.0, shrink-to-fit=no')
-    title register
-    link(rel='stylesheet' href='css/bootstrap.min.register.css')
-    link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700')
-    link(rel='stylesheet' href='css/register.css')
-    link(rel='stylesheet' href='css/register1.css')
-  body(style='background: url(images/basket-with-groceries.jpg) center / auto no-repeat;')
-    section.register-photo(style='background: rgba(241,247,252,0);border-radius: 0px;')
-      .form-container(style='border-radius: 25px;')
-        .image-holder(style='width: 316px;border-radius: 25px;background: url(images/happyscrimpy.jpg) center / cover no-repeat;border-top-right-radius: 0px;border-bottom-right-radius: 0px;')
-        form(style='border-radius: 25px;border-top-left-radius: 0px;border-top-right-radius: 25px;border-bottom-left-radius: 0px;border-bottom-right-radius: 25px;')
-          h2.text-center(style='color: rgb(0,0,0);')
-            strong Create
-            |  an account.
-          input.form-control(type='text' name='firstName' placeholder='First Name' required, style='background: rgb(241,241,241);color: rgb(0,0,0);border-radius: 100px;')
-          input.form-control(type='text' style='margin-top: 16px;background: rgb(241,241,241);color: rgb(0,0,0);border-radius: 100px;' name='lastName' placeholder='Last Name' required)
-          input.form-control(type='text' style='margin-top: 16px;background: rgb(241,241,241);color: rgb(0,0,0);border-radius: 100px;' name='postcode' placeholder='Postcode' required)
-          .mb-3
-            input.form-control(type='email' name='email' placeholder='Email' required, style='padding-top: 6px;margin-top: 16px;background: rgb(241,241,241);color: rgb(0,0,0);border-radius: 100px;')
-          .mb-3
-            input.form-control(type='password' name='password' placeholder='Password' style='background: rgb(241,241,241);color: rgb(0,0,0);border-radius: 100px;')
-          .mb-3
-            input.form-control(type='password' name='passwordrepeat' placeholder='Password (repeat)' style='background: rgb(241,241,241);color: rgb(0,0,0);border-radius: 100px;')
-          .mb-3
-            .form-check
-              label.form-check-label
-                input#termscheck.form-check-input(type='checkbox')
-                | I agree to the licence terms.
-          .mb-3
-            button(class="btn btn-primary d-block w-100" type="submit" onclick="pressTheButton(this.form)" href=('./') style="background: rgb(61,87,178);") Sign Up
-          a(class="already") Do you already have an account? Login here.
-          #error(style="text-align: center; text-decoration-color: red;")
-  script(src="/js/register.js")
-
-
-        
+head
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0, shrink-to-fit=no')
+  title Scrimpr | Compare Products and Save Money
+  link(rel='stylesheet' href='bootstrap/css/bootstrap.min.css')
+  link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700')
+  link(rel='stylesheet' href='css/register.css')
+  link(rel='stylesheet' href='css/register1.css')
+body(style="background: url('images/basket-with-groceries.jpg') center / auto no-repeat;")
+  section.register-photo(style='background: rgba(241,247,252,0);border-radius: 0px;')
+    .form-container(style='border-radius: 25px;')
+      .image-holder(style='width: 330px; border-radius: 25px;background: url("images/happyscrimpy.jpg") center / cover no-repeat;border-top-right-radius: 0px;border-bottom-right-radius: 0px;')
+      form(style='border-radius: 25px;border-top-left-radius: 0px;border-top-right-radius: 25px;border-bottom-left-radius: 0px;border-bottom-right-radius: 25px;')
+        h2.text-center(style="color: rgb(0,0,0); font-family: 'Source Sans Pro', sans-serif")
+          strong Create
+          |  an account.
+        input.form-control(type='text' name='firstname' placeholder='First Name' required='' style='background: rgb(241,241,241);color: rgb(0,0,0);border-radius: 100px;')
+        input.form-control(type='text' style='margin-top: 16px;background: rgb(241,241,241);color: rgb(0,0,0);border-radius: 100px;' name='lastname' placeholder='Last Name' required='')
+        input.form-control(type='text' style='margin-top: 16px;background: rgb(241,241,241);color: rgb(0,0,0);border-radius: 100px;' name='postcode' placeholder='Postcode' required='')
+        .mb-3
+          input.form-control(type='email' name='email' placeholder='Email' style='padding-top: 6px;margin-top: 16px;background: rgb(241,241,241);color: rgb(0,0,0);border-radius: 100px;')
+        .mb-3
+          input.form-control(type='password' name='password' placeholder='Password' style='background: rgb(241,241,241);color: rgb(0,0,0);border-radius: 100px;')
+        .mb-3
+          input.form-control(type='password' name='passwordrepeat' placeholder='Password (confirm)' style='background: rgb(241,241,241);color: rgb(0,0,0);border-radius: 100px;')
+        .mb-3
+          .form-check
+            label.form-check-label
+              input#termscheck.form-check-input(type='checkbox')
+              | I agree to the licence terms.
+        .mb-3
+          button.btn.btn-primary.d-block.w-100(type='submit' onclick='pressTheButton(this.form)' style='background: rgb(61,87,178); border-radius: 100px;') Sign Up
+        a.already(href='login.html') Do you already have an account? Login here.
+        #error(style='text-align: center; text-decoration-color: red;')
+script(src='script.js')

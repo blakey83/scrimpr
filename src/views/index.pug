@@ -1,32 +1,341 @@
 doctype html
-html(lang="en")
-  head
-    meta(charset="utf-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0, shrink-to-fit=no")
-    title Scrimpr
-    link(rel="stylesheet", href="css/bootstrap.min.css")
-    link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700")
-    link(rel="stylesheet", href="fonts/font-awesome.min.css")
-  body(class="d-xl-flex justify-content-xl-center align-items-xl-center", style="font-weight: bold;letter-spacing: 1px;background: url(images/shoppingphone.png) top / auto no-repeat;")
-    div(class="container d-lg-flex justify-content-lg-center align-items-lg-center", style="margin-top: 120px;margin-left: 100.5px;margin-bottom: 0px;")
-      div(class="row", style="border-radius: 25px;padding: 0px;margin-top: 30px;margin-left: 50px;background: #ffffff;")
-        div(class="col-md-6", style="background: url(images/superscrimpycircle.jpg) center / contain no-repeat, rgba(124,154,231,0);padding: 50px;height: 380px;width: 375px;margin: 15px;")
-          div(style="margin-left: 0px;padding-left: 0px;")
-        div(class="col-md-6 d-lg-flex d-xl-flex align-items-center justify-content-lg-start align-items-lg-start justify-content-xl-center align-items-xl-center", style="background: rgba(255,255,255,0);padding: 50px;width: 400px;")
-          div
-            div(style="width: 300px;")
-              div
-              div
-              form(style='font-size: 25px;font-family: ' Source Sans Pro', sans-serif;') User Login
-              div(style='padding: 10px;background: rgb(241,241,241);border-radius: 100px;color: var(--bs-blue);height: 44px;border-color: rgb(113,136,170);width: 300px;')
-                i(class='fa fa-user', style='color: rgb(251,251,251);padding-right: 0px;padding-left: 10px;border-color: var(--bs-orange);')
-                input#username-field(Name='username-field' type='text', style='padding-top: 0px;padding-bottom: 0px;padding-left: 15px;margin: 0px;margin-left: 10px;margin-bottom: 0px;margin-top: -2px;background: rgba(255,255,241,0);border-style: none;', placeholder='Username')
-              div(style='padding: 10px;background: rgb(241, 241, 241);border-radius: 100px;margin-top: 15px;color: var(--bs-blue);height: 44px;width: 300px;')
-                i(class='fa fa-lock', style='padding: 0px;color: rgb(255,255,255);padding-left: 10px;')
-                input#password-field(Name='password-field' type='password', style='padding-top: 0px;padding-bottom: 0px;padding-left: 15px;margin: 0px;margin-left: 10px;margin-bottom: 0px;margin-top: -2px;background: rgba(255,255,255,0);border-style: none;', placeholder='Password')
-              #login-button(class='btn btn-primary d-block w-100' onclick='loginAttempt(this.form)' type ='submit' style='padding: 10px;background: rgb(52,177,31);border-radius: 100px;margin-top: 15px;color: var(--bs-white);width: 300px;')
-                p(style='border-color: var(--bs-body-bg);margin: 0px;color: rgb(249,251,254);text-align: center;') Login
-              div
-                p(style='text-align: center;color: rgb(82,78,78);font-size: 10px;margin-top: 10px;') Do you want to create a new account? 
-                  a(href='./register') Click here
-  script(src='/js/login.js')
+head
+  meta(charset='UTF-8')
+  title Scrimpr | Compare Products and Save Money
+  meta(name='description' content='')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  link(rel='stylesheet' href='css/vendor/vendor.min.css')
+  link(rel='stylesheet' href='css/plugin/plugins.min.css')
+  link(rel='stylesheet' href='css/main.min.css')
+  link(rel='stylesheet' href='css/main.css')
+header
+  .header.d-none.d-lg-block
+    .header__top
+      .container
+        .row
+          .col-12
+            .header__top-content.d-flex.justify-content-between.align-items-center
+              .header__top-content--left
+    .header__center.sticky-header.p-tb-10
+      .container
+        .row
+          .col-12.d-flex.justify-content-between.align-items-center
+            .header__logo
+              a.header__logo-link.img-responsive(href='index.html')
+                img.header__logo-img.img-fluid(src='images/logo/scrimprlogolargerls.jpg' alt='')
+            .header-menu
+              nav
+                ul.header__nav
+                  li.header__nav-item.pos-relative
+                    a.header__nav-link(href='index.html') Home
+                  li.header__nav-item.pos-relative
+                    a.header__nav-link
+                      | New List
+                      i.header__nav-link
+                  li.header__nav-item.pos-relative
+                    a.header__nav-link
+                      | My Lists
+                      i.fal.fa-chevron-down
+                    ul.mega-menu.pos-absolute
+                      li.mega-menu__box
+                        .mega-menu__item-box
+                          a(href='list.html' mega-menu__title='') List 1
+                          span.mega-menu__title List 2
+                          span.mega-menu__title List 3
+                          ul.mega-menu__item
+                        .mega-menu__item-box
+                          ul.mega-menu__item
+                            li.mega-menu__banner
+                              a.mega-menu__banner-link(href='#')
+                  li.header__nav-item.pos-relative
+                  li.header__nav-item.pos-relative
+                  li.header__nav-item.pos-relative
+                  li.header__nav-item.pos-relative
+            ul.header__user-action-icon
+              li
+                a(href='#')
+                  i.icon-users
+              li
+                a(href='favourites.html')
+                  i.icon-heart
+    .header__bottom.p-tb-30
+      .container
+        .row.justify-content-between.align-items-center
+          .col-xl-3.col-lg-3
+            .header-menu-vertical.pos-relative
+              h4.menu-title.link--icon-left
+                i.far.fa-align-left
+                | CATEGORIES
+              ul.menu-content.pos-absolute
+                li.menu-item
+                  a(href='#') Fruits and Vegetables
+                li.menu-item
+                  a(href='#') Bakery
+                li.menu-item
+                  a(href='#') Fridge
+                li.menu-item
+                  a(href='#') Freezer
+                li.menu-item
+                  a(href='#') Pantry
+                li.menu-item
+                  a(href='#') Drinks
+                li.menu-item
+                  a(href='#') Bathroom
+                li.menu-item
+                  a(href='#') Laundry
+                li.menu-item
+                  a(href='#') Pet
+          .col-xl-7.col-lg-6
+            form.header-search(action='#' method='post')
+              .header-search__content.pos-relative
+                input(type='search' name='header-search' placeholder='Search products' required='')
+                button.pos-absolute(type='submit')
+                  i.icon-search
+          .col-xl-2.col-lg-3
+            .header-phone.text-end
+              span
+  #offcanvas-mobile-menu.offcanvas.offcanvas-mobile-menu
+    .offcanvas__top
+      span.offcanvas__top-text
+      button.offcanvas-close
+        i.fal.fa-times
+    .offcanvas-inner
+      form.header-search.m-tb-15(action='#' method='post')
+        .header-search__content.pos-relative
+          input(type='search' name='header-search' placeholder='Search products' required='')
+          button.pos-absolute(type='submit')
+            i.icon-search
+      ul.header__user-action-icon.m-tb-15.text-center
+        li
+          a(href='#')
+            i.icon-users
+        li
+          a(href='favourites.html')
+            i.icon-heart
+      .offcanvas-menu
+        ul
+          li
+            a(href='index.html')
+              span Home
+          li
+            a(href='#')
+              span My Lists
+            ul.sub-menu
+              li
+                a(href='#') Shopping Lists
+                ul.sub-menu
+                  li
+                    a(href='shop-sidebar-grid-left.html')
+            ul.sub-menu
+              li
+                a(href='#') Title
+                ul.sub-menu
+                  li
+                    a(href='#') My Account
+                  li
+                    a(href='#') Login
+            ul.offcanvas__social-nav.m-t-50
+              li.offcanvas__social-list
+                a.offcanvas__social-link(href='#')
+                  i.fab.fa-facebook-f
+              li.offcanvas__social-list
+                a.offcanvas__social-link(href='#')
+                  i.fab.fa-twitter
+              li.offcanvas__social-list
+                a.offcanvas__social-link(href='#')
+                  i.fab.fa-youtube
+              li.offcanvas__social-list
+                a.offcanvas__social-link(href='#')
+                  i.fab.fa-google-plus-g
+              li.offcanvas__social-list
+                a.offcanvas__social-link(href='#')
+                  i.fab.fa-instagram
+main#main-container.main-container
+  .product.m-t-100
+    .container
+      .row
+        .col-12
+          .section-content.section-content--border.m-b-35
+            h5.section-content__title Browse Categories
+            a.btn.btn--icon-left.btn--small.btn--radius.btn--transparent.btn--border-blue.btn--border-blue-hover-blue.font--regular.text-capitalize(href='#')
+              | More
+              | categories 
+              i.fal.fa-angle-right
+      .row
+        .col-12
+          .product__catagory
+            .product__catagory--single
+              .product__content.product__content--catagory
+                a.product__link(href='#') Fruits and Vegetables
+              .product__img-box.product__img-box--catagory
+                a.product__img--link(href='#')
+              i#fruits-vegetables-icon.fas.fa-carrot
+            .product__catagory--single
+              .product__content.product__content--catagory
+                a.product__link(href='#') Bakery
+              .product__img-box.product__img-box--catagory
+                a.product__img--link(href='#')
+              i#bakery-icon.fas.fa-bread-slice
+            .product__catagory--single
+              .product__content.product__content--catagory
+                a.product__link(href='#') Fridge
+              .product__img-box.product__img-box--catagory
+                a.product__img--link(href='#')
+              i#fridge-icon.fas.fa-drumstick-bite
+            .product__catagory--single
+              .product__content.product__content--catagory
+                a.product__link(href='#') Freezer
+              .product__img-box.product__img-box--catagory
+                a.product__img--link(href='#')
+              i#freezer-icon.fas.fa-ice-cream
+            .product__catagory--single
+              .product__content.product__content--catagory
+                a.product__link(href='#') Pantry
+              .product__img-box.product__img-box--catagory
+                a.product__img--link(href='#')
+              i#pantry-icon.fas.fa-cookie
+            .product__catagory--single
+              .product__content.product__content--catagory
+                a.product__link(href='#') Drinks
+              .product__img-box.product__img-box--catagory
+                a.product__img--link(href='#')
+              i#drinks-icon.fas.fa-glass-whiskey
+            .product__catagory--single
+              .product__content.product__content--catagory
+                a.product__link(href='#') Bathroom
+              .product__img-box.product__img-box--catagory
+                a.product__img--link(href='#')
+              i#bathroom-icon.fas.fa-pump-soap
+            .product__catagory--single
+              .product__content.product__content--catagory
+                a.product__link(href='#') Laundry
+              .product__img-box.product__img-box--catagory
+                a.product__img--link(href='#')
+              i#laundry-icon.fas.fa-soap
+            .product__catagory--single
+              .product__content.product__content--catagory
+                a.product__link(href='#') Pet
+              .product__img-box.product__img-box--catagory
+                a.product__img--link(href='#')
+              i#pet-icon.fas.fa-dog
+  .hero.slider-dot-fix.slider-dot.slider-dot-fix.slider-dot--center.slider-dot-size--medium.slider-dot-circle.slider-dot-style--fill.slider-dot-style--fill-white-active-blue.dot-gap__X--10
+    .hero-slider
+      img(src='images/hero/family-with-groceries.jpg' alt='')
+      .hero__content
+        br
+        .container
+          .row
+            .col-12.col-lg-8
+              .hero__content--inner
+                h4.title__hero.title__hero--small.font--regular
+                  | Compare Products and Save
+                  | Money!
+                a.btn.btn--large.btn--radius.btn--black.btn--black-hover-blue.font--bold.text-uppercase(href='#')
+                  | Search
+        br
+    .hero-slider
+      img(src='images/hero/young-couple-with-groceries-at-home.jpg' alt='')
+      .hero__content
+        br
+        .container
+          .row
+            .col-12.col-lg-8
+              .hero__content--inner
+                h4.title__hero.title__hero--small.font--regular
+                  | Create Interactive Shopping
+                  | Lists
+                a.btn.btn--large.btn--radius.btn--black.btn--black-hover-blue.font--bold.text-uppercase(href='#')
+                  | Register
+        br
+  .banner.m-t-30
+    .container-fluid
+      .row
+        .col-md-6.col-12
+          .banner__box
+            .banner__box--single.banner__box--single-text-style-1.pos-relative
+              a.banner__link(href='#')
+                img.banner__img(src='images/banner/size-wide/shopping-list.png' alt='')
+              .banner__content.banner__content--center.pos-absolute
+                .text-center
+                  a#button-center.btn.btn--medium.btn--radius.btn--transparent.btn--border-black-hover-blue.font--regular.text-uppercase(href='mylists.html')
+                    | Shopping
+                    | Lists
+        .col-md-6.col-12
+          .banner__box
+            .banner__box--single.banner__box--single-text-style-1.pos-relative
+              a.banner__link(href='#')
+                img.banner__img(src='images/banner/size-wide/happy-shopper.png' alt='')
+              .banner__content.banner__content--center.pos-absolute
+                .text-center
+                  a#button-center.btn.btn--medium.btn--radius.btn--transparent.btn--border-black-hover-blue.font--regular.text-uppercase(href='favourites.html')
+                    | Favourites
+footer.footer.m-t-100
+  .container
+    .footer__top
+      .row
+        .col-lg-4.col-md-5
+          .footer__about
+            .footer__logo
+              a.footer__logo-link(href='index.html')
+                img.footer__logo-img(src='images/logo/scrimprlogolarger.png' alt='')
+            ul.footer__address
+              li.footer__address-item
+                i.fa.fa-envelope
+                | support@scrimpr.com
+            ul.footer__social-nav
+              li.footer__social-list
+                a.footer__social-link(href='#')
+                  i.fab.fa-facebook-f
+              li.footer__social-list
+                a.footer__social-link(href='#')
+                  i.fab.fa-twitter
+              li.footer__social-list
+                a.footer__social-link(href='#')
+                  i.fab.fa-youtube
+              li.footer__social-list
+                a.footer__social-link(href='#')
+                  i.fab.fa-google-plus-g
+        .col-lg-2.col-md-3.col-sm-6.col-12
+          .footer__menu
+            h4.footer__nav-title.footer__nav-title--dash.footer__nav-title--dash-red
+              | APPLICATION
+            ul.footer__nav
+              li.footer__list
+                a.footer__link(href='results.html') Search Products
+              li.footer__list
+                a.footer__link(href='list.html') Create New List
+        .col-lg-2.col-md-3.col-sm-6.col-12
+          .footer__menu
+            h4.footer__nav-title.footer__nav-title--dash.footer__nav-title--dash-red
+              | SCRIMPR
+            ul.footer__nav
+              li.footer__list
+                a.footer__link(href='') Legal Notice
+              li.footer__list
+                a.footer__link(href='') About us
+              li.footer__list
+                a.footer__link(href='') Careers
+        .col-lg-2.col-md-3.col-sm-6.col-12
+          .footer__menu
+            h4.footer__nav-title.footer__nav-title--dash.footer__nav-title--dash-red
+              | MY ACCOUNT
+            ul.footer__nav
+              li.footer__list
+                a.footer__link(href='mylists.html') My Lists
+              li.footer__list
+                a.footer__link(href='favourites.html') Favourites
+              li.footer__list
+                a.footer__link(href='') Helps &amp; Faqs
+  .footer__bottom
+    .row
+      .col-lg-8.col-md-6.col-12
+        .footer__copyright-text
+          p
+            | Copyright &copy; 
+            a(href='#') Scrimpr
+            | . All Rights Reserved
+        .col-lg-4.col-md-6.col-12
+button.material-scrolltop(type='button')
+script(src='js/vendor/vendor.min.js')
+script(src='js/plugin/plugins.min.js')
+script(src='js/main.js')

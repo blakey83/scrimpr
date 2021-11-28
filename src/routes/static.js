@@ -14,4 +14,5 @@ export function registerStaticRoutes(app) {
     app.use('/files', express.static('src/assets/files'));
     app.use('/images', express.static('src/assets/images'));
     app.use('/fonts', express.static('src/assets/fonts'));
+    app.use('/assetsold', express.static('src/assets/assetsold'));
 }
